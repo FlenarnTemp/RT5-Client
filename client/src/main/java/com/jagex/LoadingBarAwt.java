@@ -10,7 +10,7 @@ public class LoadingBarAwt {
 	@OriginalMember(owner = "com.jagex.client!et", name = "m", descriptor = "Ljava/awt/Image;")
 	public static Image anImage1;
 	@OriginalMember(owner = "com.jagex.client!eu", name = "B", descriptor = "Ljava/awt/Font;")
-	public static BitmapFont aFont3;
+	public static Font aFont3;
 
 	@OriginalMember(owner = "com.jagex.client!fr", name = "a", descriptor = "(I)V")
 	public static void clear() {
