@@ -32,7 +32,7 @@ public final class LruHashTable {
 
 	@OriginalMember(owner = "com.jagex.client!hu", name = "a", descriptor = "(BJ)Ljava/lang/Object;")
 	public Object get(@OriginalArg(1) long arg0) {
-		@Pc(10) ReferenceNode local10 = (ReferenceNode) this.aClass4_56.get(arg0);
+		@Pc(10) ReferenceNode local10 = (ReferenceNode) this.aClass4_56.getNode(arg0);
 		if (local10 == null) {
 			return null;
 		}
@@ -185,7 +185,7 @@ public final class LruHashTable {
 
 	@OriginalMember(owner = "com.jagex.client!hu", name = "a", descriptor = "(JI)V")
 	private void method2626(@OriginalArg(0) long arg0) {
-		@Pc(14) ReferenceNode local14 = (ReferenceNode) this.aClass4_56.get(arg0);
+		@Pc(14) ReferenceNode local14 = (ReferenceNode) this.aClass4_56.getNode(arg0);
 		this.method2625(local14);
 	}
 }

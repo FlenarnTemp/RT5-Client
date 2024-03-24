@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.config.meltype.MapElementType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -24,7 +25,7 @@ public final class Static212 {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!mi", name = "a", descriptor = "(IIILclient!je;Lclient!wm;Lclient!jg;Lclient!np;I)V")
-	public static void method3727(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) Class113 arg3, @OriginalArg(4) Renderer arg4, @OriginalArg(5) MapElement arg5, @OriginalArg(6) MelType arg6) {
+	public static void method3727(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) Class113 arg3, @OriginalArg(4) Renderer arg4, @OriginalArg(5) MapElement arg5, @OriginalArg(6) MapElementType arg6) {
 		@Pc(14) int local14 = arg5.anInt2948 - arg0 / 2 - 5;
 		@Pc(18) int local18 = arg2 + 2;
 		if (arg6.anInt4437 != 0) {

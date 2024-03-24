@@ -7,6 +7,7 @@ import com.jagex.game.config.flutype.FloorUnderlayType;
 import com.jagex.game.config.flutype.FloorUnderlayTypeList;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
+import com.jagex.game.config.meltype.MapElementTypeList;
 import com.jagex.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -33,7 +34,7 @@ public final class MapList {
 	private static FloorUnderlayTypeList aClass241_4;
 
 	@OriginalMember(owner = "com.jagex.client!tt", name = "i", descriptor = "Lclient!ki;")
-	public static MelTypeList aClass125_4;
+	public static MapElementTypeList aClass125_4;
 
 	@OriginalMember(owner = "com.jagex.client!tt", name = "k", descriptor = "I")
 	public static int anInt6047;
@@ -317,7 +318,7 @@ public final class MapList {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!tt", name = "a", descriptor = "(Lclient!r;Lclient!fl;Lclient!vq;Lclient!rh;Lclient!ki;Lclient!ii;Lclient!wl;)V")
-	public static void method5512(@OriginalArg(0) Js5 arg0, @OriginalArg(1) FloorOverlayTypeList arg1, @OriginalArg(2) FloorUnderlayTypeList arg2, @OriginalArg(3) LocTypeList arg3, @OriginalArg(4) MelTypeList arg4, @OriginalArg(5) MsiTypeList arg5, @OriginalArg(6) Interface11 arg6) {
+	public static void method5512(@OriginalArg(0) Js5 arg0, @OriginalArg(1) FloorOverlayTypeList arg1, @OriginalArg(2) FloorUnderlayTypeList arg2, @OriginalArg(3) LocTypeList arg3, @OriginalArg(4) MapElementTypeList arg4, @OriginalArg(5) MsiTypeList arg5, @OriginalArg(6) Interface11 arg6) {
 		aClass197_85 = arg0;
 		aClass72_6 = arg1;
 		aClass241_4 = arg2;
@@ -351,7 +352,7 @@ public final class MapList {
 
 	@OriginalMember(owner = "com.jagex.client!tt", name = "a", descriptor = "(I)Lclient!vj;")
 	public static Map get(@OriginalArg(0) int arg0) {
-		return (Map) aClass4_124.get((long) arg0);
+		return (Map) aClass4_124.getNode((long) arg0);
 	}
 
 	@OriginalMember(owner = "com.jagex.client!tt", name = "a", descriptor = "(Lclient!ci;III)I")
@@ -417,7 +418,7 @@ public final class MapList {
 
 	@OriginalMember(owner = "com.jagex.client!tt", name = "b", descriptor = "(I)V")
 	public static void method5518(@OriginalArg(0) int arg0) {
-		WorldMap.currentMap = (Map) aClass4_124.get((long) arg0);
+		WorldMap.currentMap = (Map) aClass4_124.getNode((long) arg0);
 	}
 
 	@OriginalMember(owner = "com.jagex.client!tt", name = "c", descriptor = "()V")
@@ -682,7 +683,7 @@ public final class MapList {
 							} else if (local179 <= 0) {
 								method5509(arg0, local28, local70, local44, local84, local175, local177, aByteArray89[local173], null, null, true);
 							} else if (local179 == 65535) {
-								@Pc(282) Class2_Sub29 local282 = (Class2_Sub29) aClass4_125.get((long) (local50 << 16 | local93));
+								@Pc(282) Class2_Sub29 local282 = (Class2_Sub29) aClass4_125.getNode((long) (local50 << 16 | local93));
 								if (local282 != null) {
 									method5509(arg0, local28, local70, local44, local84, local175, local177, aByteArray89[local173], local282.aShortArray109, local282.aByteArray71, true);
 								}
@@ -731,7 +732,7 @@ public final class MapList {
 								if (local175 <= 0) {
 									method5526(arg0, local40, local80, local50, local93, null, null);
 								} else if (local175 == 65535) {
-									@Pc(459) Class2_Sub29 local459 = (Class2_Sub29) aClass4_125.get((long) (local57 << 16 | local173));
+									@Pc(459) Class2_Sub29 local459 = (Class2_Sub29) aClass4_125.getNode((long) (local57 << 16 | local173));
 									if (local459 != null) {
 										method5526(arg0, local40, local80, local50, local93, local459.aShortArray109, local459.aByteArray71);
 									}
@@ -890,7 +891,7 @@ public final class MapList {
 				if (local15 != 0) {
 					@Pc(35) int local35;
 					if (local15 == 65535) {
-						@Pc(31) Class2_Sub29 local31 = (Class2_Sub29) aClass4_125.get((long) (local1 << 16 | local4));
+						@Pc(31) Class2_Sub29 local31 = (Class2_Sub29) aClass4_125.getNode((long) (local1 << 16 | local4));
 						if (local31 != null) {
 							for (local35 = 0; local35 < local31.aShortArray109.length; local35++) {
 								@Pc(46) LocType local46 = aClass202_3.get(local31.aShortArray109[local35] & 0xFFFF);

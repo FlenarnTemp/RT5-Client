@@ -1889,7 +1889,7 @@ public final class Class19_Sub1 extends Renderer implements Interface8 {
 
 	@OriginalMember(owner = "com.jagex.client!bf", name = "a", descriptor = "(Lclient!dk;Z)Lclient!jd;")
 	@Override
-	public Sprite method2891(@OriginalArg(0) SpriteData arg0) {
+	public Sprite createSprite(@OriginalArg(0) SpriteData arg0) {
 		@Pc(6) int[] local6 = new int[arg0.anInt1531 * arg0.anInt1533];
 		@Pc(8) int local8 = 0;
 		@Pc(10) int local10 = 0;

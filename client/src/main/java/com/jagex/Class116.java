@@ -35,7 +35,7 @@ public final class Class116 {
 
 	@OriginalMember(owner = "com.jagex.client!jm", name = "a", descriptor = "(JB)Lclient!tl;")
 	public SecondaryNode method3152(@OriginalArg(0) long arg0) {
-		@Pc(15) SecondaryNode local15 = (SecondaryNode) this.aClass4_69.get(arg0);
+		@Pc(15) SecondaryNode local15 = (SecondaryNode) this.aClass4_69.getNode(arg0);
 		if (local15 != null) {
 			this.aClass246_3.addTail(local15);
 		}

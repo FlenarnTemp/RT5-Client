@@ -70,7 +70,7 @@ public final class Static228 {
 								if (local253 != null) {
 									local246 = new Sprite[local253.length];
 									for (local261 = 0; local261 < local253.length; local261++) {
-										local246[local261] = Rasteriser.instance.method2891(local253[local261]);
+										local246[local261] = Rasteriser.instance.createSprite(local253[local261]);
 									}
 									Static306.aClass98_49.put((long) local217, local246);
 								}
@@ -110,7 +110,7 @@ public final class Static228 {
 									if (local427 != null) {
 										local420 = new Sprite[local427.length];
 										for (local435 = 0; local435 < local427.length; local435++) {
-											local420[local435] = Rasteriser.instance.method2891(local427[local435]);
+											local420[local435] = Rasteriser.instance.createSprite(local427[local435]);
 										}
 										Static139.aClass98_18.put((long) local310, local420);
 									}

@@ -67,7 +67,7 @@ public final class MsiType {
 					local54.method1675();
 				}
 			}
-			local32 = arg2.method2891(local54);
+			local32 = arg2.createSprite(local54);
 			if (local32 != null) {
 				this.aClass104_1.aClass98_20.put(local24, local32);
 			}

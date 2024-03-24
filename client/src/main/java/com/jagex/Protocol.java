@@ -194,8 +194,8 @@ public class Protocol {
 					local74 = inboundBuffer.g4_alt3();
 					local228 = inboundBuffer.g2_alt1();
 					if (setVerifyId(local228)) {
-						@Pc(335) SubInterface local335 = (SubInterface) InterfaceList.subInterfaces.get((long) local220);
-						local344 = (SubInterface) InterfaceList.subInterfaces.get((long) local74);
+						@Pc(335) SubInterface local335 = (SubInterface) InterfaceList.subInterfaces.getNode((long) local220);
+						local344 = (SubInterface) InterfaceList.subInterfaces.getNode((long) local74);
 						if (local344 != null) {
 							Static276.method4655(false, local344, local335 == null || local344.id != local335.id);
 						}
@@ -427,7 +427,7 @@ public class Protocol {
 							if (setVerifyId(worldId)) {
 								for (local506 = local220; local506 <= local228; local506++) {
 									local1101 = (long) local506 + ((long) local497 << 32);
-									local1109 = (ServerActiveProperties) Static327.properties.get(local1101);
+									local1109 = (ServerActiveProperties) Static327.properties.getNode(local1101);
 									if (local1109 != null) {
 										local1118 = new ServerActiveProperties(local1109.events, local74);
 										local1109.remove();
@@ -455,7 +455,7 @@ public class Protocol {
 							local228 = inboundBuffer.g4_alt1();
 							worldId = inboundBuffer.g2();
 							if (setVerifyId(local220)) {
-								local344 = (SubInterface) InterfaceList.subInterfaces.get((long) local228);
+								local344 = (SubInterface) InterfaceList.subInterfaces.getNode((long) local228);
 								if (local344 != null) {
 									Static276.method4655(false, local344, worldId != local344.id);
 								}
@@ -976,7 +976,7 @@ public class Protocol {
 										if (setVerifyId(local497)) {
 											for (local506 = local74; local506 <= worldId; local506++) {
 												local1101 = ((long) local220 << 32) + ((long) local506);
-												local1109 = (ServerActiveProperties) Static327.properties.get(local1101);
+												local1109 = (ServerActiveProperties) Static327.properties.getNode(local1101);
 												if (local1109 != null) {
 													local1118 = new ServerActiveProperties(local228, local1109.targetParam);
 													local1109.remove();
@@ -1676,7 +1676,7 @@ public class Protocol {
 												local220 = inboundBuffer.g2();
 												local74 = inboundBuffer.g4();
 												if (setVerifyId(local220)) {
-													@Pc(5735) SubInterface local5735 = (SubInterface) InterfaceList.subInterfaces.get((long) local74);
+													@Pc(5735) SubInterface local5735 = (SubInterface) InterfaceList.subInterfaces.getNode((long) local74);
 													if (local5735 != null) {
 														Static276.method4655(false, local5735, true);
 													}
@@ -3966,7 +3966,7 @@ public class Protocol {
 			int newCount = inboundBuffer.g2();
 
 			if (Static120.objStacks != null && x >= 0 && z >= 0 && x < Static373.buildAreaLimitX && Static242.buildAreaLimitZ > z) {
-				@Pc(269) Class2_Sub32 local269 = (Class2_Sub32) Static120.objStacks.get((long) (x | Player.level << 28 | z << 14));
+				@Pc(269) Class2_Sub32 local269 = (Class2_Sub32) Static120.objStacks.getNode((long) (x | Player.level << 28 | z << 14));
 				if (local269 != null) {
 					for (@Pc(277) ObjStack objStack = (ObjStack) local269.aClass135_34.head(); objStack != null; objStack = (ObjStack) local269.aClass135_34.next()) {
 						if (objStack.type == (type & 0x7FFF) && oldCount == objStack.count) {
@@ -4059,7 +4059,7 @@ public class Protocol {
 			int type = inboundBuffer.g2_alt3();
 
 			if (x >= 0 && z >= 0 && x < Static373.buildAreaLimitX && z < Static242.buildAreaLimitZ) {
-				@Pc(713) Class2_Sub32 local713 = (Class2_Sub32) Static120.objStacks.get((long) (x | Player.level << 28 | z << 14));
+				@Pc(713) Class2_Sub32 local713 = (Class2_Sub32) Static120.objStacks.getNode((long) (x | Player.level << 28 | z << 14));
 				if (local713 != null) {
 					for (@Pc(721) ObjStack objStack = (ObjStack) local713.aClass135_34.head(); objStack != null; objStack = (ObjStack) local713.aClass135_34.next()) {
 						if ((type & 0x7FFF) == objStack.type) {

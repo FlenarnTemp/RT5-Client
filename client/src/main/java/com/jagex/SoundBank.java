@@ -54,7 +54,7 @@ public final class SoundBank {
 		@Pc(15) int local15 = (arg2 >>> 12 | arg2 << 4 & 0xFFF8) ^ arg0;
 		@Pc(21) int local21 = local15 | arg2 << 16;
 		@Pc(24) long local24 = (long) local21;
-		@Pc(31) PcmSound local31 = (PcmSound) this.cache.get(local24);
+		@Pc(31) PcmSound local31 = (PcmSound) this.cache.getNode(local24);
 		if (local31 != null) {
 			return local31;
 		} else if (arg1 == null || arg1[0] > 0) {
@@ -78,11 +78,11 @@ public final class SoundBank {
 		@Pc(15) int local15 = arg0 ^ (arg2 << 4 & 0xFFF9 | arg2 >>> 12);
 		@Pc(21) int local21 = local15 | arg2 << 16;
 		@Pc(26) long local26 = (long) local21 ^ 0x100000000L;
-		@Pc(33) PcmSound local33 = (PcmSound) this.cache.get(local26);
+		@Pc(33) PcmSound local33 = (PcmSound) this.cache.getNode(local26);
 		if (local33 != null) {
 			return local33;
 		} else if (arg1 == null || arg1[0] > 0) {
-			@Pc(55) Class2_Sub27 local55 = (Class2_Sub27) this.aClass4_11.get(local26);
+			@Pc(55) Class2_Sub27 local55 = (Class2_Sub27) this.aClass4_11.getNode(local26);
 			if (local55 == null) {
 				local55 = Static267.method4520(this.aClass197_4, arg2, arg0);
 				if (local55 == null) {

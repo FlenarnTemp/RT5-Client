@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.config.meltype.MapElementType;
 import com.jagex.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -40,15 +41,15 @@ public final class Static101 {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!fo", name = "a", descriptor = "(ILclient!np;)Z")
-	public static boolean method2164(@OriginalArg(1) MelType arg0) {
+	public static boolean method2164(@OriginalArg(1) MapElementType arg0) {
 		if (arg0 == null) {
 			return false;
 		} else if (!arg0.aBoolean305) {
 			return false;
 		} else if (!arg0.method4180(MapList.anInterface11_2)) {
 			return false;
-		} else if (WorldMap.visibleMapElementIds.get((long) arg0.anInt4430) == null) {
-			return WorldMap.visibleMapElementCategories.get((long) arg0.category) == null;
+		} else if (WorldMap.visibleMapElementIds.getNode((long) arg0.anInt4430) == null) {
+			return WorldMap.visibleMapElementCategories.getNode((long) arg0.category) == null;
 		} else {
 			return false;
 		}

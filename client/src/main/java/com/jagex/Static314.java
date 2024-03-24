@@ -21,7 +21,7 @@ public final class Static314 {
 			local10.decode(new Packet(local20));
 		}
 		local10.method945();
-		if (local10.anInt737 == 2 && Static7.aClass4_151.get((long) arg0) == null) {
+		if (local10.anInt737 == 2 && Static7.aClass4_151.getNode((long) arg0) == null) {
 			Static7.aClass4_151.pushNode(new IntWrapper(Static307.anInt5780), (long) arg0);
 			Static278.aClass28Array1[Static307.anInt5780++] = local10;
 		}

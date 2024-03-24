@@ -114,7 +114,7 @@ public final class SoftLruHashTable {
 	@OriginalMember(owner = "com.jagex.client!hs", name = "a", descriptor = "(ILclient!iq;)V")
 	private void method2593(@OriginalArg(1) Interface7 arg0) {
 		@Pc(11) long local11 = arg0.method1779();
-		for (@Pc(25) ReferenceNodeWithInterface local25 = (ReferenceNodeWithInterface) this.table.get(local11); local25 != null; local25 = (ReferenceNodeWithInterface) this.table.method82()) {
+		for (@Pc(25) ReferenceNodeWithInterface local25 = (ReferenceNodeWithInterface) this.table.getNode(local11); local25 != null; local25 = (ReferenceNodeWithInterface) this.table.method82()) {
 			if (local25.anInterface7_3.method1778(arg0)) {
 				this.method2586(local25);
 				return;
@@ -125,7 +125,7 @@ public final class SoftLruHashTable {
 	@OriginalMember(owner = "com.jagex.client!hs", name = "a", descriptor = "(Lclient!iq;I)Ljava/lang/Object;")
 	public Object method2596(@OriginalArg(0) Interface7 arg0) {
 		@Pc(11) long local11 = arg0.method1779();
-		for (@Pc(18) ReferenceNodeWithInterface local18 = (ReferenceNodeWithInterface) this.table.get(local11); local18 != null; local18 = (ReferenceNodeWithInterface) this.table.method82()) {
+		for (@Pc(18) ReferenceNodeWithInterface local18 = (ReferenceNodeWithInterface) this.table.getNode(local11); local18 != null; local18 = (ReferenceNodeWithInterface) this.table.method82()) {
 			if (local18.anInterface7_3.method1778(arg0)) {
 				@Pc(30) Object local30 = local18.get();
 				if (local30 != null) {

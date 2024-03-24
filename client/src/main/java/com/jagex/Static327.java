@@ -160,7 +160,7 @@ public final class Static327 {
 					}
 				}
 				if (local354.aClass11_1 instanceof Class11_Sub4_Sub1) {
-					@Pc(1038) Class2_Sub32 local1038 = (Class2_Sub32) Static120.objStacks.get((long) (local354.anInt4076 | local354.anInt4073 << 28 | local354.anInt4075 << 14));
+					@Pc(1038) Class2_Sub32 local1038 = (Class2_Sub32) Static120.objStacks.getNode((long) (local354.anInt4076 | local354.anInt4073 << 28 | local354.anInt4075 << 14));
 					if (local1038 != null) {
 						for (@Pc(1046) ObjStack local1046 = (ObjStack) local1038.aClass135_34.tail(); local1046 != null; local1046 = (ObjStack) local1038.aClass135_34.method3547()) {
 							@Pc(1054) ObjType local1054 = client.ObjTypes.get(local1046.type);

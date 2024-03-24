@@ -12,7 +12,7 @@ public final class Static137 {
 	@OriginalMember(owner = "com.jagex.client!hq", name = "a", descriptor = "(IIILclient!ed;I)V")
 	public static void addObjStack(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) ObjStack arg2, @OriginalArg(4) int arg3) {
 		@Pc(25) long local25 = (long) (arg1 | arg3 << 28 | arg0 << 14);
-		@Pc(31) Class2_Sub32 local31 = (Class2_Sub32) Static120.objStacks.get(local25);
+		@Pc(31) Class2_Sub32 local31 = (Class2_Sub32) Static120.objStacks.getNode(local25);
 		if (local31 == null) {
 			local31 = new Class2_Sub32();
 			Static120.objStacks.pushNode(local31, local25);

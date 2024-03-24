@@ -30,11 +30,11 @@ public final class Static117 {
 		@Pc(15) int local15 = Static352.anInt6519 - 3;
 		if (Static197.aClass13_12 == null || Static138.aClass13_8 == null) {
 			if (client.jsArchive8.requestDownload(LoginManager.anInt3731) && client.jsArchive8.requestDownload(LoginManager.anInt1636)) {
-				Static197.aClass13_12 = arg0.method2891(Static396.method1682(client.jsArchive8, LoginManager.anInt3731, 0));
+				Static197.aClass13_12 = arg0.createSprite(Static396.method1682(client.jsArchive8, LoginManager.anInt3731, 0));
 				@Pc(44) SpriteData local44 = Static396.method1682(client.jsArchive8, LoginManager.anInt1636, 0);
-				Static138.aClass13_8 = arg0.method2891(local44);
+				Static138.aClass13_8 = arg0.createSprite(local44);
 				local44.method1684();
-				Static75.aClass13_5 = arg0.method2891(local44);
+				Static75.aClass13_5 = arg0.createSprite(local44);
 			} else {
 				arg0.method2901(local7, local9, local11, 20, 255 - LoginManager.anInt6717 << 24 | LoginManager.anInt4446, 1);
 			}
@@ -64,14 +64,14 @@ public final class Static117 {
 		}
 		if ((Static337.aClass13_17 == null || Static211.aClass13_13 == null || Static35.aClass13_3 == null) && client.jsArchive8.requestDownload(LoginManager.anInt1722) && client.jsArchive8.requestDownload(LoginManager.anInt6804) && client.jsArchive8.requestDownload(LoginManager.anInt7211)) {
 			@Pc(275) SpriteData local275 = Static396.method1682(client.jsArchive8, LoginManager.anInt6804, 0);
-			Static211.aClass13_13 = arg0.method2891(local275);
+			Static211.aClass13_13 = arg0.createSprite(local275);
 			local275.method1684();
-			Static339.aClass13_18 = arg0.method2891(local275);
-			Static337.aClass13_17 = arg0.method2891(Static396.method1682(client.jsArchive8, LoginManager.anInt1722, 0));
+			Static339.aClass13_18 = arg0.createSprite(local275);
+			Static337.aClass13_17 = arg0.createSprite(Static396.method1682(client.jsArchive8, LoginManager.anInt1722, 0));
 			@Pc(300) SpriteData local300 = Static396.method1682(client.jsArchive8, LoginManager.anInt7211, 0);
-			Static35.aClass13_3 = arg0.method2891(local300);
+			Static35.aClass13_3 = arg0.createSprite(local300);
 			local300.method1684();
-			Static110.aClass13_6 = arg0.method2891(local300);
+			Static110.aClass13_6 = arg0.createSprite(local300);
 		}
 		local169 = 0;
 		@Pc(368) int local368;

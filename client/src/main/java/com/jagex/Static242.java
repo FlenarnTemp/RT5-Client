@@ -21,7 +21,7 @@ public final class Static242 {
 			if (local28 == null) {
 				return;
 			}
-			local21 = Rasteriser.instance.method2891(local28[0]);
+			local21 = Rasteriser.instance.createSprite(local28[0]);
 			Static61.aClass98_5.put((long) local7, local21);
 		}
 		Static324.method5541(0, arg3.zFine, arg3.plane, arg3.getSize() * 64, arg4 >> 1, arg3.xFine, arg5 >> 1);

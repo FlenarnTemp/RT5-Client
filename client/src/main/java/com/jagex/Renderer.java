@@ -318,7 +318,7 @@ public abstract class Renderer {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!wm", name = "a", descriptor = "(Lclient!dk;Z)Lclient!jd;")
-	public abstract Sprite method2891(@OriginalArg(0) SpriteData arg0);
+	public abstract Sprite createSprite(@OriginalArg(0) SpriteData arg0);
 
 	@OriginalMember(owner = "com.jagex.client!wm", name = "G", descriptor = "()Z")
 	public abstract boolean method2892();

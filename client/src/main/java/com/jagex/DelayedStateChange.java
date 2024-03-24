@@ -99,7 +99,7 @@ public final class DelayedStateChange extends SecondaryNode {
 		if (arg1.activeComponents != null) {
 			Static364.method6105(arg0, local24, arg1.id, arg1.activeComponents, local12);
 		}
-		@Pc(57) SubInterface local57 = (SubInterface) InterfaceList.subInterfaces.get((long) arg1.id);
+		@Pc(57) SubInterface local57 = (SubInterface) InterfaceList.subInterfaces.getNode((long) arg1.id);
 		if (local57 != null) {
 			Static129.method2435(local24, local57.id, arg0, local12);
 		}

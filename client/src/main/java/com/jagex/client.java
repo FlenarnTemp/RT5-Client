@@ -19,6 +19,7 @@ import com.jagex.game.config.idktype.IDKTypeList;
 import com.jagex.game.config.invtype.InvTypeList;
 import com.jagex.game.config.lighttype.LightTypeList;
 import com.jagex.game.config.loctype.LocTypeList;
+import com.jagex.game.config.meltype.MapElementTypeList;
 import com.jagex.game.network.protocol.LoginProt;
 import com.jagex.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
@@ -184,7 +185,7 @@ public final class client extends GameShell {
 	@OriginalMember(owner = "com.jagex.client!us", name = "S", descriptor = "Lclient!rh;")
 	public static LocTypeList LocTypes;
 	@OriginalMember(owner = "com.jagex.client!nk", name = "H", descriptor = "Lclient!ki;")
-	public static MelTypeList MelTypes;
+	public static MapElementTypeList MelTypes;
 	@OriginalMember(owner = "com.jagex.client!sm", name = "A", descriptor = "Lclient!ii;")
 	public static MsiTypeList MsiType;
 	@OriginalMember(owner = "com.jagex.client!ae", name = "T", descriptor = "Lclient!ta;")
@@ -675,7 +676,7 @@ public final class client extends GameShell {
 			Static98.method2107();
 		}
 		if (gameState == 0) {
-			Static172.method3290(Static291.aColorArray4[gameId], local169, mainLoadPercentage, mainLoadSecondaryText, Static286.aColorArray3[gameId], Static174.aColorArray2[gameId]);
+			GameShell.method3290(Static291.aColorArray4[gameId], local169, mainLoadPercentage, mainLoadSecondaryText, Static286.aColorArray3[gameId], Static174.aColorArray2[gameId]);
 		} else if (gameState == 5) {
 			Static193.method3512(Static286.aColorArray3[gameId].getRGB(), Rasteriser.instance, Static52.aClass130_1, Rasteriser.instance.method2812() | local169, Static291.aColorArray4[gameId].getRGB(), Static174.aColorArray2[gameId].getRGB());
 		} else if (gameState == 10) {
@@ -1464,7 +1465,7 @@ public final class client extends GameShell {
 				InvTypes = new InvTypeList(game, language, jsArchive2);
 				LightTypes = new LightTypeList(game, language, jsArchive2);
 				LocTypes = new LocTypeList(game, language, true, jsArchive16, jsArchive7);
-				MelTypes = new MelTypeList(game, language, jsArchive2, jsArchive8);
+				MelTypes = new MapElementTypeList(game, language, jsArchive2, jsArchive8);
 				MsiType = new MsiTypeList(game, language, jsArchive2, jsArchive8);
 				NpcTypes = new NpcTypeList(game, language, true, jsArchive18, jsArchive7);
 				ObjTypes = new ObjTypeList(game, language, true, ParamTypes, jsArchive19, jsArchive7);

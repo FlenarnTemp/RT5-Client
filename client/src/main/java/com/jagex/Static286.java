@@ -3,6 +3,7 @@ package com.jagex;
 import java.awt.Color;
 
 import com.jagex.core.io.Packet;
+import com.jagex.game.config.meltype.MapElementType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -28,7 +29,7 @@ public final class Static286 {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!qk", name = "a", descriptor = "(Lclient!jg;ILclient!wm;Lclient!np;BI)Z")
-	public static boolean method4923(@OriginalArg(0) MapElement arg0, @OriginalArg(2) Renderer arg1, @OriginalArg(3) MelType arg2) {
+	public static boolean method4923(@OriginalArg(0) MapElement arg0, @OriginalArg(2) Renderer arg1, @OriginalArg(3) MapElementType arg2) {
 		@Pc(24) int local24 = Integer.MAX_VALUE;
 		@Pc(26) int local26 = Integer.MIN_VALUE;
 		@Pc(28) int local28 = Integer.MAX_VALUE;

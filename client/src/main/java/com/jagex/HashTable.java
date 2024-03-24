@@ -139,7 +139,7 @@ public final class HashTable {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!ad", name = "a", descriptor = "(JI)Lclient!ag;")
-	public Node get(@OriginalArg(0) long arg0) {
+	public Node getNode(@OriginalArg(0) long arg0) {
 		this.aLong10 = arg0;
 		@Pc(23) Node local23 = this.nodes[(int) (arg0 & (long) (this.size - 1))];
 		for (this.aClass2_9 = local23.prev; this.aClass2_9 != local23; this.aClass2_9 = this.aClass2_9.prev) {

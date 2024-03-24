@@ -276,7 +276,7 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 
 	@OriginalMember(owner = "com.jagex.client!bl", name = "b", descriptor = "(III)Lclient!ut;")
 	private Js5Request fetchGroupInner(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(13) Js5Request local13 = (Js5Request) this.requests.get((long) arg0);
+		@Pc(13) Js5Request local13 = (Js5Request) this.requests.getNode((long) arg0);
 		if (local13 != null && arg1 == 0 && !local13.urgent && local13.incomplete) {
 			local13.remove();
 			local13 = null;
@@ -406,7 +406,7 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 	@OriginalMember(owner = "com.jagex.client!bl", name = "a", descriptor = "(IB)I")
 	@Override
 	public int getPercentageComplete(@OriginalArg(0) int arg0) {
-		@Pc(19) Js5Request local19 = (Js5Request) this.requests.get((long) arg0);
+		@Pc(19) Js5Request local19 = (Js5Request) this.requests.getNode((long) arg0);
 		return local19 == null ? 0 : local19.getPercentageComplete();
 	}
 

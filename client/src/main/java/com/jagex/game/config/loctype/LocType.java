@@ -371,7 +371,7 @@ public final class LocType {
 		if (this.params == null) {
 			return arg0;
 		} else {
-			@Pc(21) StringWrapper local21 = (StringWrapper) this.params.get((long) arg1);
+			@Pc(21) StringWrapper local21 = (StringWrapper) this.params.getNode((long) arg1);
 			return local21 == null ? arg0 : local21.value;
 		}
 	}
@@ -900,7 +900,7 @@ public final class LocType {
 		if (this.params == null) {
 			return arg0;
 		} else {
-			@Pc(21) IntWrapper local21 = (IntWrapper) this.params.get((long) arg1);
+			@Pc(21) IntWrapper local21 = (IntWrapper) this.params.getNode((long) arg1);
 			return local21 == null ? arg0 : local21.value;
 		}
 	}

@@ -623,7 +623,7 @@ public final class Static45 {
 								if (local6.activeComponents != null) {
 									method1400(local6.activeComponents, local6.id, local28, local30, local32, local34, local17 - local6.scrollX, local22 - local6.scrollY, arg8, arg9);
 								}
-								@Pc(2017) SubInterface local2017 = (SubInterface) InterfaceList.subInterfaces.get((long) local6.id);
+								@Pc(2017) SubInterface local2017 = (SubInterface) InterfaceList.subInterfaces.getNode((long) local6.id);
 								if (local2017 != null) {
 									if (client.game == client.GAME_RS && local2017.anInt1373 == 0 && !Static375.aBoolean477 && local207 && !Static18.qa_op_test) {
 										Static147.method2703();

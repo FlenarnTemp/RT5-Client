@@ -33,7 +33,7 @@ public final class Static165 {
 			return;
 		}
 		@Pc(19) long local19 = (long) (arg0 | arg1 << 28 | arg2 << 14);
-		@Pc(27) Class2_Sub32 local27 = (Class2_Sub32) Static120.objStacks.get(local19);
+		@Pc(27) Class2_Sub32 local27 = (Class2_Sub32) Static120.objStacks.getNode(local19);
 		if (local27 == null) {
 			Static166.method3190(arg1, arg0, arg2);
 			return;

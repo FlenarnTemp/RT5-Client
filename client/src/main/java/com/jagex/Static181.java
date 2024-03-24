@@ -149,7 +149,7 @@ public final class Static181 {
 					if (local13.activeComponents != null) {
 						method3378(local13.activeComponents, local13.id);
 					}
-					@Pc(51) SubInterface local51 = (SubInterface) InterfaceList.subInterfaces.get((long) local13.id);
+					@Pc(51) SubInterface local51 = (SubInterface) InterfaceList.subInterfaces.getNode((long) local13.id);
 					if (local51 != null) {
 						Static232.method4028(local51.id);
 					}

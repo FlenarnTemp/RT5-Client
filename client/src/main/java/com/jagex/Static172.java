@@ -1,9 +1,5 @@
 package com.jagex;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
-
 import com.jagex.game.config.loctype.LocType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -108,66 +104,6 @@ public final class Static172 {
 					local39.append(local9);
 				}
 			}
-		}
-	}
-
-	@OriginalMember(owner = "com.jagex.client!ju", name = "a", descriptor = "(Ljava/awt/Color;IZILjava/lang/String;Ljava/awt/Color;Ljava/awt/Color;)V")
-	public static void method3290(@OriginalArg(0) Color arg0, @OriginalArg(2) boolean arg1, @OriginalArg(3) int arg2, @OriginalArg(4) String arg3, @OriginalArg(5) Color arg4, @OriginalArg(6) Color arg5) {
-		try {
-			@Pc(6) Graphics local6 = GameShell.canvas.getGraphics();
-			if (LoadingBarAwt.aFont3 == null) {
-				LoadingBarAwt.aFont3 = new Font("Helvetica", 1, 13);
-			}
-			if (arg1) {
-				local6.setColor(Color.black);
-				local6.fillRect(0, 0, GameShell.canvasWidth, GameShell.canvasHeight);
-			}
-			if (arg5 == null) {
-				arg5 = new Color(140, 17, 17);
-			}
-			if (arg0 == null) {
-				arg0 = new Color(140, 17, 17);
-			}
-			if (arg4 == null) {
-				arg4 = new Color(255, 255, 255);
-			}
-			try {
-				if (LoadingBarAwt.anImage1 == null) {
-					LoadingBarAwt.anImage1 = GameShell.canvas.createImage(304, 34);
-				}
-				@Pc(68) Graphics local68 = LoadingBarAwt.anImage1.getGraphics();
-				local68.setColor(arg0);
-				local68.drawRect(0, 0, 303, 33);
-				local68.setColor(arg5);
-				local68.fillRect(2, 2, arg2 * 3, 30);
-				local68.setColor(Color.black);
-				local68.drawRect(1, 1, 301, 31);
-				local68.fillRect(arg2 * 3 + 2, 2, 300 - arg2 * 3, 30);
-				local68.setFont(LoadingBarAwt.aFont3);
-				local68.setColor(arg4);
-				local68.drawString(arg3, (304 - arg3.length() * 6) / 2, 22);
-				local6.drawImage(LoadingBarAwt.anImage1, GameShell.canvasWidth / 2 - 152, GameShell.canvasHeight / 2 + -18, null);
-			} catch (@Pc(146) Exception local146) {
-				@Pc(152) int local152 = GameShell.canvasWidth / 2 - 152;
-				@Pc(158) int local158 = GameShell.canvasHeight / 2 - 18;
-				local6.setColor(arg0);
-				local6.drawRect(0, 0, 303, 33);
-				local6.setColor(arg5);
-				local6.fillRect(local152 + 2, local158 - -2, arg2 * 3, 30);
-				local6.setColor(Color.black);
-				local6.drawRect(local152 + 1, local158 + 1, 301, 31);
-				local6.fillRect(arg2 * 3 + local152 + 2, local158 + 2, 300 - arg2 * 3, 30);
-				local6.setFont(LoadingBarAwt.aFont3);
-				local6.setColor(arg4);
-				local6.drawString(arg3, local152 + (304 - arg3.length() * 6) / 2, local158 + 22);
-			}
-			if (Static290.aString56 != null) {
-				local6.setFont(LoadingBarAwt.aFont3);
-				local6.setColor(arg4);
-				local6.drawString(Static290.aString56, GameShell.canvasWidth / 2 - Static290.aString56.length() * 6 / 2, GameShell.canvasHeight / 2 + -26);
-			}
-		} catch (@Pc(267) Exception local267) {
-			GameShell.canvas.repaint();
 		}
 	}
 

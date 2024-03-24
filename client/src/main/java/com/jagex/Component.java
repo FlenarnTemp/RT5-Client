@@ -895,7 +895,7 @@ public final class Component {
 		if (this.shadowColor != 0) {
 			local64.method1677(this.shadowColor | 0xFF000000);
 		}
-		local54 = arg0.method2891(local64);
+		local54 = arg0.createSprite(local64);
 		Static335.aClass98_57.put(local48, local54);
 		return local54;
 	}

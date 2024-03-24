@@ -34,7 +34,7 @@ public final class Class226 implements Interface11 {
 	@OriginalMember(owner = "com.jagex.client!ts", name = "a", descriptor = "(ZII)V")
 	public void method5780(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
 		this.anIntArray430[arg0] = arg1;
-		@Pc(16) Class2_Sub35 local16 = (Class2_Sub35) this.aClass4_132.get((long) arg0);
+		@Pc(16) Class2_Sub35 local16 = (Class2_Sub35) this.aClass4_132.getNode((long) arg0);
 		if (local16 == null) {
 			local16 = new Class2_Sub35(MonotonicClock.currentTimeMillis() + 500L);
 			this.aClass4_132.pushNode(local16, (long) arg0);
@@ -92,7 +92,7 @@ public final class Class226 implements Interface11 {
 	@OriginalMember(owner = "com.jagex.client!ts", name = "a", descriptor = "(IBI)V")
 	public void method5785(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
 		this.anIntArray431[arg1] = arg0;
-		@Pc(24) Class2_Sub35 local24 = (Class2_Sub35) this.aClass4_132.get((long) arg1);
+		@Pc(24) Class2_Sub35 local24 = (Class2_Sub35) this.aClass4_132.getNode((long) arg1);
 		if (local24 == null) {
 			local24 = new Class2_Sub35(4611686018427387905L);
 			this.aClass4_132.pushNode(local24, (long) arg1);

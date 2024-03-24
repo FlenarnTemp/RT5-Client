@@ -14,7 +14,7 @@ public final class Static316 {
 
 	@OriginalMember(owner = "com.jagex.client!sg", name = "a", descriptor = "(III)Lclient!gg;")
 	public static DelayedStateChange method5413(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(15) DelayedStateChange local15 = (DelayedStateChange) Static296.aClass4_109.get((long) arg1 | (long) arg0 << 32);
+		@Pc(15) DelayedStateChange local15 = (DelayedStateChange) Static296.aClass4_109.getNode((long) arg1 | (long) arg0 << 32);
 		if (local15 == null) {
 			local15 = new DelayedStateChange(arg0, arg1);
 			Static296.aClass4_109.pushNode(local15, local15.nodeId);

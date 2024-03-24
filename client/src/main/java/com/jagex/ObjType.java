@@ -392,7 +392,7 @@ public final class ObjType {
 		if (this.aClass4_103 == null) {
 			return arg0;
 		} else {
-			@Pc(22) IntWrapper local22 = (IntWrapper) this.aClass4_103.get((long) arg1);
+			@Pc(22) IntWrapper local22 = (IntWrapper) this.aClass4_103.getNode((long) arg1);
 			return local22 == null ? arg0 : local22.value;
 		}
 	}
@@ -402,7 +402,7 @@ public final class ObjType {
 		if (this.aClass4_103 == null) {
 			return arg0;
 		} else {
-			@Pc(24) StringWrapper local24 = (StringWrapper) this.aClass4_103.get((long) arg1);
+			@Pc(24) StringWrapper local24 = (StringWrapper) this.aClass4_103.getNode((long) arg1);
 			return local24 == null ? arg0 : local24.value;
 		}
 	}

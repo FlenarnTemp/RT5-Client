@@ -10,6 +10,7 @@ import com.jagex.core.utils.ColourUtils;
 import com.jagex.game.config.bastype.BASType;
 import com.jagex.game.config.enumtype.EnumType;
 import com.jagex.game.config.iftype.componentproperties.ServerActiveProperties;
+import com.jagex.game.config.meltype.MapElementType;
 import com.jagex.game.network.protocol.ClientProt;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -1240,7 +1241,7 @@ public final class ScriptRunner {
 							if (opcode == 2702) {
 								// if_hassub
 								local13 = intStack[--isp];
-								local3254 = (SubInterface) InterfaceList.subInterfaces.get((long) local13);
+								local3254 = (SubInterface) InterfaceList.subInterfaces.getNode((long) local13);
 								if (local3254 != null) {
 									intStack[isp++] = 1;
 									return;
@@ -1271,7 +1272,7 @@ public final class ScriptRunner {
 								isp -= 2;
 								local13 = intStack[isp];
 								local19 = intStack[isp + 1];
-								local3356 = (SubInterface) InterfaceList.subInterfaces.get((long) local13);
+								local3356 = (SubInterface) InterfaceList.subInterfaces.getNode((long) local13);
 								if (local3356 != null && local3356.id == local19) {
 									intStack[isp++] = 1;
 									return;
@@ -1392,7 +1393,7 @@ public final class ScriptRunner {
 									isp -= 2;
 									local13 = intStack[isp];
 									local19 = intStack[isp + 1];
-									local3356 = (SubInterface) InterfaceList.subInterfaces.get((long) local13);
+									local3356 = (SubInterface) InterfaceList.subInterfaces.getNode((long) local13);
 									if (local3356 != null) {
 										Static276.method4655(true, local3356, local3356.id != local19);
 									}
@@ -1403,7 +1404,7 @@ public final class ScriptRunner {
 									// todo
 									isp--;
 									local13 = intStack[isp];
-									local3254 = (SubInterface) InterfaceList.subInterfaces.get((long) local13);
+									local3254 = (SubInterface) InterfaceList.subInterfaces.getNode((long) local13);
 									if (local3254 != null && local3254.anInt1373 == 3) {
 										Static276.method4655(true, local3254, true);
 									}
@@ -3545,7 +3546,7 @@ public final class ScriptRunner {
 					local157 = intStack[isp];
 					local1292 = intStack[isp + 1] == 1;
 					if (WorldMap.visibleMapElementCategories != null) {
-						local2421 = WorldMap.visibleMapElementCategories.get((long) local157);
+						local2421 = WorldMap.visibleMapElementCategories.getNode((long) local157);
 						if (local2421 != null && !local1292) {
 							local2421.remove();
 							return;
@@ -3562,7 +3563,7 @@ public final class ScriptRunner {
 					// todo
 					local157 = intStack[--isp];
 					if (WorldMap.visibleMapElementCategories != null) {
-						local2463 = WorldMap.visibleMapElementCategories.get((long) local157);
+						local2463 = WorldMap.visibleMapElementCategories.getNode((long) local157);
 						intStack[isp++] = local2463 == null ? 0 : 1;
 						return;
 					}
@@ -3575,7 +3576,7 @@ public final class ScriptRunner {
 					local157 = intStack[isp];
 					local1292 = intStack[isp + 1] == 1;
 					if (WorldMap.visibleMapElementIds != null) {
-						local2421 = WorldMap.visibleMapElementIds.get((long) local157);
+						local2421 = WorldMap.visibleMapElementIds.getNode((long) local157);
 						if (local2421 != null && !local1292) {
 							local2421.remove();
 							return;
@@ -3591,7 +3592,7 @@ public final class ScriptRunner {
 					// todo
 					local157 = intStack[--isp];
 					if (WorldMap.visibleMapElementIds != null) {
-						local2463 = WorldMap.visibleMapElementIds.get((long) local157);
+						local2463 = WorldMap.visibleMapElementIds.getNode((long) local157);
 						intStack[isp++] = local2463 == null ? 0 : 1;
 						return;
 					}
@@ -5002,7 +5003,7 @@ public final class ScriptRunner {
 							return;
 						}
 					} else if (opcode < 6900) {
-						@Pc(7207) MelType type;
+						@Pc(7207) MapElementType type;
 						if (opcode == 6800) {
 							// mec_text
 							local157 = intStack[--isp];
@@ -5280,7 +5281,7 @@ public final class ScriptRunner {
 							Static290.method5023(local54);
 						} else if (local31 == 51) {
 							@Pc(774) HashTable local774 = arg0.aClass4Array1[local11[local5]];
-							@Pc(787) IntWrapper local787 = (IntWrapper) local774.get((long) intStack[--isp]);
+							@Pc(787) IntWrapper local787 = (IntWrapper) local774.getNode((long) intStack[--isp]);
 							if (local787 != null) {
 								local5 += local787.value;
 							}

@@ -86,7 +86,7 @@ public class InterfaceList {
 
     @OriginalMember(owner = "com.jagex.client!com.jagex.client", name = "b", descriptor = "(Lclient!nk;)Lclient!eh;")
     public static ServerActiveProperties getServerActiveProperties(@OriginalArg(0) Component arg0) {
-        @Pc(13) ServerActiveProperties local13 = (ServerActiveProperties) Static327.properties.get(((long) arg0.id << 32) + (long) arg0.activeComponentId);
+        @Pc(13) ServerActiveProperties local13 = (ServerActiveProperties) Static327.properties.getNode(((long) arg0.id << 32) + (long) arg0.activeComponentId);
         return local13 == null ? arg0.properties : local13;
     }
 

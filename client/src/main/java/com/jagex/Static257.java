@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.config.meltype.MapElementType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -70,7 +71,7 @@ public final class Static257 {
 			local194 = Static90.anInt6637 * 5;
 		}
 		for (@Pc(205) MapElement local205 = (MapElement) MapList.aClass135_36.head(); local205 != null; local205 = (MapElement) MapList.aClass135_36.next()) {
-			@Pc(213) MelType local213 = MapList.aClass125_4.get(local205.id);
+			@Pc(213) MapElementType local213 = MapList.aClass125_4.get(local205.id);
 			if (Static101.method2164(local213)) {
 				@Pc(242) int local242;
 				@Pc(255) int local255;

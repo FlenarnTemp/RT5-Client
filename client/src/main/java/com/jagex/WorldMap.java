@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.config.meltype.MapElementType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -87,7 +88,7 @@ public class WorldMap {
 		if (local18 == null) {
 			return null;
 		} else {
-			@Pc(33) MelType local33 = MapList.aClass125_4.get(local18.id);
+			@Pc(33) MapElementType local33 = MapList.aClass125_4.get(local18.id);
 			return local33 != null && local33.aBoolean302 && local33.method4180(MapList.anInterface11_2) ? local18 : nextMapElement();
 		}
 	}
@@ -98,7 +99,7 @@ public class WorldMap {
 			return null;
 		}
 		for (@Pc(16) MapElement local16 = (MapElement) Static116.aClass75_1.method2178(); local16 != null; local16 = (MapElement) Static116.aClass75_1.method2178()) {
-			@Pc(24) MelType local24 = MapList.aClass125_4.get(local16.id);
+			@Pc(24) MapElementType local24 = MapList.aClass125_4.get(local16.id);
 			if (local24 != null && local24.aBoolean302 && local24.method4180(MapList.anInterface11_2)) {
 				return local16;
 			}

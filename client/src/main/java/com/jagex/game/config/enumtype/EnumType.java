@@ -36,7 +36,7 @@ public final class EnumType {
 		if (this.table == null) {
 			return this.defaultInt;
 		} else {
-			@Pc(23) IntWrapper local23 = (IntWrapper) this.table.get((long) arg0);
+			@Pc(23) IntWrapper local23 = (IntWrapper) this.table.getNode((long) arg0);
 			return local23 == null ? this.defaultInt : local23.value;
 		}
 	}
@@ -84,7 +84,7 @@ public final class EnumType {
 		if (this.aClass4_30 == null) {
 			this.method1773();
 		}
-		for (@Pc(37) Class2_Sub28 local37 = (Class2_Sub28) this.aClass4_30.get(Static80.method5982(arg0)); local37 != null; local37 = (Class2_Sub28) this.aClass4_30.method82()) {
+		for (@Pc(37) Class2_Sub28 local37 = (Class2_Sub28) this.aClass4_30.getNode(Static80.method5982(arg0)); local37 != null; local37 = (Class2_Sub28) this.aClass4_30.method82()) {
 			if (local37.aString54.equals(arg0)) {
 				return true;
 			}
@@ -100,7 +100,7 @@ public final class EnumType {
 		if (this.aClass4_30 == null) {
 			this.method1768();
 		}
-		@Pc(29) IntWrapper local29 = (IntWrapper) this.aClass4_30.get((long) arg0);
+		@Pc(29) IntWrapper local29 = (IntWrapper) this.aClass4_30.getNode((long) arg0);
 		return local29 != null;
 	}
 
@@ -129,7 +129,7 @@ public final class EnumType {
 		if (this.table == null) {
 			return this.defaultString;
 		} else {
-			@Pc(19) StringWrapper local19 = (StringWrapper) this.table.get((long) arg0);
+			@Pc(19) StringWrapper local19 = (StringWrapper) this.table.getNode((long) arg0);
 			return local19 == null ? this.defaultString : local19.value;
 		}
 	}

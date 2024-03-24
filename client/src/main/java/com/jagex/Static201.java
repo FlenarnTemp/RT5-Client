@@ -203,7 +203,7 @@ public final class Static201 {
 							if (local19.activeComponents != null) {
 								method3653(local286, local19.id, local19.activeComponents, local155, local95 - local19.scrollY, local151, local275, local66, local90 - local19.scrollX);
 							}
-							@Pc(820) SubInterface local820 = (SubInterface) InterfaceList.subInterfaces.get((long) local19.id);
+							@Pc(820) SubInterface local820 = (SubInterface) InterfaceList.subInterfaces.getNode((long) local19.id);
 							if (local820 != null) {
 								Static199.method5246(local155, local286, local275, local820.id, local66, local95, local151, local90);
 							}

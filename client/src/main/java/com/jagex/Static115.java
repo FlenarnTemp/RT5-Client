@@ -21,7 +21,7 @@ public final class Static115 {
 					if (local9.activeComponents != null) {
 						method3847(arg0, local9.activeComponents);
 					}
-					@Pc(30) SubInterface local30 = (SubInterface) InterfaceList.subInterfaces.get((long) local9.id);
+					@Pc(30) SubInterface local30 = (SubInterface) InterfaceList.subInterfaces.getNode((long) local9.id);
 					if (local30 != null) {
 						Static392.method6460(local30.id, arg0);
 					}

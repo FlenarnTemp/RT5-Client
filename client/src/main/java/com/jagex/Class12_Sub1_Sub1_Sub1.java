@@ -377,7 +377,7 @@ public final class Class12_Sub1_Sub1_Sub1 extends Class12_Sub1_Sub1 {
 				local35.anIntArray455 = new int[local35.anIntArray458.length];
 				for (local313 = 0; local313 < local35.anIntArray458.length; local313++) {
 					Static314.method5367(local35.anIntArray458[local313]);
-					local35.anIntArray455[local313] = ((IntWrapper) Static7.aClass4_151.get((long) local35.anIntArray458[local313])).value;
+					local35.anIntArray455[local313] = ((IntWrapper) Static7.aClass4_151.getNode((long) local35.anIntArray458[local313])).value;
 				}
 			}
 			for (local313 = 0; local313 < local35.anIntArray455.length; local313++) {

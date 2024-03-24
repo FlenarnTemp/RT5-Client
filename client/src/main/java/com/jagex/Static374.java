@@ -42,6 +42,6 @@ public final class Static374 {
 	@OriginalMember(owner = "com.jagex.client!vr", name = "a", descriptor = "(ZII)Lclient!we;")
 	public static Class2_Sub41 method6275(@OriginalArg(0) boolean arg0, @OriginalArg(2) int arg1) {
 		@Pc(12) long local12 = (long) ((arg0 ? Integer.MIN_VALUE : 0) | arg1);
-		return (Class2_Sub41) Static353.aClass4_136.get(local12);
+		return (Class2_Sub41) Static353.aClass4_136.getNode(local12);
 	}
 }

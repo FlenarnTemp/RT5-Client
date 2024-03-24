@@ -1506,7 +1506,7 @@ public final class Class19_Sub2 extends Renderer {
 
 	@OriginalMember(owner = "com.jagex.client!j", name = "a", descriptor = "(Lclient!dk;Z)Lclient!jd;")
 	@Override
-	public Sprite method2891(@OriginalArg(0) SpriteData arg0) {
+	public Sprite createSprite(@OriginalArg(0) SpriteData arg0) {
 		@Pc(2) int[] local2 = arg0.anIntArray108;
 		@Pc(5) byte[] local5 = arg0.aByteArray21;
 		@Pc(8) int local8 = arg0.anInt1531;

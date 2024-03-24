@@ -44,7 +44,7 @@ public final class StructType extends SecondaryNode {
 		if (this.aClass4_20 == null) {
 			return arg1;
 		} else {
-			@Pc(16) IntWrapper local16 = (IntWrapper) this.aClass4_20.get((long) arg0);
+			@Pc(16) IntWrapper local16 = (IntWrapper) this.aClass4_20.getNode((long) arg0);
 			return local16 == null ? arg1 : local16.value;
 		}
 	}
@@ -65,7 +65,7 @@ public final class StructType extends SecondaryNode {
 		if (this.aClass4_20 == null) {
 			return arg1;
 		} else {
-			@Pc(16) StringWrapper local16 = (StringWrapper) this.aClass4_20.get((long) arg0);
+			@Pc(16) StringWrapper local16 = (StringWrapper) this.aClass4_20.getNode((long) arg0);
 			return local16 == null ? arg1 : local16.value;
 		}
 	}

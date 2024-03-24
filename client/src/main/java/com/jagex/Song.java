@@ -358,7 +358,7 @@ public final class Song extends Node {
 						local99 = local64 >> 16 & 0x7F;
 						if (local99 > 0) {
 							@Pc(174) int local174 = local15[local87];
-							@Pc(182) ByteArrayNode local182 = (ByteArrayNode) this.programs.get((long) local174);
+							@Pc(182) ByteArrayNode local182 = (ByteArrayNode) this.programs.getNode((long) local174);
 							if (local182 == null) {
 								local182 = new ByteArrayNode(new byte[128]);
 								this.programs.pushNode(local182, (long) local174);

@@ -87,7 +87,7 @@ public class AreaSoundManager {
 
 	@OriginalMember(owner = "com.jagex.client!rc", name = "a", descriptor = "(ILclient!nh;)V")
 	public static void remove(@OriginalArg(1) Player arg0) {
-		@Pc(11) AreaSound local11 = (AreaSound) aClass4_86.get((long) arg0.anInt4619);
+		@Pc(11) AreaSound local11 = (AreaSound) aClass4_86.getNode((long) arg0.anInt4619);
 		if (local11 == null) {
 			return;
 		}
@@ -100,7 +100,7 @@ public class AreaSoundManager {
 
 	@OriginalMember(owner = "com.jagex.client!sq", name = "a", descriptor = "(Lclient!nh;I)V")
 	public static void update(@OriginalArg(0) Player arg0) {
-		@Pc(19) AreaSound local19 = (AreaSound) aClass4_86.get((long) arg0.anInt4619);
+		@Pc(19) AreaSound local19 = (AreaSound) aClass4_86.getNode((long) arg0.anInt4619);
 		if (local19 == null) {
 			add(null, arg0.movementQueueZ[0], 0, arg0, null, arg0.movementQueueX[0], arg0.plane);
 		} else {
