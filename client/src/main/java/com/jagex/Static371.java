@@ -89,7 +89,7 @@ public final class Static371 {
 	public static byte[] method6258(@OriginalArg(0) byte[] arg0) {
 		@Pc(6) int local6 = arg0.length;
 		@Pc(17) byte[] local17 = new byte[local6];
-		Static404.method4607(arg0, 0, local17, 0, local6);
+		ArrayUtil.method4607(arg0, 0, local17, 0, local6);
 		return local17;
 	}
 }

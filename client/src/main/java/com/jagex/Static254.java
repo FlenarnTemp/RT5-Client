@@ -18,7 +18,7 @@ public final class Static254 {
 			return null;
 		} else {
 			@Pc(11) short[] local11 = new short[arg0.length];
-			Static404.method4606(arg0, 0, local11, 0, arg0.length);
+			ArrayUtil.method4606(arg0, 0, local11, 0, arg0.length);
 			return local11;
 		}
 	}

@@ -99,85 +99,85 @@ public final class Texture extends SecondaryNode {
 	@OriginalMember(owner = "com.jagex.client!oc", name = "a", descriptor = "(IB)Lclient!jq;")
 	public static TextureOp create(@OriginalArg(0) int op) {
 		if (op == 0) {
-			return new TextureOp0();
+			return new TextureOpMonochromeFill();
 		} else if (op == 1) {
-			return new TextureOp1();
+			return new TextureOpColorFill();
 		} else if (op == 2) {
-			return new TextureOp2();
+			return new TextureOpHorizontalGradient();
 		} else if (op == 3) {
-			return new TextureOp3();
+			return new TextureOpVerticalGradient();
 		} else if (op == 4) {
-			return new TextureOp4();
+			return new TextureOpBricks();
 		} else if (op == 5) {
-			return new TextureOp5();
+			return new TextureOpBoxBlur();
 		} else if (op == 6) {
-			return new TextureOp6();
+			return new TextureOpClamp();
 		} else if (op == 7) {
-			return new TextureOp7();
+			return new TextureOpCombine();
 		} else if (op == 8) {
-			return new TextureOp8();
+			return new TextureOpCurve();
 		} else if (op == 9) {
-			return new TextureOp9();
+			return new TextureOpFlip();
 		} else if (op == 10) {
-			return new TextureOp10();
+			return new TextureOpColorGradient();
 		} else if (op == 11) {
-			return new TextureOp11();
+			return new TextureOpColorize();
 		} else if (op == 12) {
-			return new TextureOp12();
+			return new TextureOpWaveForm();
 		} else if (op == 13) {
-			return new TextureOp13();
+			return new TextureOpNoise();
 		} else if (op == 14) {
-			return new TextureOp14();
+			return new TextureOpWeave();
 		} else if (op == 15) {
-			return new TextureOp15();
+			return new TextureOpVoronoiNoise();
 		} else if (op == 16) {
-			return new TextureOp16();
+			return new TextureOpHerringbone();
 		} else if (op == 17) {
-			return new TextureOp17();
+			return new HslAdjust();
 		} else if (op == 18) {
-			return new TextureOp18();
+			return new TextureOpTiledSprite();
 		} else if (op == 19) {
-			return new TextureOp19();
+			return new TextureOpPolarDistortion();
 		} else if (op == 20) {
-			return new TextureOp20();
+			return new TextureOpTile();
 		} else if (op == 21) {
-			return new TextureOp21();
+			return new TextureOpInterpolate();
 		} else if (op == 22) {
-			return new TextureOp22();
+			return new TextureOpInvert();
 		} else if (op == 23) {
-			return new TextureOp23();
+			return new TextureOpKaleidoscope();
 		} else if (op == 24) {
-			return new TextureOp24();
+			return new TextureOpMonochrome();
 		} else if (op == 25) {
-			return new TextureOp25();
+			return new TextureOpBrightness();
 		} else if (op == 26) {
-			return new TextureOp26();
+			return new TextureOpBinary();
 		} else if (op == 27) {
-			return new TextureOp27();
+			return new TextureOpSquareWaveform();
 		} else if (op == 28) {
-			return new TextureOp28();
+			return new TextureOpIrregularBricks();
 		} else if (op == 29) {
-			return new TextureOp29();
+			return new TextureOpRasterizer();
 		} else if (op == 30) {
-			return new TextureOp30();
+			return new TextureOpRange();
 		} else if (op == 31) {
-			return new TextureOp31();
+			return new TextureOpMandelbrot();
 		} else if (op == 32) {
-			return new TextureOp32();
+			return new TextureOpEmboss();
 		} else if (op == 33) {
-			return new TextureOp33();
+			return new TextureOpColorEdgeDetector();
 		} else if (op == 34) {
-			return new TextureOp34();
+			return new TextureOpPerlinNoise();
 		} else if (op == 35) {
-			return new TextureOp35();
+			return new TextureOpMonochromeEdgeDetector();
 		} else if (op == 36) {
-			return new TextureOp36();
+			return new TextureOpTexture();
 		} else if (op == 37) {
 			return new TextureOp37();
 		} else if (op == 38) {
-			return new TextureOp38();
+			return new TextureOpLineNoise();
 		} else if (op == 39) {
-			return new TextureOp39();
+			return new TextureOpSprite();
 		} else {
 			return null;
 		}

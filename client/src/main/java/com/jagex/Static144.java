@@ -26,7 +26,7 @@ public final class Static144 {
 		Static361.anInt6770 = arg0.length;
 		Static134.aClass13Array12 = new Sprite[Static361.anInt6770 + 10];
 		Static72.anIntArray114 = new int[Static361.anInt6770 + 10];
-		Static404.method4609(arg0, 0, Static134.aClass13Array12, 0, Static361.anInt6770);
+		ArrayUtil.method4609(arg0, 0, Static134.aClass13Array12, 0, Static361.anInt6770);
 		for (@Pc(31) int local31 = 0; local31 < Static361.anInt6770; local31++) {
 			Static72.anIntArray114[local31] = Static134.aClass13Array12[local31].method6384();
 		}

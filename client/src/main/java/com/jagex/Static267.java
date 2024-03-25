@@ -1,5 +1,8 @@
 package com.jagex;
 
+import com.jagex.audio.vorbis.VorbisCodeBook;
+import com.jagex.audio.vorbis.VorbisFloor;
+import com.jagex.audio.vorbis.VorbisResidue;
 import com.jagex.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -20,7 +23,7 @@ public final class Static267 {
 	public static float[] aFloatArray22;
 
 	@OriginalMember(owner = "com.jagex.client!pf", name = "B", descriptor = "I")
-	private static int anInt4922;
+	private static int bitPosition;
 
 	@OriginalMember(owner = "com.jagex.client!pf", name = "C", descriptor = "[F")
 	public static float[] aFloatArray23;
@@ -38,16 +41,16 @@ public final class Static267 {
 	public static int anInt4923;
 
 	@OriginalMember(owner = "com.jagex.client!pf", name = "K", descriptor = "[Lclient!vd;")
-	public static Class238[] aClass238Array1;
+	public static VorbisFloor[] aVorbisFloorArray1;
 
 	@OriginalMember(owner = "com.jagex.client!pf", name = "M", descriptor = "I")
-	private static int anInt4925;
+	private static int position;
 
 	@OriginalMember(owner = "com.jagex.client!pf", name = "N", descriptor = "I")
 	public static int anInt4926;
 
 	@OriginalMember(owner = "com.jagex.client!pf", name = "O", descriptor = "[Lclient!p;")
-	public static Class175[] codebooks;
+	public static VorbisCodeBook[] codebooks;
 
 	@OriginalMember(owner = "com.jagex.client!pf", name = "P", descriptor = "[F")
 	public static float[] aFloatArray26;
@@ -65,49 +68,48 @@ public final class Static267 {
 	public static int[] anIntArray337;
 
 	@OriginalMember(owner = "com.jagex.client!pf", name = "U", descriptor = "[B")
-	private static byte[] aByteArray58;
+	private static byte[] bytes;
 
 	@OriginalMember(owner = "com.jagex.client!pf", name = "F", descriptor = "Z")
 	private static boolean aBoolean368 = false;
 
 	@OriginalMember(owner = "com.jagex.client!pf", name = "b", descriptor = "(I)F")
-	public static float method4512(@OriginalArg(0) int arg0) {
-		@Pc(3) int local3 = arg0 & 0x1FFFFF;
-		@Pc(7) int local7 = arg0 & Integer.MIN_VALUE;
-		@Pc(13) int local13 = arg0 >> 21 & 0x3FF;
-		if (local7 != 0) {
-			local3 = -local3;
+	public static float float32Unpack(@OriginalArg(0) int x) {
+		@Pc(3) int mantissa = x & 0x1FFFFF;
+		@Pc(7) int sign = x & Integer.MIN_VALUE;
+		@Pc(13) int exponent = x >> 21 & 0x3FF;
+		if (sign != 0) {
+			mantissa = -mantissa;
 		}
-		return (float) ((double) local3 * Math.pow(2.0D, (double) (local13 - 788)));
+		return (float) ((double) mantissa * Math.pow(2.0D, exponent - 788));
 	}
 
 	@OriginalMember(owner = "com.jagex.client!pf", name = "c", descriptor = "(I)I")
-	public static int readBits(@OriginalArg(0) int arg0) {
-		@Pc(1) int local1 = 0;
-		@Pc(3) int local3 = 0;
-		@Pc(8) int local8;
-		while (arg0 >= 8 - anInt4922) {
-			local8 = 8 - anInt4922;
-			@Pc(14) int local14 = (0x1 << local8) - 1;
-			local1 += (aByteArray58[anInt4925] >> anInt4922 & local14) << local3;
-			anInt4922 = 0;
-			anInt4925++;
-			local3 += local8;
-			arg0 -= local8;
+	public static int read(@OriginalArg(0) int bits) {
+		@Pc(1) int value = 0;
+		@Pc(3) int offset = 0;
+		while (bits >= 8 - bitPosition) {
+			int n = 8 - bitPosition;
+			@Pc(14) int mask = (0x1 << n) - 1;
+			value += (bytes[position] >> bitPosition & mask) << offset;
+			bitPosition = 0;
+			position++;
+			offset += n;
+			bits -= n;
 		}
-		if (arg0 > 0) {
-			local8 = (0x1 << arg0) - 1;
-			local1 += (aByteArray58[anInt4925] >> anInt4922 & local8) << local3;
-			anInt4922 += arg0;
+		if (bits > 0) {
+			int mask = (0x1 << bits) - 1;
+			value += (bytes[position] >> bitPosition & mask) << offset;
+			bitPosition += bits;
 		}
-		return local1;
+		return value;
 	}
 
 	@OriginalMember(owner = "com.jagex.client!pf", name = "a", descriptor = "([B)V")
 	private static void method4514(@OriginalArg(0) byte[] arg0) {
 		method4517(arg0);
-		anInt4926 = 0x1 << readBits(4);
-		anInt4923 = 0x1 << readBits(4);
+		anInt4926 = 0x1 << read(4);
+		anInt4923 = 0x1 << read(4);
 		aFloatArray23 = new float[anInt4923];
 		@Pc(24) int local24;
 		@Pc(28) int local28;
@@ -138,7 +140,7 @@ public final class Static267 {
 				local136[local138 * 2 + 1] = -((float) Math.sin((double) (local138 * 4 + 2) * 3.141592653589793D / (double) local24));
 			}
 			@Pc(185) int[] local185 = new int[local36];
-			local191 = Static287.method4929(local36 - 1);
+			local191 = Static287.ilog(local36 - 1);
 			for (@Pc(193) int local193 = 0; local193 < local36; local193++) {
 				local185[local193] = Static136.method6071(local193, local191);
 			}
@@ -154,46 +156,46 @@ public final class Static267 {
 				anIntArray337 = local185;
 			}
 		}
-		local24 = readBits(8) + 1;
-		codebooks = new Class175[local24];
+		local24 = read(8) + 1;
+		codebooks = new VorbisCodeBook[local24];
 		for (local28 = 0; local28 < local24; local28++) {
-			codebooks[local28] = new Class175();
+			codebooks[local28] = new VorbisCodeBook();
 		}
-		local32 = readBits(6) + 1;
+		local32 = read(6) + 1;
 		for (local36 = 0; local36 < local32; local36++) {
-			readBits(16);
+			read(16);
 		}
-		@Pc(269) int local269 = readBits(6) + 1;
-		aClass238Array1 = new Class238[local269];
+		@Pc(269) int local269 = read(6) + 1;
+		aVorbisFloorArray1 = new VorbisFloor[local269];
 		for (local41 = 0; local41 < local269; local41++) {
-			aClass238Array1[local41] = new Class238();
+			aVorbisFloorArray1[local41] = new VorbisFloor();
 		}
-		@Pc(290) int local290 = readBits(6) + 1;
+		@Pc(290) int local290 = read(6) + 1;
 		aClass186Array1 = new VorbisResidue[local290];
 		for (local86 = 0; local86 < local290; local86++) {
 			aClass186Array1[local86] = new VorbisResidue();
 		}
-		@Pc(311) int local311 = readBits(6) + 1;
+		@Pc(311) int local311 = read(6) + 1;
 		aClass88Array1 = new Class88[local311];
 		for (local138 = 0; local138 < local311; local138++) {
 			aClass88Array1[local138] = new Class88();
 		}
-		@Pc(332) int local332 = readBits(6) + 1;
+		@Pc(332) int local332 = read(6) + 1;
 		aBooleanArray43 = new boolean[local332];
 		anIntArray336 = new int[local332];
 		for (local191 = 0; local191 < local332; local191++) {
 			aBooleanArray43[local191] = readBit() != 0;
-			readBits(16);
-			readBits(16);
-			anIntArray336[local191] = readBits(8);
+			read(16);
+			read(16);
+			anIntArray336[local191] = read(8);
 		}
 	}
 
 	@OriginalMember(owner = "com.jagex.client!pf", name = "a", descriptor = "([BI)V")
 	public static void method4517(@OriginalArg(0) byte[] arg0) {
-		aByteArray58 = arg0;
-		anInt4925 = 0;
-		anInt4922 = 0;
+		bytes = arg0;
+		position = 0;
+		bitPosition = 0;
 	}
 
 	@OriginalMember(owner = "com.jagex.client!pf", name = "a", descriptor = "(Lclient!r;II)Lclient!pf;")
@@ -222,10 +224,10 @@ public final class Static267 {
 
 	@OriginalMember(owner = "com.jagex.client!pf", name = "b", descriptor = "()I")
 	public static int readBit() {
-		@Pc(7) int local7 = aByteArray58[anInt4925] >> anInt4922 & 0x1;
-		anInt4922++;
-		anInt4925 += anInt4922 >> 3;
-		anInt4922 &= 0x7;
+		@Pc(7) int local7 = bytes[position] >> bitPosition & 0x1;
+		bitPosition++;
+		position += bitPosition >> 3;
+		bitPosition &= 0x7;
 		return local7;
 	}
 }

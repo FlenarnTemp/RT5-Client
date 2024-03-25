@@ -96,7 +96,7 @@ public final class SynthInstrument {
 
 	@OriginalMember(owner = "com.jagex.client!ph", name = "a", descriptor = "(II)[I")
 	public int[] method4550(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		Static404.method4608(Static269.anIntArray339, 0, arg0);
+		ArrayUtil.method4608(Static269.anIntArray339, 0, arg0);
 		if (arg1 < 10) {
 			return Static269.anIntArray339;
 		}

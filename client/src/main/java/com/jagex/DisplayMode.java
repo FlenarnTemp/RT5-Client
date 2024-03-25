@@ -58,7 +58,7 @@ public final class DisplayMode {
 				}
 			}
 			Static232.aClass169Array1 = new DisplayMode[local21];
-			Static404.method4609(local19, 0, Static232.aClass169Array1, 0, local21);
+			ArrayUtil.method4609(local19, 0, Static232.aClass169Array1, 0, local21);
 			@Pc(145) int[] local145 = new int[Static232.aClass169Array1.length];
 			for (local75 = 0; local75 < Static232.aClass169Array1.length; local75++) {
 				local81 = Static232.aClass169Array1[local75];

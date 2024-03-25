@@ -72,7 +72,7 @@ public final class Class205 {
 			}
 			if (this.aLong171 != -1L && this.aLong171 + (long) this.aByteArray74.length < this.aLong168 + (long) arg2) {
 				@Pc(92) int local92 = (int) ((long) this.aByteArray74.length + this.aLong171 - this.aLong168);
-				Static404.method4607(arg1, arg0, this.aByteArray74, (int) (this.aLong168 - this.aLong171), local92);
+				ArrayUtil.method4607(arg1, arg0, this.aByteArray74, (int) (this.aLong168 - this.aLong171), local92);
 				arg0 += local92;
 				arg2 -= local92;
 				this.aLong168 += local92;
@@ -103,14 +103,14 @@ public final class Class205 {
 				}
 				if (local181 > -1L && local183 > local181) {
 					@Pc(319) int local319 = (int) (local183 - local181);
-					Static404.method4607(arg1, (int) ((long) arg0 + local181 - this.aLong168), this.aByteArray75, (int) (local181 - this.aLong170), local319);
+					ArrayUtil.method4607(arg1, (int) ((long) arg0 + local181 - this.aLong168), this.aByteArray75, (int) (local181 - this.aLong170), local319);
 				}
 				this.aLong168 += arg2;
 			} else if (arg2 > 0) {
 				if (this.aLong171 == -1L) {
 					this.aLong171 = this.aLong168;
 				}
-				Static404.method4607(arg1, arg0, this.aByteArray74, (int) (this.aLong168 - this.aLong171), arg2);
+				ArrayUtil.method4607(arg1, arg0, this.aByteArray74, (int) (this.aLong168 - this.aLong171), arg2);
 				this.aLong168 += arg2;
 				if ((long) this.anInt5724 < this.aLong168 - this.aLong171) {
 					this.anInt5724 = (int) (this.aLong168 - this.aLong171);
@@ -182,7 +182,7 @@ public final class Class205 {
 		}
 		if (local64 > -1L && local66 > local64) {
 			@Pc(199) int local199 = (int) (local66 - local64);
-			Static404.method4607(this.aByteArray74, (int) (local64 - this.aLong171), this.aByteArray75, (int) (local64 - this.aLong170), local199);
+			ArrayUtil.method4607(this.aByteArray74, (int) (local64 - this.aLong171), this.aByteArray75, (int) (local64 - this.aLong170), local199);
 		}
 		this.aLong171 = -1L;
 		this.anInt5724 = 0;
@@ -200,7 +200,7 @@ public final class Class205 {
 				throw new ArrayIndexOutOfBoundsException(arg2 - arg0.length);
 			}
 			if (this.aLong171 != -1L && this.aLong168 >= this.aLong171 && this.aLong168 + (long) arg2 <= this.aLong171 + (long) this.anInt5724) {
-				Static404.method4607(this.aByteArray74, (int) (this.aLong168 - this.aLong171), arg0, 0, arg2);
+				ArrayUtil.method4607(this.aByteArray74, (int) (this.aLong168 - this.aLong171), arg0, 0, arg2);
 				this.aLong168 += arg2;
 				return;
 			}
@@ -212,7 +212,7 @@ public final class Class205 {
 				if (local119 > arg2) {
 					local119 = arg2;
 				}
-				Static404.method4607(this.aByteArray75, (int) (this.aLong168 - this.aLong170), arg0, 0, local119);
+				ArrayUtil.method4607(this.aByteArray75, (int) (this.aLong168 - this.aLong170), arg0, 0, local119);
 				arg1 = local119;
 				this.aLong168 += local119;
 				arg2 -= local119;
@@ -236,7 +236,7 @@ public final class Class205 {
 				if (arg2 > this.anInt5728) {
 					local119 = this.anInt5728;
 				}
-				Static404.method4607(this.aByteArray75, 0, arg0, arg1, local119);
+				ArrayUtil.method4607(this.aByteArray75, 0, arg0, arg1, local119);
 				arg1 += local119;
 				this.aLong168 += local119;
 				arg2 -= local119;
@@ -267,7 +267,7 @@ public final class Class205 {
 				}
 				if (local307 > -1L && local307 < local309) {
 					@Pc(431) int local431 = (int) (local309 - local307);
-					Static404.method4607(this.aByteArray74, (int) (local307 - this.aLong171), arg0, (int) (local307 - local86), local431);
+					ArrayUtil.method4607(this.aByteArray74, (int) (local307 - this.aLong171), arg0, (int) (local307 - local86), local431);
 					if (this.aLong168 < local309) {
 						arg2 = (int) ((long) arg2 + this.aLong168 - local309);
 						this.aLong168 = local309;

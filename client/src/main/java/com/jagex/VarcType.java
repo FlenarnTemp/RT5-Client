@@ -16,21 +16,21 @@ public final class VarcType {
 	public int anInt1258 = 1;
 
 	@OriginalMember(owner = "com.jagex.client!cr", name = "a", descriptor = "(Lclient!bt;I)V")
-	public void decode(@OriginalArg(0) Packet arg0) {
+	public void decode(@OriginalArg(0) Packet buf) {
 		while (true) {
-			@Pc(17) int local17 = arg0.g1();
-			if (local17 == 0) {
+			@Pc(17) int code = buf.g1();
+			if (code == 0) {
 				return;
 			}
-			this.decode(arg0, local17);
+			this.decode(buf, code);
 		}
 	}
 
 	@OriginalMember(owner = "com.jagex.client!cr", name = "a", descriptor = "(Lclient!bt;II)V")
-	private void decode(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
-		if (arg1 == 1) {
-			this.aChar2 = Static78.forCharKey(arg0.g1b());
-		} else if (arg1 == 2) {
+	private void decode(@OriginalArg(0) Packet buf, @OriginalArg(1) int code) {
+		if (code == 1) {
+			this.aChar2 = Static78.forCharKey(buf.g1b());
+		} else if (code == 2) {
 			this.anInt1258 = 0;
 		}
 	}

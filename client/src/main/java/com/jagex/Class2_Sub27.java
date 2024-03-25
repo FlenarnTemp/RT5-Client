@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.audio.vorbis.VorbisResidue;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.io.Packet;
 import org.openrs2.deob.annotation.OriginalArg;
@@ -58,7 +59,7 @@ public final class Class2_Sub27 extends Node {
 	private float[] method4515(@OriginalArg(0) int arg0) {
 		Static267.method4517(this.aByteArrayArray14[arg0]);
 		Static267.readBit();
-		@Pc(15) int local15 = Static267.readBits(Static287.method4929(Static267.anIntArray336.length - 1));
+		@Pc(15) int local15 = Static267.read(Static287.ilog(Static267.anIntArray336.length - 1));
 		@Pc(19) boolean local19 = Static267.aBooleanArray43[local15];
 		@Pc(25) int local25 = local19 ? Static267.anInt4923 : Static267.anInt4926;
 		@Pc(27) boolean local27 = false;
@@ -95,7 +96,7 @@ public final class Class2_Sub27 extends Node {
 		@Pc(123) Class88 local123 = Static267.aClass88Array1[Static267.anIntArray336[local15]];
 		@Pc(126) int local126 = local123.anInt2389;
 		@Pc(131) int local131 = local123.anIntArray153[local126];
-		@Pc(140) boolean local140 = !Static267.aClass238Array1[local131].method6061();
+		@Pc(140) boolean local140 = !Static267.aVorbisFloorArray1[local131].method6061();
 		@Pc(154) float[] local154;
 		for (@Pc(144) int local144 = 0; local144 < local123.anInt2388; local144++) {
 			@Pc(152) VorbisResidue local152 = Static267.aClass186Array1[local123.anIntArray154[local144]];
@@ -107,7 +108,7 @@ public final class Class2_Sub27 extends Node {
 		if (!local140) {
 			local171 = local123.anInt2389;
 			local176 = local123.anIntArray153[local171];
-			Static267.aClass238Array1[local176].method6057(Static267.aFloatArray23, local25 >> 1);
+			Static267.aVorbisFloorArray1[local176].method6057(Static267.aFloatArray23, local25 >> 1);
 		}
 		@Pc(212) int local212;
 		if (local140) {
@@ -152,7 +153,7 @@ public final class Class2_Sub27 extends Node {
 				local214[local359 * 4 + 3] = (local307 - local321) * local430 - (local313 - local396) * local440;
 				local214[local359 * 4 + 1] = (local313 - local396) * local430 + (local307 - local321) * local440;
 			}
-			@Pc(486) int local486 = Static287.method4929(local25 - 1);
+			@Pc(486) int local486 = Static287.ilog(local25 - 1);
 			@Pc(520) int local520;
 			@Pc(522) int local522;
 			@Pc(527) int local527;

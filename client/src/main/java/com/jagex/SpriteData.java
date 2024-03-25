@@ -52,7 +52,7 @@ public final class SpriteData {
 			if (local1 == -1) {
 				local1 = this.anIntArray108.length;
 				@Pc(38) int[] local38 = new int[this.anIntArray108.length + 1];
-				Static404.method4605(this.anIntArray108, 0, local38, 0, this.anIntArray108.length);
+				ArrayUtil.method4605(this.anIntArray108, 0, local38, 0, this.anIntArray108.length);
 				this.anIntArray108 = local38;
 				local38[local1] = arg0;
 			}
@@ -157,7 +157,7 @@ public final class SpriteData {
 			if (local1 == -1) {
 				local1 = this.anIntArray108.length;
 				@Pc(38) int[] local38 = new int[this.anIntArray108.length + 1];
-				Static404.method4605(this.anIntArray108, 0, local38, 0, this.anIntArray108.length);
+				ArrayUtil.method4605(this.anIntArray108, 0, local38, 0, this.anIntArray108.length);
 				this.anIntArray108 = local38;
 				local38[local1] = arg0;
 			}

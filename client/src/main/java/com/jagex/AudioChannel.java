@@ -239,7 +239,7 @@ public class AudioChannel {
 		if (Static354.stereo) {
 			local1 = 512;
 		}
-		Static404.method4608(arg0, 0, local1);
+		ArrayUtil.method4608(arg0, 0, local1);
 		this.anInt7101 -= 256;
 		if (this.aClass2_Sub12_8 != null && this.anInt7101 <= 0) {
 			this.anInt7101 += sampleRate >> 4;

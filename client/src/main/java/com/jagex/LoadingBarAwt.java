@@ -1,6 +1,5 @@
 package com.jagex;
 
-import com.jagex.graphics.BitmapFont;
 import org.openrs2.deob.annotation.OriginalMember;
 
 import java.awt.*;

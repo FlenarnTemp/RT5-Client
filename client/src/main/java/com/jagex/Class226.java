@@ -19,10 +19,10 @@ public final class Class226 implements Interface11 {
 
 	@OriginalMember(owner = "com.jagex.client!ts", name = "a", descriptor = "(III)V")
 	public void method5779(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(8) VarbitType local8 = client.VarbitTypes.method3394(arg0);
-		@Pc(11) int local11 = local8.anInt3554;
-		@Pc(14) int local14 = local8.anInt3548;
-		@Pc(17) int local17 = local8.anInt3549;
+		@Pc(8) VarbitType local8 = client.VarbitTypes.get(arg0);
+		@Pc(11) int local11 = local8.basevar;
+		@Pc(14) int local14 = local8.startbit;
+		@Pc(17) int local17 = local8.endbit;
 		@Pc(24) int local24 = TextureOp37.anIntArray368[local17 - local14];
 		if (arg1 < 0 || local24 < arg1) {
 			arg1 = 0;
@@ -58,10 +58,10 @@ public final class Class226 implements Interface11 {
 	@OriginalMember(owner = "com.jagex.client!ts", name = "a", descriptor = "(BI)I")
 	@Override
 	public int method5778(@OriginalArg(1) int arg0) {
-		@Pc(8) VarbitType local8 = client.VarbitTypes.method3394(arg0);
-		@Pc(11) int local11 = local8.anInt3554;
-		@Pc(20) int local20 = local8.anInt3548;
-		@Pc(23) int local23 = local8.anInt3549;
+		@Pc(8) VarbitType local8 = client.VarbitTypes.get(arg0);
+		@Pc(11) int local11 = local8.basevar;
+		@Pc(20) int local20 = local8.startbit;
+		@Pc(23) int local23 = local8.endbit;
 		@Pc(30) int local30 = TextureOp37.anIntArray368[local23 - local20];
 		return this.anIntArray430[local11] >> local20 & local30;
 	}
@@ -104,10 +104,10 @@ public final class Class226 implements Interface11 {
 
 	@OriginalMember(owner = "com.jagex.client!ts", name = "b", descriptor = "(III)V")
 	public void method5786(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(8) VarbitType local8 = client.VarbitTypes.method3394(arg0);
-		@Pc(11) int local11 = local8.anInt3554;
-		@Pc(14) int local14 = local8.anInt3548;
-		@Pc(17) int local17 = local8.anInt3549;
+		@Pc(8) VarbitType local8 = client.VarbitTypes.get(arg0);
+		@Pc(11) int local11 = local8.basevar;
+		@Pc(14) int local14 = local8.startbit;
+		@Pc(17) int local17 = local8.endbit;
 		@Pc(28) int local28 = TextureOp37.anIntArray368[local17 - local14];
 		if (arg1 < 0 || arg1 > local28) {
 			arg1 = 0;

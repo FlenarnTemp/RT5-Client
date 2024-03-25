@@ -118,7 +118,7 @@ public final class Static225 {
 	@OriginalMember(owner = "com.jagex.client!n", name = "a", descriptor = "(IIZIIIFII)[[I")
 	public static int[][] method3956(@OriginalArg(6) float arg0) {
 		@Pc(9) int[][] local9 = new int[256][64];
-		@Pc(13) TextureOp34 local13 = new TextureOp34();
+		@Pc(13) TextureOpPerlinNoise local13 = new TextureOpPerlinNoise();
 		local13.anInt1051 = 8;
 		local13.anInt1043 = 3;
 		local13.aBoolean85 = false;

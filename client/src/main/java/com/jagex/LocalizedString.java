@@ -11,8 +11,8 @@ public final class LocalizedString {
 	private final String[] localizations;
 
 	@OriginalMember(owner = "com.jagex.client!gd", name = "<init>", descriptor = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V")
-	public LocalizedString(@OriginalArg(0) String arg0, @OriginalArg(1) String arg1, @OriginalArg(2) String arg2, @OriginalArg(3) String arg3) {
-		this.localizations = new String[] { arg0, arg1, arg2, arg3 };
+	public LocalizedString(@OriginalArg(0) String en, @OriginalArg(1) String de, @OriginalArg(2) String fr, @OriginalArg(3) String pt) {
+		this.localizations = new String[] { en, de, fr, pt };
 	}
 
 	@OriginalMember(owner = "com.jagex.client!gd", name = "toString", descriptor = "()Ljava/lang/String;")

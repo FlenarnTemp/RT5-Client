@@ -7,6 +7,7 @@ import com.jagex.core.datastruct.IntWrapper;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.ColourUtils;
+import com.jagex.game.client.StockMarketManager;
 import com.jagex.game.config.bastype.BASType;
 import com.jagex.game.config.enumtype.EnumType;
 import com.jagex.game.config.iftype.componentproperties.ServerActiveProperties;
@@ -131,7 +132,7 @@ public final class ScriptRunner {
 			@Pc(19) Component[] local19 = Static26.components[local9];
 			@Pc(22) int local22 = local19.length;
 			local13 = Static113.aClass161ArrayArray2[local9] = new Component[local22];
-			Static404.method4609(local19, 0, local13, 0, local19.length);
+			ArrayUtil.method4609(local19, 0, local13, 0, local19.length);
 		}
 		@Pc(38) int local38;
 		for (local38 = 0; local38 < local13.length && local13[local38] != local3; local38++) {
@@ -139,7 +140,7 @@ public final class ScriptRunner {
 		if (local38 >= local13.length) {
 			return;
 		}
-		Static404.method4609(local13, local38 + 1, local13, local38, local13.length - local38 - 1);
+		ArrayUtil.method4609(local13, local38 + 1, local13, local38, local13.length - local38 - 1);
 		local13[local13.length - 1] = local3;
 	}
 
@@ -2052,7 +2053,7 @@ public final class ScriptRunner {
 								if (opcode == 3904) {
 									// stockmarket_getofferitem
 									local13 = intStack[--isp];
-									intStack[isp++] = StockMarketManager.offers[local13].item;
+									intStack[isp++] = StockMarketManager.offers[local13].obj;
 									return;
 								}
 								if (opcode == 3905) {
@@ -2812,7 +2813,7 @@ public final class ScriptRunner {
 			@Pc(19) Component[] local19 = Static26.components[local9];
 			@Pc(22) int local22 = local19.length;
 			local13 = Static113.aClass161ArrayArray2[local9] = new Component[local22];
-			Static404.method4609(local19, 0, local13, 0, local19.length);
+			ArrayUtil.method4609(local19, 0, local13, 0, local19.length);
 		}
 		@Pc(38) int local38;
 		for (local38 = 0; local38 < local13.length && local13[local38] != local3; local38++) {
@@ -2820,7 +2821,7 @@ public final class ScriptRunner {
 		if (local38 >= local13.length) {
 			return;
 		}
-		Static404.method4609(local13, 0, local13, 1, local38);
+		ArrayUtil.method4609(local13, 0, local13, 1, local38);
 		local13[0] = local3;
 	}
 

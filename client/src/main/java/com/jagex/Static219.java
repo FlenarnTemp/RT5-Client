@@ -60,7 +60,7 @@ public final class Static219 {
 	@OriginalMember(owner = "com.jagex.client!mp", name = "a", descriptor = "([BBI)[B")
 	public static byte[] method3850(@OriginalArg(0) byte[] arg0, @OriginalArg(2) int arg1) {
 		@Pc(2) byte[] local2 = new byte[arg1];
-		Static404.method4607(arg0, 0, local2, 0, arg1);
+		ArrayUtil.method4607(arg0, 0, local2, 0, arg1);
 		return local2;
 	}
 
@@ -138,14 +138,14 @@ public final class Static219 {
 	@OriginalMember(owner = "com.jagex.client!mp", name = "a", descriptor = "(I[FI)[F")
 	public static float[] method3860(@OriginalArg(0) int arg0, @OriginalArg(1) float[] arg1) {
 		@Pc(8) float[] local8 = new float[arg0];
-		Static404.method4604(arg1, 0, local8, 0, arg0);
+		ArrayUtil.method4604(arg1, 0, local8, 0, arg0);
 		return local8;
 	}
 
 	@OriginalMember(owner = "com.jagex.client!mp", name = "a", descriptor = "(II[S)[S")
 	public static short[] method3862(@OriginalArg(1) int arg0, @OriginalArg(2) short[] arg1) {
 		@Pc(2) short[] local2 = new short[arg0];
-		Static404.method4606(arg1, 0, local2, 0, arg0);
+		ArrayUtil.method4606(arg1, 0, local2, 0, arg0);
 		return local2;
 	}
 

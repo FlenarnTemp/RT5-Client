@@ -452,8 +452,8 @@ public abstract class PathingEntity extends Entity {
 						local78 = local29;
 					} else {
 						local78 = new Class114[local24.length + local29.length];
-						Static404.method4609(local24, 0, local78, 0, local24.length);
-						Static404.method4609(local29, 0, local78, local24.length, local29.length);
+						ArrayUtil.method4609(local24, 0, local78, 0, local24.length);
+						ArrayUtil.method4609(local29, 0, local78, local24.length, local29.length);
 					}
 					@Pc(105) Class163[] local105;
 					if (local31 == null) {
@@ -462,8 +462,8 @@ public abstract class PathingEntity extends Entity {
 						local105 = local31;
 					} else {
 						local105 = new Class163[local31.length + local27.length];
-						Static404.method4609(local27, 0, local105, 0, local27.length);
-						Static404.method4609(local31, 0, local105, local27.length, local31.length);
+						ArrayUtil.method4609(local27, 0, local105, 0, local27.length);
+						ArrayUtil.method4609(local31, 0, local105, local27.length, local31.length);
 					}
 					this.particleSystem.method4357(arg0, (long) client.cycle, local78, local105);
 				}

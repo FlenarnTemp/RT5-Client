@@ -87,7 +87,7 @@ public abstract class TextureOp extends Node {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!jq", name = "a", descriptor = "(ILclient!bt;I)V")
-	public void decode(@OriginalArg(0) int arg0, @OriginalArg(1) Packet arg1) {
+	public void decode(@OriginalArg(0) int code, @OriginalArg(1) Packet buf) {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!jq", name = "a", descriptor = "(BI)[I")

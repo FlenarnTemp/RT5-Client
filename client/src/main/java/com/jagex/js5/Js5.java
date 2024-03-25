@@ -224,7 +224,7 @@ public final class Js5 {
 								local523 = local31[local328];
 							}
 							if (local523 == arg0) {
-								Static404.method4607(local157, local320, local496, local437, local326);
+								ArrayUtil.method4607(local157, local320, local496, local437, local326);
 								local437 += local326;
 							}
 							local320 += local326;
@@ -257,7 +257,7 @@ public final class Js5 {
 						local326 = 0;
 						for (local328 = 0; local328 < local25; local328++) {
 							local326 += local252.g4();
-							Static404.method4607(local157, local320, local296[local328], local255[local328], local326);
+							ArrayUtil.method4607(local157, local320, local296[local328], local255[local328], local326);
 							local320 += local326;
 							local255[local328] += local326;
 						}

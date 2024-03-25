@@ -26,7 +26,7 @@ public final class Static136 {
 			return null;
 		} else {
 			@Pc(11) byte[] local11 = new byte[arg0.length];
-			Static404.method4607(arg0, 0, local11, 0, arg0.length);
+			ArrayUtil.method4607(arg0, 0, local11, 0, arg0.length);
 			return local11;
 		}
 	}

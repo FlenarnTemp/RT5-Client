@@ -3,6 +3,8 @@ package com.jagex;
 import com.jagex.core.io.Packet;
 import com.jagex.core.io.PacketBit;
 import com.jagex.core.utils.Cp1252;
+import com.jagex.game.client.StockMarketManager;
+import com.jagex.game.client.StockMarketOffer;
 import com.jagex.game.config.bastype.BASType;
 import com.jagex.game.config.iftype.componentproperties.ServerActiveProperties;
 import com.jagex.game.config.npctype.NPCType;

@@ -21,21 +21,21 @@ public final class Class88 {
 
 	@OriginalMember(owner = "com.jagex.client!gt", name = "<init>", descriptor = "()V")
 	public Class88() {
-		Static267.readBits(16);
-		this.anInt2388 = Static267.readBit() == 0 ? 1 : Static267.readBits(4) + 1;
+		Static267.read(16);
+		this.anInt2388 = Static267.readBit() == 0 ? 1 : Static267.read(4) + 1;
 		if (Static267.readBit() != 0) {
-			Static267.readBits(8);
+			Static267.read(8);
 		}
-		Static267.readBits(2);
+		Static267.read(2);
 		if (this.anInt2388 > 1) {
-			this.anInt2389 = Static267.readBits(4);
+			this.anInt2389 = Static267.read(4);
 		}
 		this.anIntArray153 = new int[this.anInt2388];
 		this.anIntArray154 = new int[this.anInt2388];
 		for (@Pc(42) int local42 = 0; local42 < this.anInt2388; local42++) {
-			Static267.readBits(8);
-			this.anIntArray153[local42] = Static267.readBits(8);
-			this.anIntArray154[local42] = Static267.readBits(8);
+			Static267.read(8);
+			this.anIntArray153[local42] = Static267.read(8);
+			this.anIntArray154[local42] = Static267.read(8);
 		}
 	}
 }

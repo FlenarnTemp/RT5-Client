@@ -10,6 +10,8 @@ import java.util.GregorianCalendar;
 import java.util.Random;
 
 import com.jagex.core.io.Packet;
+import com.jagex.game.client.StockMarketManager;
+import com.jagex.game.client.StockMarketOffer;
 import com.jagex.game.config.bastype.BASTypeList;
 import com.jagex.game.config.cursortype.CursorTypeList;
 import com.jagex.game.config.enumtype.EnumTypeList;
@@ -24,6 +26,7 @@ import com.jagex.game.config.msitype.MSITypeList;
 import com.jagex.game.config.npctype.NPCTypeList;
 import com.jagex.game.config.questtype.QuestTypeList;
 import com.jagex.game.config.seqtype.SeqTypeList;
+import com.jagex.game.config.structtype.StructTypeList;
 import com.jagex.game.network.protocol.LoginProt;
 import com.jagex.js5.Js5;
 import com.jagex.js5.index.Js5MasterIndex;
