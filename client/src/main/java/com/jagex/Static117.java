@@ -1,6 +1,7 @@
 package com.jagex;
 
 import com.jagex.game.config.loctype.LocType;
+import com.jagex.game.config.npctype.NPCType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -101,14 +102,14 @@ public final class Static117 {
 			} else if (local436.anInt1008 != -1) {
 				local499 = client.ObjTypes.get(local436.anInt1008).anIntArray364;
 			} else if (Static297.method5111(local436.anInt1005)) {
-				@Pc(572) Npc local572 = NpcList.npcs[(int) local436.aLong30];
+				@Pc(572) NPC local572 = NPCList.NPCS[(int) local436.aLong30];
 				if (local572 != null) {
-					@Pc(577) NpcType local577 = local572.type;
-					if (local577.multiNpcs != null) {
+					@Pc(577) NPCType local577 = local572.type;
+					if (local577.multinpc != null) {
 						local577 = local577.getMultiNpc(VarpDomain.instance);
 					}
 					if (local577 != null) {
-						local499 = local577.anIntArray131;
+						local499 = local577.quests;
 					}
 				}
 			} else if (Static241.method4190(local436.anInt1005)) {

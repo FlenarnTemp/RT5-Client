@@ -56,9 +56,9 @@ public final class Static61 {
 
 	@OriginalMember(owner = "com.jagex.client!dj", name = "c", descriptor = "(B)V")
 	public static void method1673() {
-		for (@Pc(5) int local5 = 0; local5 < NpcList.size; local5++) {
-			@Pc(13) int local13 = NpcList.ids[local5];
-			@Pc(17) Npc local17 = NpcList.npcs[local13];
+		for (@Pc(5) int local5 = 0; local5 < NPCList.size; local5++) {
+			@Pc(13) int local13 = NPCList.ids[local5];
+			@Pc(17) NPC local17 = NPCList.NPCS[local13];
 			if (local17 != null) {
 				Static93.method1999(local17, local17.type.size);
 			}

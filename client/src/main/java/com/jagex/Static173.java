@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.config.seqtype.SeqType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -12,7 +13,7 @@ public final class Static173 {
 	@OriginalMember(owner = "com.jagex.client!k", name = "a", descriptor = "(BLclient!mr;)V")
 	public static void method3315(@OriginalArg(1) PathingEntity arg0) {
 		arg0.aBoolean318 = false;
-		@Pc(20) Class157 local20;
+		@Pc(20) SeqType local20;
 		if (arg0.anInt4585 != -1) {
 			local20 = client.SeqTypes.method2371(arg0.anInt4585);
 			if (local20 == null || local20.anIntArray262 == null) {
@@ -21,7 +22,7 @@ public final class Static173 {
 			} else {
 				label297: {
 					arg0.anInt4629++;
-					if (local20.anIntArray262.length > arg0.anInt4626 && arg0.anInt4629 > local20.anIntArray261[arg0.anInt4626]) {
+					if (local20.anIntArray262.length > arg0.anInt4626 && arg0.anInt4629 > local20.frames[arg0.anInt4626]) {
 						arg0.anInt4626++;
 						arg0.anInt4593++;
 						arg0.anInt4629 = 1;
@@ -47,7 +48,7 @@ public final class Static173 {
 				}
 			}
 		}
-		@Pc(196) Class157 local196;
+		@Pc(196) SeqType local196;
 		if (arg0.anInt4594 != -1 && arg0.anInt4595 <= client.cycle) {
 			@Pc(184) SpotAnimType local184 = client.SpotAnimTypes.method5407(arg0.anInt4594);
 			@Pc(187) int local187 = local184.anInt2448;
@@ -75,16 +76,16 @@ public final class Static173 {
 							Static1.method4(local196, arg0 == PlayerList.self, arg0.plane, arg0.xFine, arg0.zFine, 0);
 						}
 						arg0.anInt4620++;
-						if (arg0.anInt4582 < local196.anIntArray262.length && local196.anIntArray261[arg0.anInt4582] < arg0.anInt4620) {
+						if (arg0.anInt4582 < local196.anIntArray262.length && local196.frames[arg0.anInt4582] < arg0.anInt4620) {
 							arg0.anInt4620 = 1;
 							arg0.anInt4582++;
 							Static1.method4(local196, arg0 == PlayerList.self, arg0.plane, arg0.xFine, arg0.zFine, arg0.anInt4582);
 						}
 						if (local196.anIntArray262.length <= arg0.anInt4582) {
 							if (local184.aBoolean177) {
-								arg0.anInt4582 -= local196.anInt4032;
+								arg0.anInt4582 -= local196.replayoff;
 								arg0.anInt4602++;
-								if (arg0.anInt4602 >= local196.anInt4024) {
+								if (arg0.anInt4602 >= local196.replaycount) {
 									arg0.anInt4594 = -1;
 								} else if (arg0.anInt4582 >= 0 && local196.anIntArray262.length > arg0.anInt4582) {
 									Static1.method4(local196, PlayerList.self == arg0, arg0.plane, arg0.xFine, arg0.zFine, arg0.anInt4582);
@@ -98,8 +99,8 @@ public final class Static173 {
 						arg0.anInt4612 = arg0.anInt4582 + 1;
 						if (arg0.anInt4612 >= local196.anIntArray262.length) {
 							if (local184.aBoolean177) {
-								arg0.anInt4612 -= local196.anInt4032;
-								if (arg0.anInt4602 + 1 >= local196.anInt4024) {
+								arg0.anInt4612 -= local196.replayoff;
+								if (arg0.anInt4602 + 1 >= local196.replaycount) {
 									arg0.anInt4612 = -1;
 								} else if (arg0.anInt4612 < 0 || local196.anIntArray262.length <= arg0.anInt4612) {
 									arg0.anInt4612 = -1;
@@ -128,15 +129,15 @@ public final class Static173 {
 				arg0.anInt4597 = -1;
 			} else {
 				arg0.anInt4624++;
-				if (local20.anIntArray262.length > arg0.anInt4607 && local20.anIntArray261[arg0.anInt4607] < arg0.anInt4624) {
+				if (local20.anIntArray262.length > arg0.anInt4607 && local20.frames[arg0.anInt4607] < arg0.anInt4624) {
 					arg0.anInt4624 = 1;
 					arg0.anInt4607++;
 					Static1.method4(local20, arg0 == PlayerList.self, arg0.plane, arg0.xFine, arg0.zFine, arg0.anInt4607);
 				}
 				if (arg0.anInt4607 >= local20.anIntArray262.length) {
 					arg0.anInt4598++;
-					arg0.anInt4607 -= local20.anInt4032;
-					if (arg0.anInt4598 >= local20.anInt4024) {
+					arg0.anInt4607 -= local20.replayoff;
+					if (arg0.anInt4598 >= local20.replaycount) {
 						arg0.anInt4597 = -1;
 					} else if (arg0.anInt4607 >= 0 && local20.anIntArray262.length > arg0.anInt4607) {
 						Static1.method4(local20, arg0 == PlayerList.self, arg0.plane, arg0.xFine, arg0.zFine, arg0.anInt4607);
@@ -146,14 +147,14 @@ public final class Static173 {
 				}
 				arg0.anInt4592 = arg0.anInt4607 + 1;
 				if (local20.anIntArray262.length <= arg0.anInt4592) {
-					arg0.anInt4592 -= local20.anInt4032;
-					if (arg0.anInt4598 + 1 >= local20.anInt4024) {
+					arg0.anInt4592 -= local20.replayoff;
+					if (arg0.anInt4598 + 1 >= local20.replaycount) {
 						arg0.anInt4592 = -1;
 					} else if (arg0.anInt4592 < 0 || local20.anIntArray262.length <= arg0.anInt4592) {
 						arg0.anInt4592 = -1;
 					}
 				}
-				arg0.aBoolean318 = local20.aBoolean261;
+				arg0.aBoolean318 = local20.stretches;
 			}
 		}
 		if (arg0.anInt4590 > 0) {
@@ -170,15 +171,15 @@ public final class Static173 {
 						arg0.aClass20Array3[local765] = null;
 					} else {
 						local777.anInt625++;
-						if (local777.anInt628 < local196.anIntArray262.length && local196.anIntArray261[local777.anInt628] < local777.anInt625) {
+						if (local777.anInt628 < local196.anIntArray262.length && local196.frames[local777.anInt628] < local777.anInt625) {
 							local777.anInt625 = 1;
 							local777.anInt628++;
 							Static1.method4(local196, PlayerList.self == arg0, arg0.plane, arg0.xFine, arg0.zFine, local777.anInt628);
 						}
 						if (local777.anInt628 >= local196.anIntArray262.length) {
 							local777.anInt626++;
-							local777.anInt628 -= local196.anInt4032;
-							if (local777.anInt626 >= local196.anInt4024) {
+							local777.anInt628 -= local196.replayoff;
+							if (local777.anInt626 >= local196.replaycount) {
 								arg0.aClass20Array3[local765] = null;
 							} else if (local777.anInt628 >= 0 && local777.anInt628 < local196.anIntArray262.length) {
 								Static1.method4(local196, arg0 == PlayerList.self, arg0.plane, arg0.xFine, arg0.zFine, local777.anInt628);
@@ -188,8 +189,8 @@ public final class Static173 {
 						}
 						local777.anInt627 = local777.anInt628 + 1;
 						if (local777.anInt627 >= local196.anIntArray262.length) {
-							local777.anInt627 -= local196.anInt4032;
-							if (local196.anInt4024 <= local777.anInt626 + 1) {
+							local777.anInt627 -= local196.replayoff;
+							if (local196.replaycount <= local777.anInt626 + 1) {
 								local777.anInt627 = -1;
 							} else if (local777.anInt627 < 0 || local777.anInt627 >= local196.anIntArray262.length) {
 								local777.anInt627 = -1;

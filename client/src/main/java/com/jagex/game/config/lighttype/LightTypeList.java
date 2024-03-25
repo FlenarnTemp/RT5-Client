@@ -25,7 +25,7 @@ public final class LightTypeList {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!qi", name = "a", descriptor = "(II)Lclient!et;")
-	public LightType method4878(@OriginalArg(0) int arg0) {
+	public LightType get(@OriginalArg(0) int arg0) {
 		@Pc(11) LruHashTable local11 = this.aClass98_41;
 		@Pc(21) LightType local21;
 		synchronized (this.aClass98_41) {

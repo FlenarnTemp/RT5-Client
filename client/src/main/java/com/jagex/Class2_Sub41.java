@@ -3,6 +3,7 @@ package com.jagex;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.bastype.BASType;
+import com.jagex.game.config.seqtype.SeqType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -18,12 +19,12 @@ public final class Class2_Sub41 extends Node {
 	public int[] anIntArray489 = new int[] { -1 };
 
 	@OriginalMember(owner = "com.jagex.client!we", name = "a", descriptor = "(IIIIZLclient!nb;IILclient!jo;Lclient!wm;)Lclient!gn;")
-	public Model method6360(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) boolean arg3, @OriginalArg(5) Class157 arg4, @OriginalArg(6) int arg5, @OriginalArg(8) PlayerAppearance arg6, @OriginalArg(9) Renderer arg7) {
+	public Model method6360(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) boolean arg3, @OriginalArg(5) SeqType arg4, @OriginalArg(6) int arg5, @OriginalArg(8) PlayerAppearance arg6, @OriginalArg(9) Renderer arg7) {
 		@Pc(7) Model local7 = null;
 		@Pc(9) int local9 = 1024;
 		@Pc(11) BASType local11 = null;
 		if (arg2 != -1) {
-			local11 = client.BasTypes.method245(arg2);
+			local11 = client.BasTypes.get(arg2);
 		}
 		@Pc(23) int[] local23 = this.anIntArray489;
 		if (local11 != null && local11.anIntArray425 != null) {
@@ -57,7 +58,7 @@ public final class Class2_Sub41 extends Node {
 				local79 = arg4.aBoolean263 | false;
 			}
 			if ((arg4.aBoolean264 || Static318.forceTweening) && arg5 != -1 && arg4.anIntArray262.length > arg5) {
-				local85 = arg4.anIntArray261[arg0];
+				local85 = arg4.frames[arg0];
 				local83 = arg4.anIntArray262[arg5];
 				@Pc(166) int local166 = local83 >>> 16;
 				local83 &= 0xFFFF;

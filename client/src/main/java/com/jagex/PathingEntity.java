@@ -424,7 +424,7 @@ public abstract class PathingEntity extends Entity {
 	@OriginalMember(owner = "com.jagex.client!mr", name = "c", descriptor = "(I)Lclient!ti;")
 	public final BASType getBasType() {
 		@Pc(13) int local13 = this.method4329();
-		return local13 == -1 ? Static18.aClass222_1 : client.BasTypes.method245(local13);
+		return local13 == -1 ? Static18.aClass222_1 : client.BasTypes.get(local13);
 	}
 
 	@OriginalMember(owner = "com.jagex.client!mr", name = "a", descriptor = "(ILclient!wm;[Lclient!gn;Z)V")

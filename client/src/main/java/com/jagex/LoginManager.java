@@ -562,9 +562,9 @@ public class LoginManager {
 		for (@Pc(75) int local75 = 0; local75 < 2048; local75++) {
 			PlayerList.players[local75] = null;
 		}
-		NpcList.size = 0;
+		NPCList.size = 0;
 		for (@Pc(91) int local91 = 0; local91 < 32768; local91++) {
-			NpcList.npcs[local91] = null;
+			NPCList.NPCS[local91] = null;
 		}
 		Static120.objStacks.clear();
 		Camera.reset();

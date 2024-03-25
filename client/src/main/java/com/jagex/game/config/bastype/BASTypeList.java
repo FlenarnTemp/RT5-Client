@@ -49,7 +49,7 @@ public final class BASTypeList {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!ak", name = "a", descriptor = "(II)Lclient!ti;")
-	public BASType method245(@OriginalArg(0) int arg0) {
+	public BASType get(@OriginalArg(0) int arg0) {
 		@Pc(6) LruHashTable local6 = this.aClass98_1;
 		@Pc(16) BASType local16;
 		synchronized (this.aClass98_1) {

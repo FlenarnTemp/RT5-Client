@@ -2,6 +2,7 @@ package com.jagex;
 
 import com.jagex.core.datastruct.Node;
 import com.jagex.game.config.loctype.LocType;
+import com.jagex.game.config.npctype.NPCType;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -31,7 +32,7 @@ public final class AreaSound extends Node {
 	public int minXFine;
 
 	@OriginalMember(owner = "com.jagex.client!jc", name = "B", descriptor = "Lclient!oe;")
-	public Npc npc;
+	public NPC npc;
 
 	@OriginalMember(owner = "com.jagex.client!jc", name = "E", descriptor = "I")
 	public int radius;
@@ -90,15 +91,15 @@ public final class AreaSound extends Node {
 			@Pc(42) int sound = Static340.getSound(this.npc);
 			if (sound != local8) {
 				this.sound = sound;
-				@Pc(52) NpcType npcType = this.npc.type;
-				if (npcType.multiNpcs != null) {
+				@Pc(52) NPCType npcType = this.npc.type;
+				if (npcType.multinpc != null) {
 					npcType = npcType.getMultiNpc(VarpDomain.instance);
 				}
 				if (npcType == null) {
 					this.volume = this.radius = 0;
 				} else {
-					this.radius = npcType.anInt2022 * 128;
-					this.volume = npcType.anInt2051;
+					this.radius = npcType.bgsound_range * 128;
+					this.volume = npcType.bgsound_volume;
 				}
 			}
 		} else if (this.player != null) {

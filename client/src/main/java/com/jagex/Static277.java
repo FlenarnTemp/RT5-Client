@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.config.seqtype.SeqType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -24,8 +25,8 @@ public final class Static277 {
 		if (arg0.anInt4584 == client.cycle || arg0.anInt4597 == -1 || arg0.anInt4590 != 0) {
 			local5 = true;
 		} else {
-			@Pc(25) Class157 local25 = client.SeqTypes.method2371(arg0.anInt4597);
-			if (local25.aBoolean264 || arg0.anInt4624 + 1 > local25.anIntArray261[arg0.anInt4607]) {
+			@Pc(25) SeqType local25 = client.SeqTypes.method2371(arg0.anInt4597);
+			if (local25.aBoolean264 || arg0.anInt4624 + 1 > local25.frames[arg0.anInt4607]) {
 				local5 = true;
 			}
 		}

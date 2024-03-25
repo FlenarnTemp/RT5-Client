@@ -57,8 +57,8 @@ public final class Static45 {
 				local29.anInt4638 = -1;
 			}
 		}
-		for (@Pc(111) int local111 = 0; local111 < NpcList.size; local111++) {
-			@Pc(118) Npc local118 = NpcList.npcs[NpcList.ids[local111]];
+		for (@Pc(111) int local111 = 0; local111 < NPCList.size; local111++) {
+			@Pc(118) NPC local118 = NPCList.NPCS[NPCList.ids[local111]];
 			if (local118.method4336() && local118.type.method2091(VarpDomain.instance)) {
 				local118.method6078();
 				if (local118.aShort103 >= 0 && local118.aShort101 >= 0 && local118.aShort104 < Static373.buildAreaLimitX && local118.aShort102 < Static242.buildAreaLimitZ) {
@@ -71,21 +71,21 @@ public final class Static45 {
 					}
 					local155 += 5 - local118.getSize() << 2;
 					if (Static114.anInt2344 == 0) {
-						if (local118.type.aBoolean148) {
+						if (local118.type.follower) {
 							local155 += 64;
 						} else {
 							local155 += 128;
 						}
 					} else if (Static114.anInt2344 == 1) {
-						if (local118.type.aBoolean148) {
+						if (local118.type.follower) {
 							local155 += 32;
 						} else {
 							local155 += 64;
 						}
 					}
-					if (local118.type.aBoolean149) {
+					if (local118.type.drawabove) {
 						local155 += 1024;
-					} else if (!local118.type.aBoolean146) {
+					} else if (!local118.type.drawbelow) {
 						local155 += 256;
 					}
 					local118.anInt4638 = local155 + 1;
@@ -100,7 +100,7 @@ public final class Static45 {
 			@Pc(221) Class84 local221 = Static50.aClass84Array1[local75];
 			if (local221 != null) {
 				if (local221.anInt2355 == 1) {
-					@Pc(232) Npc local232 = NpcList.npcs[local221.anInt2354];
+					@Pc(232) NPC local232 = NPCList.NPCS[local221.anInt2354];
 					if (local232 != null && local232.anInt4638 >= 0) {
 						local232.anInt4638 += 2048;
 					}
@@ -770,8 +770,8 @@ public final class Static45 {
 	@OriginalMember(owner = "com.jagex.client!com.jagex.client", name = "c", descriptor = "()V")
 	public static void method1407() {
 		Static51.anInt1369 = 0;
-		for (@Pc(3) int local3 = 0; local3 < NpcList.size; local3++) {
-			@Pc(10) Npc local10 = NpcList.npcs[NpcList.ids[local3]];
+		for (@Pc(3) int local3 = 0; local3 < NPCList.size; local3++) {
+			@Pc(10) NPC local10 = NPCList.NPCS[NPCList.ids[local3]];
 			if (local10.aBoolean320 && local10.method4324() != -1) {
 				@Pc(28) int local28 = (local10.getSize() - 1) * 64 + 60;
 				@Pc(35) int local35 = local10.xFine - local28 >> 7;
@@ -779,7 +779,7 @@ public final class Static45 {
 				@Pc(49) PathingEntity local49 = Static228.method3997(local10.plane, local35, local42);
 				if (local49 != null) {
 					@Pc(54) int local54 = local49.anInt4619;
-					if (local49 instanceof Npc) {
+					if (local49 instanceof NPC) {
 						local54 += 2048;
 					}
 					if (local49.anInt4625 == 0 && local49.method4324() != -1) {
@@ -802,12 +802,12 @@ public final class Static45 {
 	public static void method1408(@OriginalArg(0) int arg0) {
 		@Pc(1) int local1 = PlayerList.anInt751;
 		@Pc(3) int[] local3 = PlayerList.anIntArray121;
-		for (@Pc(5) int local5 = 0; local5 < local1 + NpcList.size; local5++) {
+		for (@Pc(5) int local5 = 0; local5 < local1 + NPCList.size; local5++) {
 			@Pc(15) PathingEntity local15;
 			if (local5 < local1) {
 				local15 = PlayerList.players[local3[local5]];
 			} else {
-				local15 = NpcList.npcs[NpcList.ids[local5 - local1]];
+				local15 = NPCList.NPCS[NPCList.ids[local5 - local1]];
 			}
 			if (local15.plane == arg0 && local15.anInt4638 >= 0) {
 				@Pc(35) int local35 = local15.getSize();
@@ -855,13 +855,13 @@ public final class Static45 {
 	public static void method1409(@OriginalArg(0) int arg0) {
 		@Pc(1) int local1 = PlayerList.anInt751;
 		@Pc(3) int[] local3 = PlayerList.anIntArray121;
-		@Pc(11) int local11 = Static47.nonpcs ? local1 : local1 + NpcList.size;
+		@Pc(11) int local11 = Static47.nonpcs ? local1 : local1 + NPCList.size;
 		for (@Pc(13) int local13 = 0; local13 < local11; local13++) {
 			@Pc(23) PathingEntity local23;
 			if (local13 < local1) {
 				local23 = PlayerList.players[local3[local13]];
 			} else {
-				local23 = NpcList.npcs[NpcList.ids[local13 - local1]];
+				local23 = NPCList.NPCS[NPCList.ids[local13 - local1]];
 			}
 			if (local23.plane == arg0) {
 				local23.anInt4625 = 0;
@@ -926,13 +926,13 @@ public final class Static45 {
 	public static void method1410() {
 		@Pc(1) int local1 = PlayerList.anInt751;
 		@Pc(3) int[] local3 = PlayerList.anIntArray121;
-		@Pc(11) int local11 = Static47.nonpcs ? local1 : local1 + NpcList.size;
+		@Pc(11) int local11 = Static47.nonpcs ? local1 : local1 + NPCList.size;
 		for (@Pc(13) int local13 = 0; local13 < local11; local13++) {
 			@Pc(23) PathingEntity local23;
 			if (local13 < local1) {
 				local23 = PlayerList.players[local3[local13]];
 			} else {
-				local23 = NpcList.npcs[NpcList.ids[local13 - local1]];
+				local23 = NPCList.NPCS[NPCList.ids[local13 - local1]];
 			}
 			if (local23.anInt4638 >= 0) {
 				@Pc(39) int local39 = local23.getSize();

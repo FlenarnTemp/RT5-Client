@@ -47,7 +47,7 @@ public final class SceneBuilder extends Class29 {
 							for (local496 = 0; local496 < local118; local496++) {
 								@Pc(503) Class2_Sub26_Sub1 local503 = new Class2_Sub26_Sub1(arg4);
 								if (local503.anInt4376 == 31) {
-									@Pc(516) LightType local516 = client.LightTypes.method4878(arg4.g2());
+									@Pc(516) LightType local516 = client.LightTypes.get(arg4.g2());
 									local503.method4154(local516.anInt1880, local516.anInt1879, local516.anInt1877, local516.anInt1883);
 								}
 								local503.anInt4370 += arg2 << 7;
@@ -240,7 +240,7 @@ public final class SceneBuilder extends Class29 {
 									for (local404 = 0; local404 < local117; local404++) {
 										@Pc(411) Class2_Sub26_Sub1 local411 = new Class2_Sub26_Sub1(arg0);
 										if (local411.anInt4376 == 31) {
-											@Pc(422) LightType local422 = client.LightTypes.method4878(arg0.g2());
+											@Pc(422) LightType local422 = client.LightTypes.get(arg0.g2());
 											local411.method4154(local422.anInt1880, local422.anInt1879, local422.anInt1877, local422.anInt1883);
 										}
 										local157 = local411.anInt4370 >> 7;

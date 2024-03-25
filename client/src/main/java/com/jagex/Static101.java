@@ -48,7 +48,7 @@ public final class Static101 {
 			return false;
 		} else if (!arg0.method4180(MapList.anInterface11_2)) {
 			return false;
-		} else if (WorldMap.visibleMapElementIds.getNode((long) arg0.anInt4430) == null) {
+		} else if (WorldMap.visibleMapElementIds.getNode((long) arg0.id) == null) {
 			return WorldMap.visibleMapElementCategories.getNode((long) arg0.category) == null;
 		} else {
 			return false;

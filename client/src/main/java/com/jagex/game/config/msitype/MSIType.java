@@ -1,5 +1,9 @@
-package com.jagex;
+package com.jagex.game.config.msitype;
 
+import com.jagex.Renderer;
+import com.jagex.Sprite;
+import com.jagex.SpriteData;
+import com.jagex.Static396;
 import com.jagex.core.io.Packet;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
@@ -7,10 +11,10 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("com.jagex.client!md")
-public final class MsiType {
+public final class MSIType {
 
 	@OriginalMember(owner = "com.jagex.client!md", name = "f", descriptor = "Lclient!ii;")
-	public MsiTypeList aClass104_1;
+	public MSITypeList aClass104_1;
 
 	@OriginalMember(owner = "com.jagex.client!md", name = "h", descriptor = "I")
 	public int anInt3751;
@@ -30,11 +34,6 @@ public final class MsiType {
 			}
 			this.decode(code, buf);
 		}
-	}
-
-	@OriginalMember(owner = "com.jagex.client!md", name = "a", descriptor = "(Z)Z")
-	public boolean method3708() {
-		return this.aClass104_1.aClass197_39.requestDownload(this.anInt3751);
 	}
 
 	@OriginalMember(owner = "com.jagex.client!md", name = "a", descriptor = "(ILclient!bt;I)V")
@@ -63,7 +62,7 @@ public final class MsiType {
 				if (arg0) {
 					local54.method1687();
 				}
-				for (@Pc(74) int local74 = 0; local74 < arg1; local74++) {
+				for (@Pc(74) int index = 0; index < arg1; index++) {
 					local54.method1675();
 				}
 			}
@@ -75,5 +74,10 @@ public final class MsiType {
 		} else {
 			return null;
 		}
+	}
+
+	@OriginalMember(owner = "com.jagex.client!md", name = "a", descriptor = "(Z)Z")
+	public boolean method3708() {
+		return this.aClass104_1.aClass197_39.requestDownload(this.anInt3751);
 	}
 }

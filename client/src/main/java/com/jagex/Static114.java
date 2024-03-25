@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.config.seqtype.SeqType;
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static114 {
@@ -11,7 +12,7 @@ public final class Static114 {
 	public static int anInt2346 = -60;
 
 	@OriginalMember(owner = "com.jagex.client!gm", name = "g", descriptor = "[Lclient!nb;")
-	public static final Class157[] aClass157Array14 = new Class157[14];
+	public static final SeqType[] A_SEQ_TYPE_ARRAY_14 = new SeqType[14];
 
 	@OriginalMember(owner = "com.jagex.client!gm", name = "a", descriptor = "(B)V")
 	public static void method2362() {

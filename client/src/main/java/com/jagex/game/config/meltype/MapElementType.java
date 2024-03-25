@@ -44,7 +44,7 @@ public final class MapElementType {
 	private int anInt4427;
 
 	@OriginalMember(owner = "com.jagex.client!np", name = "H", descriptor = "I")
-	public int anInt4430;
+	public int id;
 
 	@OriginalMember(owner = "com.jagex.client!np", name = "I", descriptor = "I")
 	public int anInt4431;

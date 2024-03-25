@@ -183,7 +183,7 @@ public final class AttachLocRequest extends Node {
             }
         } else {
             local18 = arg8 - 1;
-            entity = NpcList.npcs[local18];
+            entity = NPCList.NPCS[local18];
         }
         if (entity == null) {
             return;

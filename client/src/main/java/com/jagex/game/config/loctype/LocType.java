@@ -5,6 +5,7 @@ import com.jagex.core.datastruct.IntWrapper;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.datastruct.StringWrapper;
 import com.jagex.core.io.Packet;
+import com.jagex.game.config.seqtype.SeqType;
 import com.jagex.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
@@ -51,7 +52,7 @@ public final class LocType {
 	public LocTypeList myList;
 
 	@OriginalMember(owner = "com.jagex.client!ct", name = "Ab", descriptor = "I")
-	public int anInt1351;
+	public int id;
 
 	@OriginalMember(owner = "com.jagex.client!ct", name = "i", descriptor = "I")
 	private int anInt1311 = 0;
@@ -213,14 +214,14 @@ public final class LocType {
 	private byte hillskew_mode = 0;
 
 	@OriginalMember(owner = "com.jagex.client!ct", name = "a", descriptor = "(B)V")
-	public void method1516() {
+	public void postDecode() {
 		if (this.active == -1) {
 			this.active = 0;
 			if (this.models != null && (this.shapes == null || this.shapes[0] == 10)) {
 				this.active = 1;
 			}
-			for (@Pc(32) int local32 = 0; local32 < 5; local32++) {
-				if (this.ops[local32] != null) {
+			for (@Pc(32) int index = 0; index < 5; index++) {
+				if (this.ops[index] != null) {
 					this.active = 1;
 					break;
 				}
@@ -232,15 +233,15 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!ct", name = "a", descriptor = "(IILclient!tf;IILclient!nb;ILclient!wm;ILclient!tf;IIII)Lclient!gn;")
-	public Model method1518(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class6 arg2, @OriginalArg(3) int arg3, @OriginalArg(5) Class157 arg4, @OriginalArg(6) int arg5, @OriginalArg(7) Renderer arg6, @OriginalArg(8) int arg7, @OriginalArg(9) Class6 arg8, @OriginalArg(10) int arg9, @OriginalArg(11) int arg10, @OriginalArg(12) int arg11, @OriginalArg(13) int arg12) {
+	public Model method1518(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class6 arg2, @OriginalArg(3) int arg3, @OriginalArg(5) SeqType arg4, @OriginalArg(6) int arg5, @OriginalArg(7) Renderer arg6, @OriginalArg(8) int arg7, @OriginalArg(9) Class6 arg8, @OriginalArg(10) int arg9, @OriginalArg(11) int arg10, @OriginalArg(12) int arg11, @OriginalArg(13) int arg12) {
 		if (arg3 == 5 || arg3 == 6 || arg3 == 7 || arg3 == 8) {
 			arg3 = 4;
 		}
 		@Pc(36) long local36;
 		if (this.shapes == null) {
-			local36 = (this.anInt1351 << 10) + arg5;
+			local36 = (this.id << 10) + arg5;
 		} else {
-			local36 = (this.anInt1351 << 10) + (arg3 << 3) + arg5;
+			local36 = (this.id << 10) + (arg3 << 3) + arg5;
 		}
 		@Pc(49) int local49 = arg12;
 		local36 |= arg6.anInt2836 << 29;
@@ -303,7 +304,7 @@ public final class LocType {
 		if (arg9 == 5 || arg9 == 6 || arg9 == 7 || arg9 == 8) {
 			arg9 = 4;
 		}
-		@Pc(45) long local45 = (long) (this.shapes == null ? (this.anInt1351 << 10) + arg2 : arg2 + (this.anInt1351 << 10) + (arg9 << 3));
+		@Pc(45) long local45 = (long) (this.shapes == null ? (this.id << 10) + arg2 : arg2 + (this.id << 10) + (arg9 << 3));
 		@Pc(53) long local53 = local45 | (long) (arg7.anInt2836 << 29);
 		@Pc(55) int local55 = arg5;
 		if (this.hillskew_mode == 3) {
@@ -379,13 +380,12 @@ public final class LocType {
 	@OriginalMember(owner = "com.jagex.client!ct", name = "a", descriptor = "(II)Z")
 	public boolean isReady(@OriginalArg(1) int arg0) {
 		@Pc(31) Js5 local31;
-		@Pc(35) int local35;
 		if (this.shapes != null) {
 			local31 = this.myList.aClass197_78;
 			synchronized (this.myList.aClass197_78) {
-				for (local35 = 0; local35 < this.shapes.length; local35++) {
-					if (this.shapes[local35] == arg0) {
-						return this.myList.aClass197_78.requestDownload(this.models[local35] & 0xFFFF, 0);
+				for (int index = 0; index < this.shapes.length; index++) {
+					if (this.shapes[index] == arg0) {
+						return this.myList.aClass197_78.requestDownload(this.models[index] & 0xFFFF, 0);
 					}
 				}
 				return true;
@@ -396,8 +396,8 @@ public final class LocType {
 			@Pc(27) boolean local27 = true;
 			local31 = this.myList.aClass197_78;
 			synchronized (this.myList.aClass197_78) {
-				for (local35 = 0; local35 < this.models.length; local35++) {
-					local27 &= this.myList.aClass197_78.requestDownload(this.models[local35] & 0xFFFF, 0);
+				for (int index = 0; index < this.models.length; index++) {
+					local27 &= this.myList.aClass197_78.requestDownload(this.models[index] & 0xFFFF, 0);
 				}
 				return local27;
 			}

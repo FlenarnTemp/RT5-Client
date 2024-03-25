@@ -20,8 +20,13 @@ import com.jagex.game.config.invtype.InvTypeList;
 import com.jagex.game.config.lighttype.LightTypeList;
 import com.jagex.game.config.loctype.LocTypeList;
 import com.jagex.game.config.meltype.MapElementTypeList;
+import com.jagex.game.config.msitype.MSITypeList;
+import com.jagex.game.config.npctype.NPCTypeList;
+import com.jagex.game.config.questtype.QuestTypeList;
+import com.jagex.game.config.seqtype.SeqTypeList;
 import com.jagex.game.network.protocol.LoginProt;
 import com.jagex.js5.Js5;
+import com.jagex.js5.index.Js5MasterIndex;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -187,9 +192,9 @@ public final class client extends GameShell {
 	@OriginalMember(owner = "com.jagex.client!nk", name = "H", descriptor = "Lclient!ki;")
 	public static MapElementTypeList MelTypes;
 	@OriginalMember(owner = "com.jagex.client!sm", name = "A", descriptor = "Lclient!ii;")
-	public static MsiTypeList MsiType;
+	public static MSITypeList MsiType;
 	@OriginalMember(owner = "com.jagex.client!ae", name = "T", descriptor = "Lclient!ta;")
-	public static NpcTypeList NpcTypes;
+	public static NPCTypeList NpcTypes;
 	@OriginalMember(owner = "com.jagex.client!sb", name = "Q", descriptor = "Lclient!io;")
 	public static ObjTypeList ObjTypes;
 	@OriginalMember(owner = "com.jagex.client!ql", name = "g", descriptor = "Lclient!ui;")
@@ -367,9 +372,9 @@ public final class client extends GameShell {
 		for (@Pc(4448) int local4448 = 0; local4448 < 2048; local4448++) {
 			PlayerList.players[local4448] = null;
 		}
-		NpcList.size = 0;
+		NPCList.size = 0;
 		for (@Pc(4464) int local4464 = 0; local4464 < 32768; local4464++) {
-			NpcList.npcs[local4464] = null;
+			NPCList.NPCS[local4464] = null;
 		}
 		Static332.projAnims.clear();
 		Static129.spotAnims.clear();
@@ -1014,9 +1019,9 @@ public final class client extends GameShell {
 		Static309.method5278();
 		InterfaceList.transmitTimer++;
 		for (@Pc(27) int local27 = 0; local27 < 32768; local27++) {
-			@Pc(33) Npc local33 = NpcList.npcs[local27];
+			@Pc(33) NPC local33 = NPCList.NPCS[local27];
 			if (local33 != null) {
-				@Pc(39) byte local39 = local33.type.aByte16;
+				@Pc(39) byte local39 = local33.type.walkflags;
 				if ((local39 & 0x1) != 0) {
 					@Pc(50) int local50 = local33.getSize();
 					@Pc(74) int local74;
@@ -1466,8 +1471,8 @@ public final class client extends GameShell {
 				LightTypes = new LightTypeList(game, language, jsArchive2);
 				LocTypes = new LocTypeList(game, language, true, jsArchive16, jsArchive7);
 				MelTypes = new MapElementTypeList(game, language, jsArchive2, jsArchive8);
-				MsiType = new MsiTypeList(game, language, jsArchive2, jsArchive8);
-				NpcTypes = new NpcTypeList(game, language, true, jsArchive18, jsArchive7);
+				MsiType = new MSITypeList(game, language, jsArchive2, jsArchive8);
+				NpcTypes = new NPCTypeList(game, language, true, jsArchive18, jsArchive7);
 				ObjTypes = new ObjTypeList(game, language, true, ParamTypes, jsArchive19, jsArchive7);
 				QuestTypes = new QuestTypeList(game, language, jsArchive2);
 				SeqTypes = new SeqTypeList(game, language, jsArchive20, jsArchive0, jsArchive1);

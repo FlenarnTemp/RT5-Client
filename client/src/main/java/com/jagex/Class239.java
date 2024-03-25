@@ -1,6 +1,7 @@
 package com.jagex;
 
 import com.jagex.core.io.Packet;
+import com.jagex.core.utils.Cp1252;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -102,7 +103,7 @@ public final class Class239 {
 		@Pc(33) int local33 = 0;
 		@Pc(36) int local36 = arg1.length();
 		for (@Pc(38) int local38 = 0; local38 < local36; local38++) {
-			@Pc(48) int local48 = Static234.method4099(arg1.charAt(local38)) & 0xFF;
+			@Pc(48) int local48 = Cp1252.encode(arg1.charAt(local38)) & 0xFF;
 			@Pc(50) int local50 = 0;
 			if (local48 == 60) {
 				local29 = local38;
@@ -327,7 +328,7 @@ public final class Class239 {
 					}
 				}
 				if (local19 == -1) {
-					local23 += this.aByteArray98[Static234.method4099(local34) & 0xFF] & 0xFF;
+					local23 += this.aByteArray98[Cp1252.encode(local34) & 0xFF] & 0xFF;
 					if (this.aByteArrayArray22 != null && local21 != -1) {
 						local23 += this.aByteArrayArray22[local21][local34];
 					}

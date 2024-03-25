@@ -1,5 +1,6 @@
-package com.jagex;
+package com.jagex.game.config.seqtype;
 
+import com.jagex.*;
 import com.jagex.core.io.Packet;
 import com.jagex.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
@@ -46,27 +47,27 @@ public final class SeqTypeList {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!gp", name = "c", descriptor = "(II)Lclient!nb;")
-	public Class157 method2371(@OriginalArg(1) int arg0) {
+	public SeqType method2371(@OriginalArg(1) int id) {
 		@Pc(6) LruHashTable local6 = this.aClass98_14;
-		@Pc(16) Class157 local16;
+		@Pc(16) SeqType type;
 		synchronized (this.aClass98_14) {
-			local16 = (Class157) this.aClass98_14.get((long) arg0);
+			type = (SeqType) this.aClass98_14.get((long) id);
 		}
-		if (local16 != null) {
-			return local16;
+		if (type != null) {
+			return type;
 		}
-		@Pc(37) byte[] local37 = this.aClass197_27.getfile(Static341.method5768(arg0), Static98.method2104(arg0));
-		local16 = new Class157();
-		local16.anInt4028 = arg0;
-		local16.aClass85_2 = this;
+		@Pc(37) byte[] local37 = this.aClass197_27.getfile(Static341.method5768(id), Static98.method2104(id));
+		type = new SeqType();
+		type.id = id;
+		type.aClass85_2 = this;
 		if (local37 != null) {
-			local16.method3993(new Packet(local37));
+			type.decode(new Packet(local37));
 		}
-		local16.method3991();
+		type.postDecode();
 		@Pc(64) LruHashTable local64 = this.aClass98_14;
 		synchronized (this.aClass98_14) {
-			this.aClass98_14.put((long) arg0, local16);
-			return local16;
+			this.aClass98_14.put((long) id, type);
+			return type;
 		}
 	}
 

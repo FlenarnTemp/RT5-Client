@@ -1,5 +1,8 @@
-package com.jagex;
+package com.jagex.game.config.seqtype;
 
+import com.jagex.AnimFrameset;
+import com.jagex.Model;
+import com.jagex.Static318;
 import com.jagex.core.io.Packet;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
@@ -7,22 +10,22 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("com.jagex.client!nb")
-public final class Class157 {
+public final class SeqType {
 
 	@OriginalMember(owner = "com.jagex.client!nb", name = "a", descriptor = "[[I")
-	public int[][] anIntArrayArray33;
+	public int[][] sound;
 
 	@OriginalMember(owner = "com.jagex.client!nb", name = "b", descriptor = "[Z")
 	public boolean[] aBooleanArray37;
 
 	@OriginalMember(owner = "com.jagex.client!nb", name = "c", descriptor = "[I")
-	public int[] anIntArray261;
+	public int[] frames;
 
 	@OriginalMember(owner = "com.jagex.client!nb", name = "e", descriptor = "[I")
 	public int[] anIntArray262;
 
 	@OriginalMember(owner = "com.jagex.client!nb", name = "n", descriptor = "I")
-	public int anInt4028;
+	public int id;
 
 	@OriginalMember(owner = "com.jagex.client!nb", name = "t", descriptor = "Lclient!gp;")
 	public SeqTypeList aClass85_2;
@@ -31,25 +34,25 @@ public final class Class157 {
 	private int[] anIntArray263;
 
 	@OriginalMember(owner = "com.jagex.client!nb", name = "j", descriptor = "I")
-	public int anInt4024 = 99;
+	public int replaycount = 99;
 
 	@OriginalMember(owner = "com.jagex.client!nb", name = "r", descriptor = "I")
-	public int anInt4032 = -1;
+	public int replayoff = -1;
 
 	@OriginalMember(owner = "com.jagex.client!nb", name = "s", descriptor = "Z")
-	public boolean aBoolean261 = false;
+	public boolean stretches = false;
 
 	@OriginalMember(owner = "com.jagex.client!nb", name = "m", descriptor = "I")
 	public int anInt4027 = -1;
 
 	@OriginalMember(owner = "com.jagex.client!nb", name = "h", descriptor = "I")
-	public int anInt4023 = 5;
+	public int priority = 5;
 
 	@OriginalMember(owner = "com.jagex.client!nb", name = "o", descriptor = "I")
 	public int anInt4029 = -1;
 
 	@OriginalMember(owner = "com.jagex.client!nb", name = "p", descriptor = "I")
-	public int anInt4030 = -1;
+	public int mainhand = -1;
 
 	@OriginalMember(owner = "com.jagex.client!nb", name = "g", descriptor = "I")
 	public int anInt4022 = 2;
@@ -58,7 +61,7 @@ public final class Class157 {
 	public boolean aBoolean263 = false;
 
 	@OriginalMember(owner = "com.jagex.client!nb", name = "y", descriptor = "I")
-	public int anInt4034 = -1;
+	public int offhand = -1;
 
 	@OriginalMember(owner = "com.jagex.client!nb", name = "A", descriptor = "Z")
 	public boolean aBoolean264 = false;
@@ -66,9 +69,111 @@ public final class Class157 {
 	@OriginalMember(owner = "com.jagex.client!nb", name = "v", descriptor = "Z")
 	public boolean aBoolean262 = false;
 
+	@OriginalMember(owner = "com.jagex.client!nb", name = "a", descriptor = "(Lclient!bt;I)V")
+	public void decode(@OriginalArg(0) Packet buf) {
+		while (true) {
+			@Pc(5) int code = buf.g1();
+			if (code == 0) {
+				return;
+			}
+			this.decode(buf, code);
+		}
+	}
+
+	@OriginalMember(owner = "com.jagex.client!nb", name = "a", descriptor = "(Lclient!bt;II)V")
+	private void decode(@OriginalArg(0) Packet buf, @OriginalArg(1) int code) {
+		@Pc(45) int local45;
+		@Pc(60) int local60;
+		if (code == 1) {
+			int frameCount = buf.g2();
+			this.frames = new int[frameCount];
+			for (int index = 0; index < frameCount; index++) {
+				this.frames[index] = buf.g2();
+			}
+			this.anIntArray262 = new int[frameCount];
+			for (int index = 0; index < frameCount; index++) {
+				this.anIntArray262[index] = buf.g2();
+			}
+			for (int index = 0; index < frameCount; index++) {
+				this.anIntArray262[index] += buf.g2() << 16;
+			}
+		} else if (code == 2) {
+			this.replayoff = buf.g2();
+		} else if (code == 3) {
+			this.aBooleanArray37 = new boolean[256];
+			int length = buf.g1();
+			for (int index = 0; index < length; index++) {
+				this.aBooleanArray37[buf.g1()] = true;
+			}
+		} else if (code == 4) {
+			this.stretches = true;
+		} else if (code == 5) {
+			this.priority = buf.g1();
+		} else if (code == 6) {
+			this.mainhand = buf.g2();
+		} else if (code == 7) {
+			this.offhand = buf.g2();
+		} else if (code == 8) {
+			this.replaycount = buf.g1();
+		} else if (code == 9) {
+			this.anInt4027 = buf.g1();
+		} else if (code == 10) {
+			this.anInt4029 = buf.g1();
+		} else if (code == 11) {
+			this.anInt4022 = buf.g1();
+		} else if (code == 12) {
+			int length = buf.g1();
+			this.anIntArray263 = new int[length];
+			for (int index = 0; index < length; index++) {
+				this.anIntArray263[index] = buf.g2();
+			}
+			for (int index = 0; index < length; index++) {
+				this.anIntArray263[index] += buf.g2() << 16;
+			}
+		} else if (code == 13) {
+			int length = buf.g2();
+			this.sound = new int[length][];
+			for (int index = 0; index < length; index++) {
+				local45 = buf.g1();
+				if (local45 > 0) {
+					this.sound[index] = new int[local45];
+					this.sound[index][0] = buf.g3();
+					for (local60 = 1; local60 < local45; local60++) {
+						this.sound[index][local60] = buf.g2();
+					}
+				}
+			}
+		} else if (code == 14) {
+			this.aBoolean263 = true;
+		} else if (code == 15) {
+			this.aBoolean264 = true;
+		} else if (code == 16) {
+			this.aBoolean262 = true;
+		}
+	}
+
+	@OriginalMember(owner = "com.jagex.client!nb", name = "a", descriptor = "(I)V")
+	public void postDecode() {
+		if (this.anInt4029 == -1) {
+			if (this.aBooleanArray37 == null) {
+				this.anInt4029 = 0;
+			} else {
+				this.anInt4029 = 2;
+			}
+		}
+		if (this.anInt4027 != -1) {
+			return;
+		}
+		if (this.aBooleanArray37 == null) {
+			this.anInt4027 = 0;
+		} else {
+			this.anInt4027 = 2;
+		}
+	}
+
 	@OriginalMember(owner = "com.jagex.client!nb", name = "a", descriptor = "(Lclient!gn;IZIII)Lclient!gn;")
 	public Model method3986(@OriginalArg(0) Model arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
-		@Pc(8) int local8 = this.anIntArray261[arg1];
+		@Pc(8) int local8 = this.frames[arg1];
 		@Pc(13) int local13 = this.anIntArray262[arg1];
 		@Pc(21) AnimFrameset local21 = this.aClass85_2.method2368(local13 >> 16);
 		@Pc(25) int local25 = local13 & 0xFFFF;
@@ -145,7 +250,7 @@ public final class Class157 {
 
 	@OriginalMember(owner = "com.jagex.client!nb", name = "a", descriptor = "(IBIIIIBLclient!gn;)Lclient!gn;")
 	public Model method3987(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(7) Model arg6) {
-		@Pc(8) int local8 = this.anIntArray261[arg2];
+		@Pc(8) int local8 = this.frames[arg2];
 		@Pc(13) int local13 = this.anIntArray262[arg2];
 		@Pc(21) AnimFrameset local21 = this.aClass85_2.method2368(local13 >> 16);
 		@Pc(25) int local25 = local13 & 0xFFFF;
@@ -179,84 +284,6 @@ public final class Class157 {
 		@Pc(125) Model local125 = arg6.method3800(arg1, arg5, true);
 		local125.method3828(local8, local35, arg0, this.aBoolean263, arg4 - 1, local25, local21, arg3);
 		return local125;
-	}
-
-	@OriginalMember(owner = "com.jagex.client!nb", name = "a", descriptor = "(Lclient!bt;II)V")
-	private void method3988(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
-		@Pc(16) int local16;
-		@Pc(22) int local22;
-		@Pc(45) int local45;
-		@Pc(60) int local60;
-		if (arg1 == 1) {
-			local16 = arg0.g2();
-			this.anIntArray261 = new int[local16];
-			for (local22 = 0; local22 < local16; local22++) {
-				this.anIntArray261[local22] = arg0.g2();
-			}
-			this.anIntArray262 = new int[local16];
-			for (local45 = 0; local45 < local16; local45++) {
-				this.anIntArray262[local45] = arg0.g2();
-			}
-			for (local60 = 0; local60 < local16; local60++) {
-				this.anIntArray262[local60] += arg0.g2() << 16;
-			}
-		} else if (arg1 == 2) {
-			this.anInt4032 = arg0.g2();
-		} else if (arg1 == 3) {
-			this.aBooleanArray37 = new boolean[256];
-			local16 = arg0.g1();
-			for (local22 = 0; local22 < local16; local22++) {
-				this.aBooleanArray37[arg0.g1()] = true;
-			}
-		} else if (arg1 == 4) {
-			this.aBoolean261 = true;
-		} else if (arg1 == 5) {
-			this.anInt4023 = arg0.g1();
-		} else if (arg1 == 6) {
-			this.anInt4030 = arg0.g2();
-		} else if (arg1 == 7) {
-			this.anInt4034 = arg0.g2();
-		} else if (arg1 == 8) {
-			this.anInt4024 = arg0.g1();
-		} else if (arg1 == 9) {
-			this.anInt4027 = arg0.g1();
-		} else if (arg1 == 10) {
-			this.anInt4029 = arg0.g1();
-		} else if (arg1 == 11) {
-			this.anInt4022 = arg0.g1();
-		} else if (arg1 == 12) {
-			local16 = arg0.g1();
-			this.anIntArray263 = new int[local16];
-			for (local22 = 0; local22 < local16; local22++) {
-				this.anIntArray263[local22] = arg0.g2();
-			}
-			for (local45 = 0; local45 < local16; local45++) {
-				this.anIntArray263[local45] += arg0.g2() << 16;
-			}
-		} else if (arg1 == 13) {
-			local16 = arg0.g2();
-			this.anIntArrayArray33 = new int[local16][];
-			for (local22 = 0; local22 < local16; local22++) {
-				local45 = arg0.g1();
-				if (local45 > 0) {
-					this.anIntArrayArray33[local22] = new int[local45];
-					this.anIntArrayArray33[local22][0] = arg0.g3();
-					for (local60 = 1; local60 < local45; local60++) {
-						this.anIntArrayArray33[local22][local60] = arg0.g2();
-					}
-				}
-			}
-			return;
-		} else if (arg1 == 14) {
-			this.aBoolean263 = true;
-			return;
-		} else if (arg1 == 15) {
-			this.aBoolean264 = true;
-			return;
-		} else if (arg1 == 16) {
-			this.aBoolean262 = true;
-			return;
-		}
 	}
 
 	@OriginalMember(owner = "com.jagex.client!nb", name = "a", descriptor = "(IZII)I")
@@ -327,35 +354,5 @@ public final class Class157 {
 			}
 		}
 		return local5 | 0x20;
-	}
-
-	@OriginalMember(owner = "com.jagex.client!nb", name = "a", descriptor = "(I)V")
-	public void method3991() {
-		if (this.anInt4029 == -1) {
-			if (this.aBooleanArray37 == null) {
-				this.anInt4029 = 0;
-			} else {
-				this.anInt4029 = 2;
-			}
-		}
-		if (this.anInt4027 != -1) {
-			return;
-		}
-		if (this.aBooleanArray37 == null) {
-			this.anInt4027 = 0;
-		} else {
-			this.anInt4027 = 2;
-		}
-	}
-
-	@OriginalMember(owner = "com.jagex.client!nb", name = "a", descriptor = "(Lclient!bt;I)V")
-	public void method3993(@OriginalArg(0) Packet arg0) {
-		while (true) {
-			@Pc(5) int local5 = arg0.g1();
-			if (local5 == 0) {
-				return;
-			}
-			this.method3988(arg0, local5);
-		}
 	}
 }

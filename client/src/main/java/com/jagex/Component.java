@@ -4,6 +4,9 @@ import com.jagex.core.io.Packet;
 import com.jagex.game.config.bastype.BASTypeList;
 import com.jagex.game.config.idktype.IDKTypeList;
 import com.jagex.game.config.iftype.componentproperties.ServerActiveProperties;
+import com.jagex.game.config.npctype.NPCTypeList;
+import com.jagex.game.config.seqtype.SeqType;
+import com.jagex.game.config.seqtype.SeqTypeList;
 import com.jagex.graphics.BitmapFont;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
@@ -486,7 +489,7 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!nk", name = "a", descriptor = "(IILclient!io;Lclient!wl;ILclient!nb;Lclient!ak;Lclient!jo;Lclient!ta;ILclient!gp;ILclient!e;Lclient!wm;)Lclient!gn;")
-	public Model method4105(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) ObjTypeList arg2, @OriginalArg(3) Interface11 arg3, @OriginalArg(5) Class157 arg4, @OriginalArg(6) BASTypeList arg5, @OriginalArg(7) PlayerAppearance arg6, @OriginalArg(8) NpcTypeList arg7, @OriginalArg(9) int arg8, @OriginalArg(10) SeqTypeList arg9, @OriginalArg(11) int arg10, @OriginalArg(12) IDKTypeList arg11, @OriginalArg(13) Renderer arg12) {
+	public Model method4105(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) ObjTypeList arg2, @OriginalArg(3) Interface11 arg3, @OriginalArg(5) SeqType arg4, @OriginalArg(6) BASTypeList arg5, @OriginalArg(7) PlayerAppearance arg6, @OriginalArg(8) NPCTypeList arg7, @OriginalArg(9) int arg8, @OriginalArg(10) SeqTypeList arg9, @OriginalArg(11) int arg10, @OriginalArg(12) IDKTypeList arg11, @OriginalArg(13) Renderer arg12) {
 		Static86.aBoolean133 = false;
 		if (this.modelType == 0) {
 			return null;

@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.core.utils.Cp1252;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -20,7 +21,7 @@ public final class Static278 {
 		@Pc(8) int local8 = arg0.length();
 		@Pc(10) int local10 = 0;
 		for (@Pc(12) int local12 = 0; local12 < local8; local12++) {
-			local10 = Static234.method4099(arg0.charAt(local12)) + (local10 << 5) - local10;
+			local10 = Cp1252.encode(arg0.charAt(local12)) + (local10 << 5) - local10;
 		}
 		return local10;
 	}

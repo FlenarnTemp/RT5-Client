@@ -3,6 +3,7 @@ package com.jagex;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.bastype.BASType;
 import com.jagex.game.config.enumtype.EnumType;
+import com.jagex.game.config.seqtype.SeqType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -105,7 +106,7 @@ public final class Player extends PathingEntity {
 	@OriginalMember(owner = "com.jagex.client!tk", name = "a", descriptor = "(ILclient!nh;II)V")
 	public static void animate(@OriginalArg(1) Player arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
 		if (arg0.anInt4597 == arg2 && arg2 != -1) {
-			@Pc(18) Class157 local18 = client.SeqTypes.method2371(arg2);
+			@Pc(18) SeqType local18 = client.SeqTypes.method2371(arg2);
 			@Pc(21) int local21 = local18.anInt4022;
 			if (local21 == 1) {
 				arg0.anInt4590 = arg1;
@@ -118,7 +119,7 @@ public final class Player extends PathingEntity {
 			if (local21 == 2) {
 				arg0.anInt4598 = 0;
 			}
-		} else if (arg2 == -1 || arg0.anInt4597 == -1 || client.SeqTypes.method2371(arg2).anInt4023 >= client.SeqTypes.method2371(arg0.anInt4597).anInt4023) {
+		} else if (arg2 == -1 || arg0.anInt4597 == -1 || client.SeqTypes.method2371(arg2).priority >= client.SeqTypes.method2371(arg0.anInt4597).priority) {
 			arg0.anInt4597 = arg2;
 			arg0.anInt4598 = 0;
 			arg0.anInt4624 = 0;
@@ -336,8 +337,8 @@ public final class Player extends PathingEntity {
 	private boolean method4067(@OriginalArg(1) Renderer arg0, @OriginalArg(2) int arg1) {
 		@Pc(7) int local7 = arg1;
 		@Pc(13) BASType local13 = this.getBasType();
-		@Pc(28) Class157 local28 = super.anInt4597 != -1 && super.anInt4590 == 0 ? client.SeqTypes.method2371(super.anInt4597) : null;
-		@Pc(48) Class157 local48 = super.anInt4585 == -1 || this.aBoolean275 || super.aBoolean317 && local28 != null ? null : client.SeqTypes.method2371(super.anInt4585);
+		@Pc(28) SeqType local28 = super.anInt4597 != -1 && super.anInt4590 == 0 ? client.SeqTypes.method2371(super.anInt4597) : null;
+		@Pc(48) SeqType local48 = super.anInt4585 == -1 || this.aBoolean275 || super.aBoolean317 && local28 != null ? null : client.SeqTypes.method2371(super.anInt4585);
 		@Pc(51) int local51 = local13.anInt6287;
 		@Pc(54) int local54 = local13.anInt6290;
 		if (local51 != 0 || local54 != 0 || local13.anInt6281 != 0 || local13.anInt6283 != 0) {
@@ -468,9 +469,9 @@ public final class Player extends PathingEntity {
 		@Pc(48) float local48 = arg0.method2860();
 		if (client.preferences.characterShadows) {
 			@Pc(55) BASType local55 = this.getBasType();
-			if (local55.aBoolean424 && (this.appearance.npcId == -1 || client.NpcTypes.get(this.appearance.npcId).aBoolean142)) {
-				@Pc(87) Class157 local87 = super.anInt4597 != -1 && super.anInt4590 == 0 ? client.SeqTypes.method2371(super.anInt4597) : null;
-				@Pc(108) Class157 local108 = super.anInt4585 == -1 || this.aBoolean275 || super.aBoolean317 && local87 != null ? null : client.SeqTypes.method2371(super.anInt4585);
+			if (local55.aBoolean424 && (this.appearance.npcId == -1 || client.NpcTypes.get(this.appearance.npcId).spotshadow)) {
+				@Pc(87) SeqType local87 = super.anInt4597 != -1 && super.anInt4590 == 0 ? client.SeqTypes.method2371(super.anInt4597) : null;
+				@Pc(108) SeqType local108 = super.anInt4585 == -1 || this.aBoolean275 || super.aBoolean317 && local87 != null ? null : client.SeqTypes.method2371(super.anInt4585);
 				@Pc(142) Model local142 = Static178.method2340(local108 == null ? super.anInt4607 : super.anInt4626, 240, 160, super.anInt4596, local108 == null ? local87 : local108, 1, 0, super.aClass31Array3[0], local24, arg0, 0, super.aBoolean318, super.anInt4608, super.anInt4589);
 				if (local142 != null) {
 					arg0.method2823(local45, local48 - 128.0F);
@@ -488,8 +489,8 @@ public final class Player extends PathingEntity {
 				if (local189 != null && local189.anInt2361 != -1) {
 					@Pc(239) int local239;
 					@Pc(228) int local228;
-					if (local189.anInt2355 == 1 && local189.anInt2354 >= 0 && local189.anInt2354 < NpcList.npcs.length) {
-						@Pc(215) Npc local215 = NpcList.npcs[local189.anInt2354];
+					if (local189.anInt2355 == 1 && local189.anInt2354 >= 0 && local189.anInt2354 < NPCList.NPCS.length) {
+						@Pc(215) NPC local215 = NPCList.NPCS[local189.anInt2354];
 						if (local215 != null) {
 							local228 = local215.xFine / 32 - PlayerList.self.xFine / 32;
 							local239 = local215.zFine / 32 - PlayerList.self.zFine / 32;

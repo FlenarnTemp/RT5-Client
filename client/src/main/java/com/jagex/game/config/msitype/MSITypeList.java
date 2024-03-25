@@ -1,5 +1,7 @@
-package com.jagex;
+package com.jagex.game.config.msitype;
 
+import com.jagex.Class50;
+import com.jagex.LruHashTable;
 import com.jagex.core.io.Packet;
 import com.jagex.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
@@ -8,7 +10,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("com.jagex.client!ii")
-public final class MsiTypeList {
+public final class MSITypeList {
 
 	@OriginalMember(owner = "com.jagex.client!ii", name = "n", descriptor = "Lclient!hu;")
 	private LruHashTable aClass98_19 = new LruHashTable(64);
@@ -23,7 +25,7 @@ public final class MsiTypeList {
 	private final Js5 aClass197_40;
 
 	@OriginalMember(owner = "com.jagex.client!ii", name = "<init>", descriptor = "(Lclient!dn;ILclient!r;Lclient!r;)V")
-	public MsiTypeList(@OriginalArg(0) Class50 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Js5 arg2, @OriginalArg(3) Js5 arg3) {
+	public MSITypeList(@OriginalArg(0) Class50 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Js5 arg2, @OriginalArg(3) Js5 arg3) {
 		this.aClass197_39 = arg3;
 		this.aClass197_40 = arg2;
 		this.aClass197_40.getGroupCapacity(34);
@@ -72,17 +74,17 @@ public final class MsiTypeList {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!ii", name = "b", descriptor = "(II)Lclient!md;")
-	public MsiType method2708(@OriginalArg(1) int arg0) {
+	public MSIType method2708(@OriginalArg(1) int arg0) {
 		@Pc(6) LruHashTable local6 = this.aClass98_19;
-		@Pc(16) MsiType local16;
+		@Pc(16) MSIType local16;
 		synchronized (this.aClass98_19) {
-			local16 = (MsiType) this.aClass98_19.get((long) arg0);
+			local16 = (MSIType) this.aClass98_19.get((long) arg0);
 		}
 		if (local16 != null) {
 			return local16;
 		}
 		@Pc(33) byte[] local33 = this.aClass197_40.getfile(arg0, 34);
-		local16 = new MsiType();
+		local16 = new MSIType();
 		local16.aClass104_1 = this;
 		if (local33 != null) {
 			local16.decode(new Packet(local33));

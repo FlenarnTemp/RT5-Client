@@ -3,6 +3,7 @@ package com.jagex;
 import java.util.Date;
 
 import com.jagex.game.config.loctype.LocType;
+import com.jagex.game.config.msitype.MSIType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -30,7 +31,7 @@ public final class Static15 {
 
 	@OriginalMember(owner = "com.jagex.client!ar", name = "a", descriptor = "(ILclient!ct;IILclient!wm;Z)V")
 	public static void method395(@OriginalArg(0) int arg0, @OriginalArg(1) LocType arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) Renderer arg4) {
-		@Pc(9) MsiType local9 = client.MsiType.method2708(arg1.mapsceneicon);
+		@Pc(9) MSIType local9 = client.MsiType.method2708(arg1.mapsceneicon);
 		if (local9.anInt3751 == -1) {
 			return;
 		}

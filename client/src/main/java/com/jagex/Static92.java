@@ -2,6 +2,8 @@ package com.jagex;
 
 import com.jagex.core.datastruct.IntWrapper;
 import com.jagex.game.config.loctype.LocType;
+import com.jagex.game.config.npctype.NPCType;
+import com.jagex.game.config.seqtype.SeqType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -12,7 +14,7 @@ public final class Static92 {
 	public static final LruHashTable aClass98_9 = new LruHashTable(260);
 
 	@OriginalMember(owner = "com.jagex.client!fa", name = "a", descriptor = "([I[ILclient!oe;I[I)V")
-	public static void method1966(@OriginalArg(0) int[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) Npc arg2, @OriginalArg(4) int[] arg3) {
+	public static void method1966(@OriginalArg(0) int[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) NPC arg2, @OriginalArg(4) int[] arg3) {
 		for (@Pc(3) int local3 = 0; local3 < arg0.length; local3++) {
 			@Pc(9) int local9 = arg0[local3];
 			@Pc(13) int local13 = arg1[local3];
@@ -23,7 +25,7 @@ public final class Static92 {
 					if (local9 == -1) {
 						arg2.aClass20Array3[local19] = null;
 					} else {
-						@Pc(41) Class157 local41 = client.SeqTypes.method2371(local9);
+						@Pc(41) SeqType local41 = client.SeqTypes.method2371(local9);
 						@Pc(44) int local44 = local41.anInt4022;
 						@Pc(49) Class20 local49 = arg2.aClass20Array3[local19];
 						if (local49 != null) {
@@ -40,7 +42,7 @@ public final class Static92 {
 								} else if (local44 == 2) {
 									local49.anInt626 = 0;
 								}
-							} else if (local41.anInt4023 >= client.SeqTypes.method2371(local49.anInt624).anInt4023) {
+							} else if (local41.priority >= client.SeqTypes.method2371(local49.anInt624).priority) {
 								local49 = arg2.aClass20Array3[local19] = null;
 							}
 						}
@@ -124,20 +126,20 @@ public final class Static92 {
 			}
 		}
 		@Pc(410) int local410;
-		for (local185 = 0; local185 < NpcList.size; local185++) {
-			@Pc(365) Npc local365 = NpcList.npcs[NpcList.ids[local185]];
+		for (local185 = 0; local185 < NPCList.size; local185++) {
+			@Pc(365) NPC local365 = NPCList.NPCS[NPCList.ids[local185]];
 			if (local365 != null && local365.method4336() && local365.plane == PlayerList.self.plane) {
-				@Pc(383) NpcType local383 = local365.type;
-				if (local383 != null && local383.multiNpcs != null) {
+				@Pc(383) NPCType local383 = local365.type;
+				if (local383 != null && local383.multinpc != null) {
 					local383 = local383.getMultiNpc(VarpDomain.instance);
 				}
-				if (local383 != null && local383.aBoolean147 && local383.aBoolean145) {
+				if (local383 != null && local383.minimap && local383.active) {
 					local410 = local365.xFine / 32 - local61 / 32;
 					@Pc(419) int local419 = local365.zFine / 32 - local58 / 32;
-					if (local383.anInt2037 == -1) {
+					if (local383.mapelement == -1) {
 						Static376.method6288(local14, local410, arg3, local419, Static76.aClass13Array5[1], arg2, arg0);
 					} else {
-						Static216.method3776(arg3, arg0, local383.anInt2037, arg1, local419, local14, local410, arg2);
+						Static216.method3776(arg3, arg0, local383.mapelement, arg1, local419, local14, local410, arg2);
 					}
 				}
 			}
@@ -187,8 +189,8 @@ public final class Static92 {
 			@Pc(644) Class84 local644 = local636[local489];
 			if (local644 != null && local644.anInt2355 != 0 && client.cycle % 20 < 10) {
 				@Pc(699) int local699;
-				if (local644.anInt2355 == 1 && local644.anInt2354 >= 0 && local644.anInt2354 < NpcList.npcs.length) {
-					@Pc(677) Npc local677 = NpcList.npcs[local644.anInt2354];
+				if (local644.anInt2355 == 1 && local644.anInt2354 >= 0 && local644.anInt2354 < NPCList.NPCS.length) {
+					@Pc(677) NPC local677 = NPCList.NPCS[local644.anInt2354];
 					if (local677 != null) {
 						local502 = local677.xFine / 32 - local61 / 32;
 						local699 = local677.zFine / 32 - local58 / 32;

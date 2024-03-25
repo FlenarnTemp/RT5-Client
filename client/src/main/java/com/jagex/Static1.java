@@ -1,6 +1,8 @@
 package com.jagex;
 
 import com.jagex.core.io.Packet;
+import com.jagex.game.config.npctype.NPCType;
+import com.jagex.game.config.seqtype.SeqType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -28,7 +30,7 @@ public final class Static1 {
 				}
 				@Pc(65) Packet local65 = new Packet(Static210.aByteArrayArray7[local10]);
 				@Pc(67) int local67 = 0;
-				while (Static210.aByteArrayArray7[local10].length > local65.pos && local67 < 511 && NpcList.size < 1023) {
+				while (Static210.aByteArrayArray7[local10].length > local65.pos && local67 < 511 && NPCList.size < 1023) {
 					@Pc(88) int local88 = local23 | local67++ << 6;
 					@Pc(92) int local92 = local65.g2();
 					@Pc(96) int local96 = local92 >> 14;
@@ -36,20 +38,20 @@ public final class Static1 {
 					@Pc(106) int local106 = local92 & 0x3F;
 					@Pc(119) int local119 = local102 + (Static291.mapSquares[local10] >> 8) * 64 - Camera.originX;
 					@Pc(132) int local132 = local106 + (Static291.mapSquares[local10] & 0xFF) * 64 - Camera.originZ;
-					@Pc(139) NpcType local139 = client.NpcTypes.get(local65.g2());
-					if (NpcList.npcs[local88] == null && (local139.aByte16 & 0x1) > 0 && Static44.anInt1115 == local96 && local119 >= 0 && local119 + local139.size < Static373.buildAreaLimitX && local132 >= 0 && local132 + local139.size < Static242.buildAreaLimitZ) {
-						NpcList.npcs[local88] = new Npc();
-						NpcList.npcs[local88].anInt4619 = local88;
-						@Pc(187) Npc local187 = NpcList.npcs[local88];
-						NpcList.ids[NpcList.size++] = local88;
+					@Pc(139) NPCType local139 = client.NpcTypes.get(local65.g2());
+					if (NPCList.NPCS[local88] == null && (local139.walkflags & 0x1) > 0 && Static44.anInt1115 == local96 && local119 >= 0 && local119 + local139.size < Static373.buildAreaLimitX && local132 >= 0 && local132 + local139.size < Static242.buildAreaLimitZ) {
+						NPCList.NPCS[local88] = new NPC();
+						NPCList.NPCS[local88].anInt4619 = local88;
+						@Pc(187) NPC local187 = NPCList.NPCS[local88];
+						NPCList.ids[NPCList.size++] = local88;
 						local187.lastCycle = client.cycle;
 						local187.setType(local139);
 						local187.setSize(local187.type.size);
-						local187.anInt4604 = local187.type.anInt2044 << 3;
+						local187.anInt4604 = local187.type.turnspeed << 3;
 						if (local187.anInt4604 == 0) {
 							local187.method4330(0);
 						} else {
-							local187.method4330(local187.type.aByte17 + 4 << 11 & 0x3863);
+							local187.method4330(local187.type.respawndir + 4 << 11 & 0x3863);
 						}
 						local187.teleport(local187.getSize(), local96, local119, true, local132);
 					}
@@ -69,18 +71,18 @@ public final class Static1 {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!a", name = "a", descriptor = "(Lclient!nb;ZIIIII)V")
-	public static void method4(@OriginalArg(0) Class157 arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5) {
-		if (SoundPlayer.size >= 50 || (arg0 == null || arg0.anIntArrayArray33 == null || arg0.anIntArrayArray33.length <= arg5 || arg0.anIntArrayArray33[arg5] == null)) {
+	public static void method4(@OriginalArg(0) SeqType arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5) {
+		if (SoundPlayer.size >= 50 || (arg0 == null || arg0.sound == null || arg0.sound.length <= arg5 || arg0.sound[arg5] == null)) {
 			return;
 		}
-		@Pc(36) int local36 = arg0.anIntArrayArray33[arg5][0];
+		@Pc(36) int local36 = arg0.sound[arg5][0];
 		@Pc(40) int local40 = local36 >> 8;
 		@Pc(46) int local46 = local36 >> 5 & 0x7;
 		@Pc(65) int local65;
-		if (arg0.anIntArrayArray33[arg5].length > 1) {
-			local65 = (int) ((double) arg0.anIntArrayArray33[arg5].length * Math.random());
+		if (arg0.sound[arg5].length > 1) {
+			local65 = (int) ((double) arg0.sound[arg5].length * Math.random());
 			if (local65 > 0) {
-				local40 = arg0.anIntArrayArray33[arg5][local65];
+				local40 = arg0.sound[arg5][local65];
 			}
 		}
 		@Pc(78) int local78 = local36 & 0x1F;

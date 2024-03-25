@@ -43,11 +43,11 @@ public final class Static373 {
 		@Pc(103) int local103;
 		@Pc(113) int local113;
 		if (arg0) {
-			NpcList.size = 0;
+			NPCList.size = 0;
 			local103 = (buildAreaLimitX - 1) * 128;
 			@Pc(175) int local175 = (Static242.buildAreaLimitZ - 1) * 128;
 			for (local113 = 0; local113 < 32768; local113++) {
-				@Pc(183) Npc local183 = NpcList.npcs[local113];
+				@Pc(183) NPC local183 = NPCList.NPCS[local113];
 				if (local183 != null) {
 					local183.xFine -= local94 * 128;
 					local183.zFine -= local99 * 128;
@@ -61,20 +61,20 @@ public final class Static373 {
 							}
 						}
 						if (local232) {
-							NpcList.ids[NpcList.size++] = local113;
+							NPCList.ids[NPCList.size++] = local113;
 						} else {
-							NpcList.npcs[local113].setType(null);
-							NpcList.npcs[local113] = null;
+							NPCList.NPCS[local113].setType(null);
+							NPCList.NPCS[local113] = null;
 						}
 					} else {
-						NpcList.npcs[local113].setType(null);
-						NpcList.npcs[local113] = null;
+						NPCList.NPCS[local113].setType(null);
+						NPCList.NPCS[local113] = null;
 					}
 				}
 			}
 		} else {
 			for (local103 = 0; local103 < 32768; local103++) {
-				@Pc(109) Npc local109 = NpcList.npcs[local103];
+				@Pc(109) NPC local109 = NPCList.NPCS[local103];
 				if (local109 != null) {
 					for (local113 = 0; local113 < 10; local113++) {
 						local109.movementQueueX[local113] -= local94;

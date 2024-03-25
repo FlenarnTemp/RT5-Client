@@ -151,35 +151,35 @@ public final class LocTypeList {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!rh", name = "b", descriptor = "(IB)Lclient!ct;")
-	public LocType get(@OriginalArg(0) int arg0) {
+	public LocType get(@OriginalArg(0) int id) {
 		@Pc(6) LruHashTable local6 = this.aClass98_45;
-		@Pc(16) LocType local16;
+		@Pc(16) LocType type;
 		synchronized (this.aClass98_45) {
-			local16 = (LocType) this.aClass98_45.get((long) arg0);
+			type = (LocType) this.aClass98_45.get((long) id);
 		}
-		if (local16 != null) {
-			return local16;
+		if (type != null) {
+			return type;
 		}
-		@Pc(37) byte[] local37 = this.aClass197_79.getfile(Static381.method6348(arg0), Static324.method5540(arg0));
-		local16 = new LocType();
-		local16.anInt1351 = arg0;
-		local16.myList = this;
+		@Pc(37) byte[] local37 = this.aClass197_79.getfile(Static381.method6348(id), Static324.method5540(id));
+		type = new LocType();
+		type.id = id;
+		type.myList = this;
 		if (local37 != null) {
-			local16.decode(new Packet(local37));
+			type.decode(new Packet(local37));
 		}
-		local16.method1516();
-		if (local16.breakroutefinding) {
-			local16.blockwalk = 0;
-			local16.var1 = false;
+		type.postDecode();
+		if (type.breakroutefinding) {
+			type.blockwalk = 0;
+			type.var1 = false;
 		}
-		if (!this.allowMembers && local16.members) {
-			local16.quests = null;
-			local16.ops = null;
+		if (!this.allowMembers && type.members) {
+			type.quests = null;
+			type.ops = null;
 		}
 		@Pc(91) LruHashTable local91 = this.aClass98_45;
 		synchronized (this.aClass98_45) {
-			this.aClass98_45.put((long) arg0, local16);
-			return local16;
+			this.aClass98_45.put((long) id, type);
+			return type;
 		}
 	}
 }

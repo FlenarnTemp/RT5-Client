@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.config.npctype.NPCType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -19,28 +20,28 @@ public final class Static241 {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!nq", name = "a", descriptor = "(Lclient!oe;ZZ)V")
-	public static void method4191(@OriginalArg(0) Npc arg0, @OriginalArg(1) boolean arg1) {
+	public static void method4191(@OriginalArg(0) NPC arg0, @OriginalArg(1) boolean arg1) {
 		if (Static268.anInt4959 >= 400) {
 			return;
 		}
-		@Pc(16) NpcType local16 = arg0.type;
-		if (local16.multiNpcs != null) {
+		@Pc(16) NPCType local16 = arg0.type;
+		if (local16.multinpc != null) {
 			local16 = local16.getMultiNpc(VarpDomain.instance);
 			if (local16 == null) {
 				return;
 			}
 		}
-		if (!local16.aBoolean145) {
+		if (!local16.active) {
 			return;
 		}
-		@Pc(34) String local34 = local16.aString19;
-		if (local16.anInt2039 != 0) {
+		@Pc(34) String local34 = local16.name;
+		if (local16.vislevel != 0) {
 			@Pc(50) String local50 = client.game == client.GAME_SD ? Static367.aClass79_142.getLocalized(client.language) : Static33.aClass79_96.getLocalized(client.language);
-			local34 = local34 + Static178.method2343(PlayerList.self.combatLevel, local16.anInt2039) + " (" + local50 + local16.anInt2039 + ")";
+			local34 = local34 + Static178.method2343(PlayerList.self.combatLevel, local16.vislevel) + " (" + local50 + local16.vislevel + ")";
 		}
 		if (!Static330.aBoolean419) {
 			if (!arg1) {
-				@Pc(80) String[] local80 = local16.aStringArray14;
+				@Pc(80) String[] local80 = local16.ops;
 				if (Static338.aBoolean465) {
 					local80 = Static97.method2095(local80);
 				}
@@ -79,7 +80,7 @@ public final class Static241 {
 					for (local90 = 4; local90 >= 0; local90--) {
 						if (local80[local90] != null && local80[local90].equalsIgnoreCase(Static378.ATTACK.getLocalized(client.language))) {
 							@Pc(211) short local211 = 0;
-							if (PlayerList.self.combatLevel < local16.anInt2039) {
+							if (PlayerList.self.combatLevel < local16.vislevel) {
 								local211 = 2000;
 							}
 							@Pc(224) short local224 = 0;
@@ -101,7 +102,7 @@ public final class Static241 {
 							if (local224 != 0) {
 								local224 += local211;
 							}
-							Static1.method3(-1, true, 0, false, local80[local90], 0, local224, "<col=ffff00>" + local34, local16.anInt2023, (long) arg0.anInt4619);
+							Static1.method3(-1, true, 0, false, local80[local90], 0, local224, "<col=ffff00>" + local34, local16.cursorattack, (long) arg0.anInt4619);
 						}
 					}
 				}

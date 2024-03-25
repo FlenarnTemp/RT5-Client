@@ -2,6 +2,7 @@ package com.jagex;
 
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.bastype.BASType;
+import com.jagex.game.config.npctype.NPCType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -41,22 +42,22 @@ public final class Static340 {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!tp", name = "a", descriptor = "(BLclient!oe;)I")
-	public static int getSound(@OriginalArg(1) Npc arg0) {
-		@Pc(8) NpcType local8 = arg0.type;
-		if (local8.multiNpcs != null) {
+	public static int getSound(@OriginalArg(1) NPC arg0) {
+		@Pc(8) NPCType local8 = arg0.type;
+		if (local8.multinpc != null) {
 			local8 = local8.getMultiNpc(VarpDomain.instance);
 			if (local8 == null) {
 				return -1;
 			}
 		}
-		@Pc(28) int local28 = local8.anInt2015;
+		@Pc(28) int local28 = local8.bgsound_walk;
 		@Pc(32) BASType local32 = arg0.getBasType();
 		if (arg0.aBoolean317) {
-			local28 = local8.anInt2038;
+			local28 = local8.bgsound;
 		} else if (local32.anInt6263 == arg0.anInt4585 || arg0.anInt4585 == local32.anInt6292 || local32.anInt6301 == arg0.anInt4585 || local32.anInt6271 == arg0.anInt4585) {
-			local28 = local8.anInt2025;
+			local28 = local8.bgsound_run;
 		} else if (local32.anInt6265 == arg0.anInt4585 || arg0.anInt4585 == local32.anInt6299 || local32.anInt6267 == arg0.anInt4585 || arg0.anInt4585 == local32.anInt6284) {
-			local28 = local8.anInt2009;
+			local28 = local8.bgsound_crawl;
 		}
 		return local28;
 	}

@@ -8,6 +8,8 @@ import com.jagex.game.config.flutype.FloorUnderlayTypeList;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
 import com.jagex.game.config.meltype.MapElementTypeList;
+import com.jagex.game.config.msitype.MSIType;
+import com.jagex.game.config.msitype.MSITypeList;
 import com.jagex.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -22,7 +24,7 @@ public final class MapList {
 	public static LocTypeList aClass202_3;
 
 	@OriginalMember(owner = "com.jagex.client!tt", name = "d", descriptor = "Lclient!ii;")
-	public static MsiTypeList aClass104_4;
+	public static MSITypeList aClass104_4;
 
 	@OriginalMember(owner = "com.jagex.client!tt", name = "e", descriptor = "Lclient!fl;")
 	private static FloorOverlayTypeList aClass72_6;
@@ -318,7 +320,7 @@ public final class MapList {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!tt", name = "a", descriptor = "(Lclient!r;Lclient!fl;Lclient!vq;Lclient!rh;Lclient!ki;Lclient!ii;Lclient!wl;)V")
-	public static void method5512(@OriginalArg(0) Js5 arg0, @OriginalArg(1) FloorOverlayTypeList arg1, @OriginalArg(2) FloorUnderlayTypeList arg2, @OriginalArg(3) LocTypeList arg3, @OriginalArg(4) MapElementTypeList arg4, @OriginalArg(5) MsiTypeList arg5, @OriginalArg(6) Interface11 arg6) {
+	public static void method5512(@OriginalArg(0) Js5 arg0, @OriginalArg(1) FloorOverlayTypeList arg1, @OriginalArg(2) FloorUnderlayTypeList arg2, @OriginalArg(3) LocTypeList arg3, @OriginalArg(4) MapElementTypeList arg4, @OriginalArg(5) MSITypeList arg5, @OriginalArg(6) Interface11 arg6) {
 		aClass197_85 = arg0;
 		aClass72_6 = arg1;
 		aClass241_4 = arg2;
@@ -817,7 +819,7 @@ public final class MapList {
 			@Pc(14) LocType local14 = aClass202_3.get(arg5[local4] & 0xFFFF);
 			@Pc(17) int local17 = local14.mapsceneicon;
 			if (local17 != -1) {
-				@Pc(25) MsiType local25 = aClass104_4.method2708(local17);
+				@Pc(25) MSIType local25 = aClass104_4.method2708(local17);
 				@Pc(49) Sprite local49 = local25.method3711(local14.mapsceneiconmirror ? local14.mirror : false, local14.mapsceneiconrotate ? arg6[local4] >> 6 & 0x3 : 0, arg0);
 				if (local49 != null) {
 					@Pc(58) int local58 = arg3 * local49.method6399() >> 2;

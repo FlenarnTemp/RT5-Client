@@ -3,6 +3,7 @@ package com.jagex;
 import java.awt.Point;
 
 import com.jagex.game.config.cursortype.CursorType;
+import com.jagex.game.config.seqtype.SeqType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -40,9 +41,9 @@ public final class Static307 {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!rq", name = "a", descriptor = "(ILclient!oe;BI)V")
-	public static void method5256(@OriginalArg(0) int arg0, @OriginalArg(1) Npc arg1, @OriginalArg(3) int arg2) {
+	public static void method5256(@OriginalArg(0) int arg0, @OriginalArg(1) NPC arg1, @OriginalArg(3) int arg2) {
 		if (arg0 == arg1.anInt4597 && arg0 != -1) {
-			@Pc(78) Class157 local78 = client.SeqTypes.method2371(arg0);
+			@Pc(78) SeqType local78 = client.SeqTypes.method2371(arg0);
 			@Pc(81) int local81 = local78.anInt4022;
 			if (local81 == 1) {
 				arg1.anInt4592 = 1;
@@ -55,7 +56,7 @@ public final class Static307 {
 			if (local81 == 2) {
 				arg1.anInt4598 = 0;
 			}
-		} else if (arg0 == -1 || arg1.anInt4597 == -1 || client.SeqTypes.method2371(arg0).anInt4023 >= client.SeqTypes.method2371(arg1.anInt4597).anInt4023) {
+		} else if (arg0 == -1 || arg1.anInt4597 == -1 || client.SeqTypes.method2371(arg0).priority >= client.SeqTypes.method2371(arg1.anInt4597).priority) {
 			arg1.anInt4597 = arg0;
 			arg1.anInt4598 = 0;
 			arg1.anInt4607 = 0;

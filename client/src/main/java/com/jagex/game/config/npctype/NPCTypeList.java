@@ -1,5 +1,9 @@
-package com.jagex;
+package com.jagex.game.config.npctype;
 
+import com.jagex.Class50;
+import com.jagex.LruHashTable;
+import com.jagex.Static349;
+import com.jagex.Static65;
 import com.jagex.core.io.Packet;
 import com.jagex.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
@@ -8,7 +12,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("com.jagex.client!ta")
-public final class NpcTypeList {
+public final class NPCTypeList {
 
 	@OriginalMember(owner = "com.jagex.client!ta", name = "r", descriptor = "I")
 	public int anInt6108;
@@ -29,13 +33,13 @@ public final class NpcTypeList {
 	public final Js5 aClass197_88;
 
 	@OriginalMember(owner = "com.jagex.client!ta", name = "m", descriptor = "Z")
-	public boolean aBoolean410;
+	public boolean allowMembers;
 
 	@OriginalMember(owner = "com.jagex.client!ta", name = "<init>", descriptor = "(Lclient!dn;IZLclient!r;Lclient!r;)V")
-	public NpcTypeList(@OriginalArg(0) Class50 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) Js5 arg3, @OriginalArg(4) Js5 arg4) {
+	public NPCTypeList(@OriginalArg(0) Class50 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) Js5 arg3, @OriginalArg(4) Js5 arg4) {
 		this.aClass197_87 = arg3;
 		this.aClass197_88 = arg4;
-		this.aBoolean410 = arg2;
+		this.allowMembers = arg2;
 		if (this.aClass197_87 != null) {
 			@Pc(38) int local38 = this.aClass197_87.capacity() - 1;
 			this.aClass197_87.getGroupCapacity(local38);
@@ -43,27 +47,27 @@ public final class NpcTypeList {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!ta", name = "a", descriptor = "(II)Lclient!fk;")
-	public NpcType get(@OriginalArg(0) int arg0) {
+	public NPCType get(@OriginalArg(0) int id) {
 		@Pc(6) LruHashTable local6 = this.aClass98_53;
-		@Pc(16) NpcType local16;
+		@Pc(16) NPCType type;
 		synchronized (this.aClass98_53) {
-			local16 = (NpcType) this.aClass98_53.get((long) arg0);
+			type = (NPCType) this.aClass98_53.get((long) id);
 		}
-		if (local16 != null) {
-			return local16;
+		if (type != null) {
+			return type;
 		}
-		@Pc(37) byte[] local37 = this.aClass197_87.getfile(Static349.method5831(arg0), Static65.method1732(arg0));
-		local16 = new NpcType();
-		local16.aClass219_2 = this;
-		local16.anInt2048 = arg0;
+		@Pc(37) byte[] local37 = this.aClass197_87.getfile(Static349.method5831(id), Static65.method1732(id));
+		type = new NPCType();
+		type.myList = this;
+		type.id = id;
 		if (local37 != null) {
-			local16.decode(new Packet(local37));
+			type.decode(new Packet(local37));
 		}
-		local16.method2089();
+		type.postDecode();
 		@Pc(67) LruHashTable local67 = this.aClass98_53;
 		synchronized (this.aClass98_53) {
-			this.aClass98_53.put((long) arg0, local16);
-			return local16;
+			this.aClass98_53.put((long) id, type);
+			return type;
 		}
 	}
 
@@ -97,8 +101,8 @@ public final class NpcTypeList {
 
 	@OriginalMember(owner = "com.jagex.client!ta", name = "a", descriptor = "(ZB)V")
 	public void setAllowMembers(@OriginalArg(0) boolean arg0) {
-		if (arg0 != this.aBoolean410) {
-			this.aBoolean410 = arg0;
+		if (arg0 != this.allowMembers) {
+			this.allowMembers = arg0;
 			this.method5571();
 		}
 	}

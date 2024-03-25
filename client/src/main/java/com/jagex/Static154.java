@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.config.seqtype.SeqType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -51,7 +52,7 @@ public final class Static154 {
 					if (local11 == -1) {
 						arg3.aClass20Array3[local21] = null;
 					} else {
-						@Pc(46) Class157 local46 = client.SeqTypes.method2371(local11);
+						@Pc(46) SeqType local46 = client.SeqTypes.method2371(local11);
 						@Pc(49) int local49 = local46.anInt4022;
 						@Pc(54) Class20 local54 = arg3.aClass20Array3[local21];
 						if (local54 != null) {
@@ -68,7 +69,7 @@ public final class Static154 {
 								} else if (local49 == 2) {
 									local54.anInt626 = 0;
 								}
-							} else if (local46.anInt4023 >= client.SeqTypes.method2371(local54.anInt624).anInt4023) {
+							} else if (local46.priority >= client.SeqTypes.method2371(local54.anInt624).priority) {
 								local54 = arg3.aClass20Array3[local21] = null;
 							}
 						}

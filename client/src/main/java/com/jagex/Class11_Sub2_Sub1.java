@@ -46,7 +46,7 @@ public final class Class11_Sub2_Sub1 extends Class11_Sub2 implements Interface6 
 		super.anInt3708 = (short) arg5;
 		this.aBoolean65 = arg6;
 		this.aBoolean64 = arg8;
-		this.aShort1 = (short) arg1.anInt1351;
+		this.aShort1 = (short) arg1.id;
 		this.aBoolean66 = arg0.method2878() && arg1.hardshadow && !this.aBoolean65 && client.preferences.shadows != 0;
 		@Pc(70) int local70 = 1024;
 		if (this.aBoolean64) {

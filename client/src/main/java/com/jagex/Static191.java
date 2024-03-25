@@ -14,8 +14,8 @@ public final class Static191 {
 
 	@OriginalMember(owner = "com.jagex.client!ku", name = "a", descriptor = "(Lclient!mr;I)V")
 	public static void method1581(@OriginalArg(0) PathingEntity arg0) {
-		if (arg0 instanceof Npc) {
-			@Pc(5) Npc local5 = (Npc) arg0;
+		if (arg0 instanceof NPC) {
+			@Pc(5) NPC local5 = (NPC) arg0;
 			if (local5.type != null) {
 				Static241.method4191(local5, local5.plane != PlayerList.self.plane);
 			}

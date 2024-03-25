@@ -27,22 +27,22 @@ public final class InvTypeList {
 	@OriginalMember(owner = "com.jagex.client!dp", name = "a", descriptor = "(II)Lclient!hl;")
 	public InvType get(@OriginalArg(0) int arg0) {
 		@Pc(6) LruHashTable local6 = this.aClass98_6;
-		@Pc(16) InvType local16;
+		@Pc(16) InvType type;
 		synchronized (this.aClass98_6) {
-			local16 = (InvType) this.aClass98_6.get((long) arg0);
+			type = (InvType) this.aClass98_6.get((long) arg0);
 		}
-		if (local16 != null) {
-			return local16;
+		if (type != null) {
+			return type;
 		}
 		@Pc(38) byte[] local38 = this.aClass197_15.getfile(arg0, 5);
-		local16 = new InvType();
+		type = new InvType();
 		if (local38 != null) {
-			local16.decode(new Packet(local38));
+			type.decode(new Packet(local38));
 		}
 		@Pc(54) LruHashTable local54 = this.aClass98_6;
 		synchronized (this.aClass98_6) {
-			this.aClass98_6.put((long) arg0, local16);
-			return local16;
+			this.aClass98_6.put((long) arg0, type);
+			return type;
 		}
 	}
 }

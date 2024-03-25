@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.config.npctype.NPCType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -21,13 +22,13 @@ public final class Static228 {
 		@Pc(546) int local546;
 		@Pc(663) int local663;
 		@Pc(322) int local322;
-		for (@Pc(13) int local13 = 0; local13 < NpcList.size + local7; local13++) {
-			@Pc(17) NpcType local17 = null;
+		for (@Pc(13) int local13 = 0; local13 < NPCList.size + local7; local13++) {
+			@Pc(17) NPCType local17 = null;
 			@Pc(33) PathingEntity local33;
 			if (local7 <= local13) {
-				local33 = NpcList.npcs[NpcList.ids[local13 - local7]];
-				local17 = ((Npc) local33).type;
-				if (local17.multiNpcs != null) {
+				local33 = NPCList.NPCS[NPCList.ids[local13 - local7]];
+				local17 = ((NPC) local33).type;
+				if (local17.multinpc != null) {
 					local17 = local17.getMultiNpc(VarpDomain.instance);
 					if (local17 == null) {
 						continue;
@@ -55,7 +56,7 @@ public final class Static228 {
 					@Pc(310) int local310;
 					if (!local33.aBoolean320 && client.cycle < local33.anInt4606) {
 						local209 = Static62.aClass13Array9[1];
-						if (local33 instanceof Npc) {
+						if (local33 instanceof NPC) {
 							local217 = local17.anInt2028;
 							if (local217 == -1) {
 								local217 = local33.getBasType().anInt6304;
@@ -95,7 +96,7 @@ public final class Static228 {
 						if (client.cycle < local33.anInt4621) {
 							local209 = Static332.aClass13Array23[local33.aBoolean319 ? 2 : 0];
 							@Pc(386) Sprite local386 = Static332.aClass13Array23[local33.aBoolean319 ? 3 : 1];
-							if (local33 instanceof Npc) {
+							if (local33 instanceof NPC) {
 								local310 = local17.anInt2042;
 								if (local310 == -1) {
 									local310 = local33.getBasType().anInt6288;
@@ -164,7 +165,7 @@ public final class Static228 {
 						local665 = Static50.aClass84Array1;
 						for (local310 = 0; local310 < local665.length; local310++) {
 							local673 = local665[local310];
-							if (local673 != null && local673.anInt2355 == 1 && NpcList.ids[local13 - local7] == local673.anInt2354) {
+							if (local673 != null && local673.anInt2355 == 1 && NPCList.ids[local13 - local7] == local673.anInt2354) {
 								local695 = Static230.aClass13Array16[local673.anInt2363];
 								if (local695.method6382() > local663) {
 									local663 = local695.method6382();
@@ -221,7 +222,7 @@ public final class Static228 {
 			local965 = Static150.anIntArray175[local959];
 			@Pc(974) PathingEntity local974;
 			if (local965 >= 2048) {
-				local974 = NpcList.npcs[local965 - 2048];
+				local974 = NPCList.NPCS[local965 - 2048];
 			} else {
 				local974 = PlayerList.players[local965];
 			}
@@ -230,7 +231,7 @@ public final class Static228 {
 			if (local194 < 2048) {
 				local991 = PlayerList.players[local194];
 			} else {
-				local991 = NpcList.npcs[local194 - 2048];
+				local991 = NPCList.NPCS[local194 - 2048];
 			}
 			Static242.method4195(local991, arg3, arg0, local974, arg1, arg2, --local974.anInt4625);
 		}

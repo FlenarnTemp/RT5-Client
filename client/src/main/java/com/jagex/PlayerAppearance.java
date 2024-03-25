@@ -4,6 +4,9 @@ import com.jagex.core.io.Packet;
 import com.jagex.game.config.bastype.BASType;
 import com.jagex.game.config.bastype.BASTypeList;
 import com.jagex.game.config.idktype.IDKTypeList;
+import com.jagex.game.config.npctype.NPCTypeList;
+import com.jagex.game.config.seqtype.SeqType;
+import com.jagex.game.config.seqtype.SeqTypeList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -71,7 +74,7 @@ public final class PlayerAppearance {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!jo", name = "a", descriptor = "(ILclient!gp;Lclient!wl;ZIILclient!nb;Lclient!ta;Lclient!e;Lclient!wm;ILclient!io;)Lclient!gn;")
-	public Model method3184(@OriginalArg(0) int arg0, @OriginalArg(1) SeqTypeList arg1, @OriginalArg(2) Interface11 arg2, @OriginalArg(5) int arg3, @OriginalArg(6) Class157 arg4, @OriginalArg(7) NpcTypeList arg5, @OriginalArg(8) IDKTypeList arg6, @OriginalArg(9) Renderer arg7, @OriginalArg(10) int arg8, @OriginalArg(11) ObjTypeList arg9) {
+	public Model method3184(@OriginalArg(0) int arg0, @OriginalArg(1) SeqTypeList arg1, @OriginalArg(2) Interface11 arg2, @OriginalArg(5) int arg3, @OriginalArg(6) SeqType arg4, @OriginalArg(7) NPCTypeList arg5, @OriginalArg(8) IDKTypeList arg6, @OriginalArg(9) Renderer arg7, @OriginalArg(10) int arg8, @OriginalArg(11) ObjTypeList arg9) {
 		if (this.npcId != -1) {
 			return arg5.get(this.npcId).method2088(arg3, arg8, arg0, arg7, arg4, arg2, arg1);
 		}
@@ -181,7 +184,7 @@ public final class PlayerAppearance {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!jo", name = "a", descriptor = "(IILclient!e;ILclient!nb;IIILclient!gp;Lclient!wm;II)Lclient!gn;")
-	public Model method3185(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) IDKTypeList arg2, @OriginalArg(4) Class157 arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(8) SeqTypeList arg6, @OriginalArg(9) Renderer arg7, @OriginalArg(10) int arg8, @OriginalArg(11) int arg9) {
+	public Model method3185(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) IDKTypeList arg2, @OriginalArg(4) SeqType arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(8) SeqTypeList arg6, @OriginalArg(9) Renderer arg7, @OriginalArg(10) int arg8, @OriginalArg(11) int arg9) {
 		@Pc(7) int local7 = 1024;
 		@Pc(32) int local32;
 		@Pc(36) int local36;
@@ -302,33 +305,33 @@ public final class PlayerAppearance {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!jo", name = "a", descriptor = "(IZLclient!ak;Lclient!gp;Lclient!e;Lclient!nb;IIIIZILclient!nb;Lclient!wl;Lclient!io;Lclient!wm;Lclient!ta;[Lclient!bg;I)Lclient!gn;")
-	public Model method3191(@OriginalArg(0) int arg0, @OriginalArg(2) BASTypeList arg1, @OriginalArg(3) SeqTypeList arg2, @OriginalArg(4) IDKTypeList arg3, @OriginalArg(5) Class157 arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8, @OriginalArg(11) int arg9, @OriginalArg(12) Class157 arg10, @OriginalArg(13) Interface11 arg11, @OriginalArg(14) ObjTypeList arg12, @OriginalArg(15) Renderer arg13, @OriginalArg(16) NpcTypeList arg14, @OriginalArg(17) Class20[] arg15, @OriginalArg(18) int arg16) {
+	public Model method3191(@OriginalArg(0) int arg0, @OriginalArg(2) BASTypeList arg1, @OriginalArg(3) SeqTypeList arg2, @OriginalArg(4) IDKTypeList arg3, @OriginalArg(5) SeqType arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8, @OriginalArg(11) int arg9, @OriginalArg(12) SeqType arg10, @OriginalArg(13) Interface11 arg11, @OriginalArg(14) ObjTypeList arg12, @OriginalArg(15) Renderer arg13, @OriginalArg(16) NPCTypeList arg14, @OriginalArg(17) Class20[] arg15, @OriginalArg(18) int arg16) {
 		if (this.npcId != -1) {
 			return arg14.get(this.npcId).getBodyModel(arg1, arg16, arg4, arg13, arg2, arg6, arg9, arg8, arg10, arg7, arg15, arg0, arg11, arg5);
 		}
 		@Pc(33) int local33 = arg7;
 		@Pc(36) long local36 = this.aLong107;
 		@Pc(39) int[] local39 = this.anIntArray193;
-		if (arg4 != null && (arg4.anInt4030 >= 0 || arg4.anInt4034 >= 0)) {
+		if (arg4 != null && (arg4.mainhand >= 0 || arg4.offhand >= 0)) {
 			local39 = new int[12];
 			for (@Pc(52) int local52 = 0; local52 < 12; local52++) {
 				local39[local52] = this.anIntArray193[local52];
 			}
-			if (arg4.anInt4030 >= 0) {
-				if (arg4.anInt4030 == 65535) {
+			if (arg4.mainhand >= 0) {
+				if (arg4.mainhand == 65535) {
 					local36 ^= 0xFFFFFFFF00000000L;
 					local39[5] = 0;
 				} else {
-					local39[5] = arg4.anInt4030 | 0x40000000;
+					local39[5] = arg4.mainhand | 0x40000000;
 					local36 ^= (long) local39[5] << 32;
 				}
 			}
-			if (arg4.anInt4034 >= 0) {
-				if (arg4.anInt4034 == 65535) {
+			if (arg4.offhand >= 0) {
+				if (arg4.offhand == 65535) {
 					local39[3] = 0;
 					local36 ^= 0xFFFFFFFFL;
 				} else {
-					local39[3] = arg4.anInt4034 | 0x40000000;
+					local39[3] = arg4.offhand | 0x40000000;
 					local36 ^= local39[3];
 				}
 			}
@@ -342,9 +345,9 @@ public final class PlayerAppearance {
 		for (@Pc(158) int local158 = 0; local158 < local156; local158++) {
 			Static41.aClass2_Sub2_Sub13Array2[local158] = null;
 			if (arg15[local158] != null) {
-				@Pc(176) Class157 local176 = arg2.method2371(arg15[local158].anInt624);
+				@Pc(176) SeqType local176 = arg2.method2371(arg15[local158].anInt624);
 				if (local176.anIntArray262 != null) {
-					Static114.aClass157Array14[local158] = local176;
+					Static114.A_SEQ_TYPE_ARRAY_14[local158] = local176;
 					local149 = true;
 					local190 = arg15[local158].anInt628;
 					local195 = arg15[local158].anInt627;
@@ -357,7 +360,7 @@ public final class PlayerAppearance {
 						local139 |= Static41.aClass2_Sub2_Sub13Array2[local158].method4235(local213);
 					}
 					if ((local176.aBoolean264 || Static318.forceTweening) && local195 != -1 && local176.anIntArray262.length > local195) {
-						Static296.anIntArray381[local158] = local176.anIntArray261[local190];
+						Static296.anIntArray381[local158] = local176.frames[local190];
 						Static316.anIntArray396[local158] = arg15[local158].anInt625;
 						@Pc(290) int local290 = local176.anIntArray262[local195];
 						Static385.aClass2_Sub2_Sub13Array4[local158] = arg2.method2368(local290 >>> 16);
@@ -399,7 +402,7 @@ public final class PlayerAppearance {
 					local139 |= local345.method4235(local339);
 				}
 				if ((arg4.aBoolean264 || Static318.forceTweening) && arg5 != -1 && arg5 < arg4.anIntArray262.length) {
-					local195 = arg4.anIntArray261[arg16];
+					local195 = arg4.frames[arg16];
 					local190 = arg4.anIntArray262[arg5];
 					local427 = local190 >>> 16;
 					local347 = local427 == local370 ? local345 : arg2.method2368(local427);
@@ -421,7 +424,7 @@ public final class PlayerAppearance {
 					local139 |= local355.method4235(local349);
 				}
 				if ((arg10.aBoolean264 || Static318.forceTweening) && arg8 != -1 && arg10.anIntArray262.length > arg8) {
-					local353 = arg10.anIntArray261[arg9];
+					local353 = arg10.frames[arg9];
 					local351 = arg10.anIntArray262[arg8];
 					local427 = local351 >>> 16;
 					local351 &= 0xFFFF;
@@ -446,7 +449,7 @@ public final class PlayerAppearance {
 		}
 		@Pc(597) BASType local597 = null;
 		if (this.anInt3190 != -1) {
-			local597 = arg1.method245(this.anInt3190);
+			local597 = arg1.get(this.anInt3190);
 		}
 		@Pc(640) int local640;
 		@Pc(646) int local646;
@@ -595,7 +598,7 @@ public final class PlayerAppearance {
 		for (local646 = 0; local646 < local156; local646++) {
 			Static41.aClass2_Sub2_Sub13Array2[local646] = null;
 			Static385.aClass2_Sub2_Sub13Array4[local646] = null;
-			Static114.aClass157Array14[local646] = null;
+			Static114.A_SEQ_TYPE_ARRAY_14[local646] = null;
 		}
 		return local1310;
 	}

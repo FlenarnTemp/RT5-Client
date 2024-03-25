@@ -62,27 +62,27 @@ public final class MapElementTypeList {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!ki", name = "b", descriptor = "(II)Lclient!np;")
-	public MapElementType get(@OriginalArg(1) int arg0) {
+	public MapElementType get(@OriginalArg(1) int id) {
 		@Pc(6) LruHashTable local6 = this.aClass98_26;
-		@Pc(16) MapElementType local16;
+		@Pc(16) MapElementType type;
 		synchronized (this.aClass98_26) {
-			local16 = (MapElementType) this.aClass98_26.get((long) arg0);
+			type = (MapElementType) this.aClass98_26.get((long) id);
 		}
-		if (local16 != null) {
-			return local16;
+		if (type != null) {
+			return type;
 		}
-		@Pc(33) byte[] local33 = this.aClass197_49.getfile(arg0, 36);
-		local16 = new MapElementType();
-		local16.anInt4430 = arg0;
-		local16.aClass125_2 = this;
+		@Pc(33) byte[] local33 = this.aClass197_49.getfile(id, 36);
+		type = new MapElementType();
+		type.id = id;
+		type.aClass125_2 = this;
 		if (local33 != null) {
-			local16.decode(new Packet(local33));
+			type.decode(new Packet(local33));
 		}
-		local16.postDecode();
+		type.postDecode();
 		@Pc(65) LruHashTable local65 = this.aClass98_26;
 		synchronized (this.aClass98_26) {
-			this.aClass98_26.put((long) arg0, local16);
-			return local16;
+			this.aClass98_26.put((long) id, type);
+			return type;
 		}
 	}
 

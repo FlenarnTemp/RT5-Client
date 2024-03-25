@@ -1,5 +1,7 @@
-package com.jagex;
+package com.jagex.game.config.questtype;
 
+import com.jagex.Class50;
+import com.jagex.LruHashTable;
 import com.jagex.core.io.Packet;
 import com.jagex.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
@@ -49,25 +51,25 @@ public final class QuestTypeList {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!ui", name = "a", descriptor = "(II)Lclient!ud;")
-	public QuestType get(@OriginalArg(1) int arg0) {
+	public QuestType get(@OriginalArg(1) int id) {
 		@Pc(6) LruHashTable local6 = this.aClass98_60;
-		@Pc(16) QuestType local16;
+		@Pc(16) QuestType type;
 		synchronized (this.aClass98_60) {
-			local16 = (QuestType) this.aClass98_60.get((long) arg0);
+			type = (QuestType) this.aClass98_60.get((long) id);
 		}
-		if (local16 != null) {
-			return local16;
+		if (type != null) {
+			return type;
 		}
-		@Pc(33) byte[] local33 = this.aClass197_91.getfile(arg0, 35);
-		local16 = new QuestType();
+		@Pc(33) byte[] local33 = this.aClass197_91.getfile(id, 35);
+		type = new QuestType();
 		if (local33 != null) {
-			local16.decode(new Packet(local33));
+			type.decode(new Packet(local33));
 		}
-		local16.method5834();
+		type.postDecode();
 		@Pc(52) LruHashTable local52 = this.aClass98_60;
 		synchronized (this.aClass98_60) {
-			this.aClass98_60.put((long) arg0, local16);
-			return local16;
+			this.aClass98_60.put((long) id, type);
+			return type;
 		}
 	}
 }

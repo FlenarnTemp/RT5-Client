@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.js5.index.Js5Index;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;

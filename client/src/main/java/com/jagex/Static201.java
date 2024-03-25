@@ -1,6 +1,7 @@
 package com.jagex;
 
 import com.jagex.game.config.idktype.IDKTypeList;
+import com.jagex.game.config.seqtype.SeqType;
 import com.jagex.graphics.BitmapFont;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -311,7 +312,7 @@ public final class Static201 {
 									Static99.method2146();
 									@Pc(1477) Model local1477 = null;
 									local248 = 0;
-									@Pc(1511) Class157 local1511;
+									@Pc(1511) SeqType local1511;
 									@Pc(1519) PlayerAppearance local1519;
 									if (local19.objId != -1) {
 										@Pc(1490) ObjType local1490 = client.ObjTypes.get(local19.objId);
@@ -330,7 +331,7 @@ public final class Static201 {
 										local1161 = local19.modelId;
 										if (local1161 >= 0 && local1161 < 2048) {
 											@Pc(1566) Player local1566 = PlayerList.players[local1161];
-											@Pc(1579) Class157 local1579 = local19.modelSeqId == -1 ? null : client.SeqTypes.method2371(local19.modelSeqId);
+											@Pc(1579) SeqType local1579 = local19.modelSeqId == -1 ? null : client.SeqTypes.method2371(local19.modelSeqId);
 											if (local1566 != null && (local1161 == PlayerList.selfId || Static276.method4651(local1566.username) == local19.anInt4236)) {
 												local1477 = local1566.appearance.method3191(local19.anInt4283, client.BasTypes, client.SeqTypes, client.IdkTypes, local1579, local19.anInt4316, 0, 1024, -1, 0, null, VarpDomain.instance, client.ObjTypes, Rasteriser.instance, client.NpcTypes, null, local19.anInt4247);
 											}
@@ -348,7 +349,7 @@ public final class Static201 {
 											InterfaceList.redraw(local19);
 										}
 									} else {
-										@Pc(1640) Class157 local1640 = client.SeqTypes.method2371(local19.modelSeqId);
+										@Pc(1640) SeqType local1640 = client.SeqTypes.method2371(local19.modelSeqId);
 										local1477 = local19.method4105(local19.anInt4283, local19.anInt4316, client.ObjTypes, VarpDomain.instance, local1640, client.BasTypes, PlayerList.self.appearance, client.NpcTypes, local19.anInt4247, client.SeqTypes, 1024, client.IdkTypes, Rasteriser.instance);
 										if (local1477 == null && Static86.aBoolean133) {
 											InterfaceList.redraw(local19);

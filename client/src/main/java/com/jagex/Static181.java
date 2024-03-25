@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.config.seqtype.SeqType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -155,21 +156,21 @@ public final class Static181 {
 					}
 				}
 				if (local13.type == 6 && local13.modelSeqId != -1) {
-					@Pc(71) Class157 local71 = client.SeqTypes.method2371(local13.modelSeqId);
+					@Pc(71) SeqType local71 = client.SeqTypes.method2371(local13.modelSeqId);
 					if (local71 != null) {
 						local13.anInt4283 += client.sceneDelta;
-						while (local71.anIntArray261[local13.anInt4247] < local13.anInt4283) {
-							local13.anInt4283 -= local71.anIntArray261[local13.anInt4247];
+						while (local71.frames[local13.anInt4247] < local13.anInt4283) {
+							local13.anInt4283 -= local71.frames[local13.anInt4247];
 							local13.anInt4247++;
 							if (local71.anIntArray262.length <= local13.anInt4247) {
-								local13.anInt4247 -= local71.anInt4032;
+								local13.anInt4247 -= local71.replayoff;
 								if (local13.anInt4247 < 0 || local13.anInt4247 >= local71.anIntArray262.length) {
 									local13.anInt4247 = 0;
 								}
 							}
 							local13.anInt4316 = local13.anInt4247 + 1;
 							if (local71.anIntArray262.length <= local13.anInt4316) {
-								local13.anInt4316 -= local71.anInt4032;
+								local13.anInt4316 -= local71.replayoff;
 								if (local13.anInt4316 < 0 || local13.anInt4316 >= local71.anIntArray262.length) {
 									local13.anInt4316 = -1;
 								}

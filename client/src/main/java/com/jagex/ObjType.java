@@ -4,6 +4,7 @@ import com.jagex.core.datastruct.IntWrapper;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.datastruct.StringWrapper;
 import com.jagex.core.io.Packet;
+import com.jagex.game.config.seqtype.SeqType;
 import com.jagex.graphics.BitmapFont;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
@@ -444,7 +445,7 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!qf", name = "a", descriptor = "(IIIILclient!nb;Lclient!wm;ILclient!jo;I)Lclient!gn;")
-	public Model method4776(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) Class157 arg3, @OriginalArg(5) Renderer arg4, @OriginalArg(6) int arg5, @OriginalArg(7) PlayerAppearance arg6, @OriginalArg(8) int arg7) {
+	public Model method4776(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) SeqType arg3, @OriginalArg(5) Renderer arg4, @OriginalArg(6) int arg5, @OriginalArg(7) PlayerAppearance arg6, @OriginalArg(8) int arg7) {
 		@Pc(15) int local15;
 		if (this.anIntArray365 != null && arg5 > 1) {
 			local15 = -1;

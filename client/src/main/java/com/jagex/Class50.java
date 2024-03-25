@@ -14,9 +14,9 @@ public final class Class50 {
 	public final int id;
 
 	@OriginalMember(owner = "com.jagex.client!dn", name = "<init>", descriptor = "(Ljava/lang/String;I)V")
-	public Class50(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
-		this.name = arg0;
-		this.id = arg1;
+	public Class50(@OriginalArg(0) String name, @OriginalArg(1) int id) {
+		this.name = name;
+		this.id = id;
 	}
 
 	@OriginalMember(owner = "com.jagex.client!dn", name = "toString", descriptor = "()Ljava/lang/String;")

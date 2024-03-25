@@ -93,7 +93,12 @@ public class Packet extends Node {
 		return ~crc;
 	}
 
-	// get, 8 bytes
+    @OriginalMember(owner = "com.jagex.client!c", name = "a", descriptor = "([BIB)I")
+    public static int getcrc(@OriginalArg(0) byte[] src, @OriginalArg(1) int len) {
+        return getcrc(len, 0, src);
+    }
+
+    // get, 8 bytes
 	@OriginalMember(owner = "com.jagex.client!bt", name = "b", descriptor = "(I)J")
 	public long g8() {
 		@Pc(10) long high = (long) this.g4() & 0xFFFFFFFFL;

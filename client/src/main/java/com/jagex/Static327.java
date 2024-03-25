@@ -90,8 +90,8 @@ public final class Static327 {
 						local76 = local380.xFine + 64 - local380.getSize() * 64;
 						local79 = local380.zFine + 64 - local380.getSize() * 64;
 						@Pc(485) int local485;
-						for (local88 = 0; local88 < NpcList.size; local88++) {
-							@Pc(451) Npc local451 = NpcList.npcs[NpcList.ids[local88]];
+						for (local88 = 0; local88 < NPCList.size; local88++) {
+							@Pc(451) NPC local451 = NPCList.NPCS[NPCList.ids[local88]];
 							if (local451 != null && local451.anInt4632 != client.cycle && local451.aBoolean320) {
 								local473 = local451.xFine - (local451.type.size - 1) * 64;
 								local485 = local451.zFine - (local451.type.size - 1) * 64;
@@ -121,14 +121,14 @@ public final class Static327 {
 					Static184.method3397(local354.anInt4073 != PlayerList.self.plane, local380);
 					local380.anInt4632 = client.cycle;
 				}
-				if (local354.aClass11_1 instanceof Npc) {
-					@Pc(692) Npc local692 = (Npc) local354.aClass11_1;
+				if (local354.aClass11_1 instanceof NPC) {
+					@Pc(692) NPC local692 = (NPC) local354.aClass11_1;
 					if (local692.type != null) {
 						if ((local692.type.size & 0x1) == 0 && (local692.xFine & 0x7F) == 0 && (local692.zFine & 0x7F) == 0 || (local692.type.size & 0x1) == 1 && (local692.xFine & 0x7F) == 64 && (local692.zFine & 0x7F) == 64) {
 							local67 = local692.xFine - (local692.type.size - 1) * 64;
 							local76 = local692.zFine - (local692.type.size - 1) * 64;
-							for (local79 = 0; local79 < NpcList.size; local79++) {
-								@Pc(768) Npc local768 = NpcList.npcs[NpcList.ids[local79]];
+							for (local79 = 0; local79 < NPCList.size; local79++) {
+								@Pc(768) NPC local768 = NPCList.NPCS[NPCList.ids[local79]];
 								if (local768 != null && local768.anInt4632 != client.cycle && local692 != local768 && local768.aBoolean320) {
 									local97 = local768.xFine - (local768.type.size - 1) * 64;
 									local473 = local768.zFine + 64 - local768.type.size * 64;
@@ -247,7 +247,7 @@ public final class Static327 {
 									}
 								}
 							}
-							Static1.method3(-1, true, local354.anInt4075, local354.anInt4073 != PlayerList.self.plane, Static368.aClass79_143.getLocalized(client.language), local354.anInt4076, 1010, "<col=00ffff>" + local1297.name, Static135.anInt2523, (long) local1297.anInt1351);
+							Static1.method3(-1, true, local354.anInt4075, local354.anInt4073 != PlayerList.self.plane, Static368.aClass79_143.getLocalized(client.language), local354.anInt4076, 1010, "<col=00ffff>" + local1297.name, Static135.anInt2523, (long) local1297.id);
 						} else if (local354.anInt4073 == PlayerList.self.plane) {
 							@Pc(1324) ParamType local1324 = Static172.anInt3298 == -1 ? null : client.ParamTypes.get(Static172.anInt3298);
 							if ((Static115.anInt3837 & 0x4) != 0 && (local1324 == null || local1297.getParam(local1324.defaultInt, Static172.anInt3298) != local1324.defaultInt)) {

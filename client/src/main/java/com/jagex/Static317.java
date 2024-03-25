@@ -2,6 +2,7 @@ package com.jagex;
 
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.bastype.BASType;
+import com.jagex.game.config.seqtype.SeqType;
 import com.jagex.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -25,7 +26,7 @@ public final class Static317 {
 			return;
 		}
 		if (arg0.anInt4597 != -1 && arg0.anInt4590 == 0) {
-			@Pc(39) Class157 local39 = client.SeqTypes.method2371(arg0.anInt4597);
+			@Pc(39) SeqType local39 = client.SeqTypes.method2371(arg0.anInt4597);
 			if (arg0.anInt4642 > 0 && local39.anInt4027 == 0) {
 				Static16.anInt4756 = 0;
 				Static170.anInt3229 = -1;
@@ -42,7 +43,7 @@ public final class Static317 {
 		if (arg0.anInt4594 != -1 && arg0.anInt4595 <= client.cycle) {
 			@Pc(97) SpotAnimType local97 = client.SpotAnimTypes.method5407(arg0.anInt4594);
 			if (local97.aBoolean177 && local97.anInt2448 != -1) {
-				@Pc(111) Class157 local111 = client.SeqTypes.method2371(local97.anInt2448);
+				@Pc(111) SeqType local111 = client.SeqTypes.method2371(local97.anInt2448);
 				if (arg0.anInt4642 > 0 && local111.anInt4027 == 0) {
 					Static16.anInt4756 = 0;
 					arg0.anInt4641++;
@@ -97,8 +98,8 @@ public final class Static317 {
 		}
 		@Pc(354) int local354 = 4;
 		@Pc(356) boolean local356 = true;
-		if (arg0 instanceof Npc) {
-			local356 = ((Npc) arg0).type.aBoolean143;
+		if (arg0 instanceof NPC) {
+			local356 = ((NPC) arg0).type.walksmoothing;
 		}
 		@Pc(396) int local396;
 		if (local356) {

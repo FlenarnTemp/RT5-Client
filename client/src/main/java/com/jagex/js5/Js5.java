@@ -2,6 +2,7 @@ package com.jagex.js5;
 
 import com.jagex.*;
 import com.jagex.core.io.Packet;
+import com.jagex.js5.index.Js5Index;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -165,7 +166,7 @@ public final class Js5 {
 			try {
 				local157 = Js5Compression.uncompress(local128);
 			} catch (@Pc(159) RuntimeException local159) {
-				throw Static382.rethrow(local159, "T3 - " + (arg2 != null) + "," + arg1 + "," + local128.length + "," + Static36.method1111(local128, local128.length) + "," + Static36.method1111(local128, local128.length - 2) + "," + this.index.groupChecksums[arg1] + "," + this.index.checksum);
+				throw Static382.rethrow(local159, "T3 - " + (arg2 != null) + "," + arg1 + "," + local128.length + "," + Packet.getcrc(local128, local128.length) + "," + Packet.getcrc(local128, local128.length - 2) + "," + this.index.groupChecksums[arg1] + "," + this.index.crc);
 			}
 			if (this.discardPacked) {
 				this.packed[arg1] = null;
@@ -331,7 +332,7 @@ public final class Js5 {
 		if (!this.isIndexReady()) {
 			throw new IllegalStateException("");
 		}
-		return this.index.checksum;
+		return this.index.crc;
 	}
 
 	@OriginalMember(owner = "com.jagex.client!r", name = "c", descriptor = "(BI)V")

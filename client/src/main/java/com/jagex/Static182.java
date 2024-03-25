@@ -102,8 +102,8 @@ public final class Static182 {
 			PlayerList.players[local35] = null;
 		}
 		PlayerList.self = null;
-		for (@Pc(51) int local51 = 0; local51 < NpcList.npcs.length; local51++) {
-			@Pc(57) Npc local57 = NpcList.npcs[local51];
+		for (@Pc(51) int local51 = 0; local51 < NPCList.NPCS.length; local51++) {
+			@Pc(57) NPC local57 = NPCList.NPCS[local51];
 			if (local57 != null) {
 				local57.anInt4611 = -1;
 			}

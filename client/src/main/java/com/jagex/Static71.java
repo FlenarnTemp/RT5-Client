@@ -16,7 +16,7 @@ public final class Static71 {
 		if (arg0.anInt4611 != -1) {
 			@Pc(22) PathingEntity local22 = null;
 			if (arg0.anInt4611 < 32768) {
-				local22 = NpcList.npcs[arg0.anInt4611];
+				local22 = NPCList.NPCS[arg0.anInt4611];
 			} else if (arg0.anInt4611 >= 32768) {
 				local22 = PlayerList.players[arg0.anInt4611 - 32768];
 			}
@@ -34,8 +34,8 @@ public final class Static71 {
 				local160.method4325(local160.anInt4174);
 				local160.anInt4174 = -1;
 			}
-		} else if (arg0 instanceof Npc) {
-			@Pc(90) Npc local90 = (Npc) arg0;
+		} else if (arg0 instanceof NPC) {
+			@Pc(90) NPC local90 = (NPC) arg0;
 			if (local90.anInt4663 != -1 && (local90.anInt4643 == 0 || local90.anInt4641 > 0)) {
 				local54 = local90.xFine - (local90.anInt4663 - Camera.originX - Camera.originX) * 64;
 				local61 = local90.zFine - (local90.anInt4657 - Camera.originZ - Camera.originZ) * 64;

@@ -1,6 +1,7 @@
 package com.jagex;
 
 import com.jagex.core.datastruct.Node;
+import com.jagex.js5.index.Js5Index;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -432,7 +433,7 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 					throw new RuntimeException();
 				}
 				this.index = new Js5Index(local48, this.expectedChecksum);
-				if (this.expectedVersion != this.index.version) {
+				if (this.expectedVersion != this.index.indexversion) {
 					throw new RuntimeException();
 				}
 			} catch (@Pc(138) RuntimeException local138) {

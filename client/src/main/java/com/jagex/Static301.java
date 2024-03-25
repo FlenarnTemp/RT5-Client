@@ -26,7 +26,7 @@ public final class Static301 {
 				local19.method4391();
 			} else if (client.cycle >= local19.anInt4725) {
 				if (local19.anInt4714 > 0) {
-					@Pc(56) Npc local56 = NpcList.npcs[local19.anInt4714 - 1];
+					@Pc(56) NPC local56 = NPCList.NPCS[local19.anInt4714 - 1];
 					if (local56 != null && local56.xFine >= 0 && local56.xFine < Static373.buildAreaLimitX * 128 && local56.zFine >= 0 && Static242.buildAreaLimitZ * 128 > local56.zFine) {
 						local19.setTarget(Scene.getTileHeight(local56.xFine, local56.zFine, local19.plane) - local19.anInt4736, local56.xFine, client.cycle, local56.zFine);
 					}

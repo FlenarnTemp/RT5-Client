@@ -1,5 +1,7 @@
-package com.jagex;
+package com.jagex.js5.index;
 
+import com.jagex.IntHashTable;
+import com.jagex.Js5Compression;
 import com.jagex.core.io.Packet;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
@@ -19,7 +21,7 @@ public final class Js5Index {
 	public int[][] fileIds;
 
 	@OriginalMember(owner = "com.jagex.client!ra", name = "e", descriptor = "I")
-	public int version;
+	public int indexversion;
 
 	@OriginalMember(owner = "com.jagex.client!ra", name = "f", descriptor = "[I")
 	public int[] groupSizes;
@@ -49,13 +51,13 @@ public final class Js5Index {
 	public int[] groupChecksums;
 
 	@OriginalMember(owner = "com.jagex.client!ra", name = "i", descriptor = "I")
-	public final int checksum;
+	public final int crc;
 
 	@OriginalMember(owner = "com.jagex.client!ra", name = "<init>", descriptor = "([BI)V")
 	public Js5Index(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1) {
-		this.checksum = Static36.method1111(arg0, arg0.length);
-		if (arg1 != this.checksum) {
-			throw new RuntimeException();
+		this.crc = Packet.getcrc(arg0, arg0.length);
+		if (this.crc != arg1) {
+			throw new RuntimeException("Invalid CRC - expected:" + arg1 + " got:" + this.crc);
 		}
 		this.method5105(arg0);
 	}
@@ -65,22 +67,22 @@ public final class Js5Index {
 		@Pc(12) Packet local12 = new Packet(Js5Compression.uncompress(arg0));
 		@Pc(16) int local16 = local12.g1();
 		if (local16 != 5 && local16 != 6) {
-			throw new RuntimeException();
+			throw new RuntimeException("Incorrect JS5 protocol number: " + local16);
 		}
 		if (local16 < 6) {
-			this.version = 0;
+			this.indexversion = 0;
 		} else {
-			this.version = local12.g4();
+			this.indexversion = local12.g4();
 		}
 		@Pc(45) int local45 = local12.g1();
 		this.size = local12.g2();
 		@Pc(52) int local52 = 0;
 		this.groupIds = new int[this.size];
 		@Pc(59) int local59 = -1;
-		for (@Pc(61) int local61 = 0; local61 < this.size; local61++) {
-			this.groupIds[local61] = local52 += local12.g2();
-			if (this.groupIds[local61] > local59) {
-				local59 = this.groupIds[local61];
+		for (@Pc(61) int index = 0; index < this.size; index++) {
+			this.groupIds[index] = local52 += local12.g2();
+			if (this.groupIds[index] > local59) {
+				local59 = this.groupIds[index];
 			}
 		}
 		this.capacity = local59 + 1;
@@ -89,34 +91,33 @@ public final class Js5Index {
 		this.groupVersions = new int[this.capacity];
 		this.groupChecksums = new int[this.capacity];
 		this.groupSizes = new int[this.capacity];
-		@Pc(141) int local141;
-		@Pc(155) int local155;
+
 		if (local45 != 0) {
 			this.groupNameHashes = new int[this.capacity];
-			for (local141 = 0; local141 < this.capacity; local141++) {
-				this.groupNameHashes[local141] = -1;
+			for (int index = 0; index < this.capacity; index++) {
+				this.groupNameHashes[index] = -1;
 			}
-			for (local155 = 0; local155 < this.size; local155++) {
-				this.groupNameHashes[this.groupIds[local155]] = local12.g4();
+			for (int index = 0; index < this.size; index++) {
+				this.groupNameHashes[this.groupIds[index]] = local12.g4();
 			}
 			this.groupNameHashTable = new IntHashTable(this.groupNameHashes);
 		}
-		for (local141 = 0; local141 < this.size; local141++) {
-			this.groupChecksums[this.groupIds[local141]] = local12.g4();
+		for (int index = 0; index < this.size; index++) {
+			this.groupChecksums[this.groupIds[index]] = local12.g4();
 		}
-		for (local155 = 0; local155 < this.size; local155++) {
-			this.groupVersions[this.groupIds[local155]] = local12.g4();
+		for (int index = 0; index < this.size; index++) {
+			this.groupVersions[this.groupIds[index]] = local12.g4();
 		}
-		for (@Pc(223) int local223 = 0; local223 < this.size; local223++) {
-			this.groupSizes[this.groupIds[local223]] = local12.g2();
+		for (@Pc(223) int index = 0; index < this.size; index++) {
+			this.groupSizes[this.groupIds[index]] = local12.g2();
 		}
 		@Pc(253) int local253;
 		@Pc(260) int local260;
 		@Pc(268) int local268;
 		@Pc(270) int local270;
 		@Pc(287) int local287;
-		for (@Pc(246) int local246 = 0; local246 < this.size; local246++) {
-			local253 = this.groupIds[local246];
+		for (@Pc(246) int index = 0; index < this.size; index++) {
+			local253 = this.groupIds[index];
 			local52 = 0;
 			local260 = this.groupSizes[local253];
 			this.fileIds[local253] = new int[local260];

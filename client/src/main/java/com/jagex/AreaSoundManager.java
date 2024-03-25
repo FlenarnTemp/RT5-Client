@@ -2,6 +2,7 @@ package com.jagex;
 
 import com.jagex.game.config.bastype.BASType;
 import com.jagex.game.config.loctype.LocType;
+import com.jagex.game.config.npctype.NPCType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -16,7 +17,7 @@ public class AreaSoundManager {
 	public static final LinkedList locSounds = new LinkedList();
 
 	@OriginalMember(owner = "com.jagex.client!is", name = "a", descriptor = "(Lclient!oe;B)V")
-	public static void remove(@OriginalArg(0) Npc arg0) {
+	public static void remove(@OriginalArg(0) NPC arg0) {
 		for (@Pc(16) AreaSound local16 = (AreaSound) npcSounds.head(); local16 != null; local16 = (AreaSound) npcSounds.next()) {
 			if (local16.npc == arg0) {
 				if (local16.primaryStream != null) {
@@ -30,7 +31,7 @@ public class AreaSoundManager {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!mh", name = "a", descriptor = "(Lclient!ct;IILclient!nh;Lclient!oe;BII)V")
-	public static void add(@OriginalArg(0) LocType arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) Player arg3, @OriginalArg(4) Npc arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
+	public static void add(@OriginalArg(0) LocType arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) Player arg3, @OriginalArg(4) NPC arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
 		@Pc(7) AreaSound local7 = new AreaSound();
 		local7.level = arg6;
 		local7.minXFine = arg5 * 128;
@@ -61,8 +62,8 @@ public class AreaSoundManager {
 			locSounds.addTail(local7);
 		} else if (arg4 != null) {
 			local7.npc = arg4;
-			@Pc(131) NpcType local131 = arg4.type;
-			if (local131.multiNpcs != null) {
+			@Pc(131) NPCType local131 = arg4.type;
+			if (local131.multinpc != null) {
 				local7.multiLocOrNpc = true;
 				local131 = local131.getMultiNpc(VarpDomain.instance);
 			}
@@ -70,8 +71,8 @@ public class AreaSoundManager {
 				local7.maxZFine = (arg1 + local131.size) * 128;
 				local7.maxXFine = (arg5 + local131.size) * 128;
 				local7.sound = Static340.getSound(arg4);
-				local7.radius = local131.anInt2022 * 128;
-				local7.volume = local131.anInt2051;
+				local7.radius = local131.bgsound_range * 128;
+				local7.volume = local131.bgsound_volume;
 			}
 			npcSounds.addTail(local7);
 		} else if (arg3 != null) {
@@ -238,7 +239,7 @@ public class AreaSoundManager {
 	@OriginalMember(owner = "com.jagex.client!gb", name = "a", descriptor = "(IIIILclient!ct;)V")
 	public static void remove(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) LocType arg3) {
 		for (@Pc(10) AreaSound local10 = (AreaSound) locSounds.head(); local10 != null; local10 = (AreaSound) locSounds.next()) {
-			if (local10.level == arg0 && local10.minXFine == arg1 * 128 && local10.minZFine == arg2 * 128 && local10.aClass41_1.anInt1351 == arg3.anInt1351) {
+			if (local10.level == arg0 && local10.minXFine == arg1 * 128 && local10.minZFine == arg2 * 128 && local10.aClass41_1.id == arg3.id) {
 				if (local10.primaryStream != null) {
 					client.soundStream.removeSubStream(local10.primaryStream);
 					local10.primaryStream = null;

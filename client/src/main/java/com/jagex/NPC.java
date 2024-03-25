@@ -1,16 +1,18 @@
 package com.jagex;
 
 import com.jagex.game.config.bastype.BASType;
+import com.jagex.game.config.npctype.NPCType;
+import com.jagex.game.config.seqtype.SeqType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("com.jagex.client!oe")
-public final class Npc extends PathingEntity {
+public final class NPC extends PathingEntity {
 
 	@OriginalMember(owner = "com.jagex.client!oe", name = "tc", descriptor = "Lclient!fk;")
-	public NpcType type;
+	public NPCType type;
 
 	@OriginalMember(owner = "com.jagex.client!oe", name = "Ac", descriptor = "I")
 	public int anInt4657 = -1;
@@ -22,8 +24,8 @@ public final class Npc extends PathingEntity {
 	private boolean method4335(@OriginalArg(1) int arg0, @OriginalArg(2) Renderer arg1) {
 		@Pc(7) int local7 = arg0;
 		@Pc(11) BASType local11 = this.getBasType();
-		@Pc(27) Class157 local27 = super.anInt4597 != -1 && super.anInt4590 == 0 ? client.SeqTypes.method2371(super.anInt4597) : null;
-		@Pc(45) Class157 local45 = super.anInt4585 == -1 || super.aBoolean317 && local27 != null ? null : client.SeqTypes.method2371(super.anInt4585);
+		@Pc(27) SeqType local27 = super.anInt4597 != -1 && super.anInt4590 == 0 ? client.SeqTypes.method2371(super.anInt4597) : null;
+		@Pc(45) SeqType local45 = super.anInt4585 == -1 || super.aBoolean317 && local27 != null ? null : client.SeqTypes.method2371(super.anInt4585);
 		@Pc(48) int local48 = local11.anInt6287;
 		@Pc(51) int local51 = local11.anInt6290;
 		if (local48 != 0 || local51 != 0 || local11.anInt6281 != 0 || local11.anInt6283 != 0) {
@@ -117,13 +119,13 @@ public final class Npc extends PathingEntity {
 	@OriginalMember(owner = "com.jagex.client!oe", name = "a", descriptor = "(Z)I")
 	@Override
 	public int method4324() {
-		if (this.type.multiNpcs != null) {
-			@Pc(18) NpcType local18 = this.type.getMultiNpc(VarpDomain.instance);
-			if (local18 != null && local18.anInt2031 != -1) {
-				return local18.anInt2031;
+		if (this.type.multinpc != null) {
+			@Pc(18) NPCType local18 = this.type.getMultiNpc(VarpDomain.instance);
+			if (local18 != null && local18.covermarker != -1) {
+				return local18.covermarker;
 			}
 		}
-		return this.type.anInt2031;
+		return this.type.covermarker;
 	}
 
 	@OriginalMember(owner = "com.jagex.client!oe", name = "a", descriptor = "(IZI)V")
@@ -191,11 +193,11 @@ public final class Npc extends PathingEntity {
 		local17.method3925(local22);
 		local17.method3936(super.xFine, super.anInt6782, super.zFine);
 		@Pc(37) BASType local37 = this.getBasType();
-		@Pc(50) NpcType local50 = this.type.multiNpcs == null ? this.type : this.type.getMultiNpc(VarpDomain.instance);
-		if (client.preferences.characterShadows && local50.aBoolean142 && local37.aBoolean424) {
-			@Pc(75) Class157 local75 = super.anInt4597 != -1 && super.anInt4590 == 0 ? client.SeqTypes.method2371(super.anInt4597) : null;
-			@Pc(92) Class157 local92 = super.anInt4585 == -1 || super.aBoolean317 && local75 != null ? null : client.SeqTypes.method2371(super.anInt4585);
-			@Pc(144) Model local144 = Static178.method2340(local92 == null ? super.anInt4607 : super.anInt4626, this.type.aByte15 & 0xFF, this.type.aByte14 & 0xFF, super.anInt4596, local92 == null ? local75 : local92, this.type.size, this.type.aShort25 & 0xFFFF, super.aClass31Array3[0], local22, arg0, this.type.aShort24 & 0xFFFF, super.aBoolean318, super.anInt4608, super.anInt4589);
+		@Pc(50) NPCType local50 = this.type.multinpc == null ? this.type : this.type.getMultiNpc(VarpDomain.instance);
+		if (client.preferences.characterShadows && local50.spotshadow && local37.aBoolean424) {
+			@Pc(75) SeqType local75 = super.anInt4597 != -1 && super.anInt4590 == 0 ? client.SeqTypes.method2371(super.anInt4597) : null;
+			@Pc(92) SeqType local92 = super.anInt4585 == -1 || super.aBoolean317 && local75 != null ? null : client.SeqTypes.method2371(super.anInt4585);
+			@Pc(144) Model local144 = Static178.method2340(local92 == null ? super.anInt4607 : super.anInt4626, this.type.spotshadowtrans_2 & 0xFF, this.type.spotshadowtrans_1 & 0xFF, super.anInt4596, local92 == null ? local75 : local92, this.type.size, this.type.spotshadowcolour_2 & 0xFFFF, super.aClass31Array3[0], local22, arg0, this.type.spotshadowcolour_1 & 0xFFFF, super.aBoolean318, super.anInt4608, super.anInt4589);
 			if (local144 != null) {
 				@Pc(149) float local149 = arg0.method2802();
 				@Pc(152) float local152 = arg0.method2860();
@@ -296,30 +298,30 @@ public final class Npc extends PathingEntity {
 	@OriginalMember(owner = "com.jagex.client!oe", name = "a", descriptor = "(I)I")
 	@Override
 	public int method4323() {
-		if (this.type.multiNpcs != null) {
-			@Pc(21) NpcType local21 = this.type.getMultiNpc(VarpDomain.instance);
-			if (local21 != null && local21.anInt2010 != -1) {
-				return local21.anInt2010;
+		if (this.type.multinpc != null) {
+			@Pc(21) NPCType local21 = this.type.getMultiNpc(VarpDomain.instance);
+			if (local21 != null && local21.overlayheight != -1) {
+				return local21.overlayheight;
 			}
 		}
-		return this.type.anInt2010 == -1 ? super.method4323() : this.type.anInt2010;
+		return this.type.overlayheight == -1 ? super.method4323() : this.type.overlayheight;
 	}
 
 	@OriginalMember(owner = "com.jagex.client!oe", name = "j", descriptor = "(I)Z")
 	private boolean method4340() {
-		return this.type.aBoolean145;
+		return this.type.active;
 	}
 
 	@OriginalMember(owner = "com.jagex.client!oe", name = "e", descriptor = "(B)I")
 	@Override
 	protected int method4329() {
-		if (this.type.multiNpcs != null) {
-			@Pc(19) NpcType local19 = this.type.getMultiNpc(VarpDomain.instance);
-			if (local19 != null && local19.anInt2032 != -1) {
-				return local19.anInt2032;
+		if (this.type.multinpc != null) {
+			@Pc(19) NPCType local19 = this.type.getMultiNpc(VarpDomain.instance);
+			if (local19 != null && local19.bas != -1) {
+				return local19.bas;
 			}
 		}
-		return this.type.anInt2032;
+		return this.type.bas;
 	}
 
 	@OriginalMember(owner = "com.jagex.client!oe", name = "a", descriptor = "(Lclient!wm;B)V")
@@ -331,7 +333,7 @@ public final class Npc extends PathingEntity {
 	}
 
 	@OriginalMember(owner = "com.jagex.client!oe", name = "a", descriptor = "(Lclient!fk;I)V")
-	public void setType(@OriginalArg(0) NpcType arg0) {
+	public void setType(@OriginalArg(0) NPCType arg0) {
 		this.type = arg0;
 		if (super.particleSystem != null) {
 			super.particleSystem.method4359();

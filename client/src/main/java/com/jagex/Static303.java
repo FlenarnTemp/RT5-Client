@@ -51,9 +51,9 @@ public final class Static303 {
 				}
 			}
 		}
-		for (@Pc(49) int local49 = 0; local49 < NpcList.size; local49++) {
-			@Pc(55) int local55 = NpcList.ids[local49];
-			@Pc(59) Npc local59 = NpcList.npcs[local55];
+		for (@Pc(49) int local49 = 0; local49 < NPCList.size; local49++) {
+			@Pc(55) int local55 = NPCList.ids[local49];
+			@Pc(59) NPC local59 = NPCList.NPCS[local55];
 			if (local59 != null && local59.anInt4636 > 0) {
 				local59.anInt4636--;
 				if (local59.anInt4636 == 0) {

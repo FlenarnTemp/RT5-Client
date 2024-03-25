@@ -1,6 +1,7 @@
 package com.jagex;
 
 import com.jagex.game.config.loctype.LocType;
+import com.jagex.game.config.msitype.MSIType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -33,7 +34,7 @@ public final class Static306 {
 		if (local10.mapsceneicon == -1) {
 			return true;
 		} else {
-			@Pc(22) MsiType local22 = client.MsiType.method2708(local10.mapsceneicon);
+			@Pc(22) MSIType local22 = client.MsiType.method2708(local10.mapsceneicon);
 			return local22.anInt3751 == -1 ? true : local22.method3708();
 		}
 	}

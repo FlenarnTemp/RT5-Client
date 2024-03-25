@@ -47,7 +47,7 @@ public final class Class11_Sub5_Sub1 extends Entity implements Interface6 {
 		this.aBoolean153 = arg14;
 		this.aBoolean152 = arg1.active != 0 && !arg7;
 		this.aBoolean154 = arg7;
-		this.aShort34 = (short) arg1.anInt1351;
+		this.aShort34 = (short) arg1.id;
 		this.aByte24 = (byte) arg13;
 		this.aBoolean155 = arg0.method2878() && arg1.hardshadow && !this.aBoolean154 && client.preferences.shadows != 0;
 		@Pc(77) int local77 = 1024;

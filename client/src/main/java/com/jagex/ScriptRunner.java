@@ -2661,7 +2661,7 @@ public final class ScriptRunner {
 								} else if (opcode < 4700 && opcode == 4600) {
 									// bas_getanim_ready
 									local13 = intStack[--isp];
-									@Pc(8467) BASType local8467 = client.BasTypes.method245(local13);
+									@Pc(8467) BASType local8467 = client.BasTypes.get(local13);
 									if (local8467.anIntArray426 != null && local8467.anIntArray426.length > 0) {
 										local25 = 0;
 										local353 = local8467.anIntArray427[0];
